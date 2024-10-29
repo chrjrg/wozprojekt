@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "VezRv5OwraE=",
   "success": true,
   "projectFilePath": "/Users/chr/projects/wozprojekt/GameProjekt/GameProjekt.csproj",
+=======
+  "dgSpecHash": "s1hFGhJwiVs=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\chris\\code\\wozprojekt\\Gameprojekt\\GameProjekt.csproj",
+>>>>>>> bde3fbbdc4ca7dfe00a38587f93f31e15b67cbe1
   "expectedPackageFiles": [],
   "logs": []
 }
