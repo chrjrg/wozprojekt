@@ -24,7 +24,7 @@ class Game {
   }
   
   static void Main (string[] byargs) {
-    DriveAnim(GameAssets.Car, 50, 25);
+    DriveAnim(Car, Wind, 50, 25);
     InitRegistry();
     context.GetCurrent().Welcome();
 

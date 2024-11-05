@@ -2,40 +2,84 @@ using System;
 using System.Threading;
 using GameLogic;
 
-    public static class Anim
+public static class Anim
+{
+    public static void DriveAnim(Shape leftShape, Shape rightShape, int initialSpacing, int fart)
     {
-        public static void DriveAnim(Shape shape, int spacesCount, int fart)
-        {
-            string[] asciiArt = shape.GetAsciiArt();
-            string spacing = "";
-            int sleepTimer = fart;
+        string[] leftAsciiArt = leftShape.GetAsciiArt();
+        string[] rightAsciiArt = rightShape.GetAsciiArt();
 
-            // Bevæg ASCII-kunsten ved at tilføje mellemrum ét ad gangen
-            for (int step = 0; step < spacesCount; step++)
-            {
-                Console.Clear();
-                
-                // Opdater spacing og tilføj det til hver linje
-                spacing += " ";
-                string[] updatedArt = new string[asciiArt.Length];
-                
-                for (int i = 0; i < asciiArt.Length; i++)
-                {
-                    updatedArt[i] = spacing + asciiArt[i];
-                }
-                
-                // Vis den opdaterede ASCII-kunst
-                DisplayAnim(updatedArt);
-                Thread.Sleep(fart);
-            }
-        }
+        // Justér højden på venstre og højre ASCII-tegninger
+        int maxHeight = Math.Max(leftAsciiArt.Length, rightAsciiArt.Length);
+        leftAsciiArt = AdjustHeight(leftAsciiArt, maxHeight);
+        rightAsciiArt = AdjustHeightFromBottom(rightAsciiArt, maxHeight);
 
-        public static void DisplayAnim(string[] array)
+        // Find længden af den længste linje i venstre ASCII-tegning
+        int maxLeftWidth = GetMaxLineLength(leftAsciiArt);
+
+        // Indstil en bufferafstand, så venstre ikke kommer helt over til højre
+        int finalSpacing = initialSpacing / 2;
+
+        // Animation af venstre ASCII-tegning mod højre ASCII-tegning
+        for (int step = 0; step < initialSpacing - finalSpacing; step++)
         {
-            foreach (string text in array)
+            Console.Clear();
+
+            // Generér hele animationen som én blok per iteration
+            for (int i = 0; i < maxHeight; i++)
             {
-                Console.WriteLine(text);
+                // Tilføj dynamisk mellemrum foran venstre ASCII-tegning
+                string leftLine = new string(' ', step) + leftAsciiArt[i];
+
+                // Beregn mellemrummet mellem venstre og højre ASCII-tegninger baseret på maxLeftWidth
+                int dynamicSpacing = initialSpacing - step + (maxLeftWidth - leftAsciiArt[i].Length);
+                string rightLine = new string(' ', dynamicSpacing) + rightAsciiArt[i];
+
+                // Skriv linjen med både venstre og højre ASCII-tegning
+                Console.WriteLine(leftLine + rightLine);
             }
+
+            Thread.Sleep(fart);
         }
     }
 
+    private static string[] AdjustHeight(string[] art, int targetHeight)
+    {
+        string[] adjustedArt = new string[targetHeight];
+        int padding = targetHeight - art.Length;
+
+        for (int i = 0; i < padding; i++)
+        {
+            adjustedArt[i] = ""; // Tilføj tomme linjer for at matche højden
+        }
+        Array.Copy(art, 0, adjustedArt, padding, art.Length);
+        
+        return adjustedArt;
+    }
+
+    private static string[] AdjustHeightFromBottom(string[] art, int targetHeight)
+    {
+        string[] adjustedArt = new string[targetHeight];
+        int padding = targetHeight - art.Length;
+
+        // Fyld øverste linjer med tomme linjer for at justere bunden af højre tegning
+        for (int i = 0; i < padding; i++)
+        {
+            adjustedArt[i] = ""; // Tilføj tomme linjer for at justere toppen
+        }
+        Array.Copy(art, 0, adjustedArt, padding, art.Length);
+
+        return adjustedArt;
+    }
+
+    private static int GetMaxLineLength(string[] art)
+    {
+        int maxLength = 0;
+        foreach (var line in art)
+        {
+            if (line.Length > maxLength)
+                maxLength = line.Length;
+        }
+        return maxLength;
+    }
+}
