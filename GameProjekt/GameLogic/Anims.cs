@@ -27,7 +27,7 @@ namespace Anims
                 
                 // Vis den opdaterede ASCII-kunst
                 DisplayAnim(updatedArt);
-                Thread.Sleep(100);
+                Thread.Sleep(50);
             }
         }
 

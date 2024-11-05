@@ -4,7 +4,8 @@ using System.Reflection.Metadata.Ecma335;
 
 namespace GameLogic{
     class Shape{
-        protected string[] asciiArt;
+        protected string[] asciiArt = Array.Empty<string>();
+        
 
         public string[] GetAsciiArt()
         {

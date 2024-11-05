@@ -6,7 +6,7 @@ using GameLogic;
 using Anims;
 
 class Game {
-  static World    world    = new World();
+  static World world = new World();
   static Intro intro = new Intro();
   static Shape vindmølle = new Wind();
   static Shape atom = new Atom();
@@ -29,10 +29,10 @@ class Game {
   }
   
   static void Main (string[] byargs) {
-    //intro.ShowIntro();
+    intro.ShowIntro();
     //vindmølle.Show();
     //atom.Show();
-    Anim.DriveAnim(car, 50);
+    //Anim.DriveAnim(car, 50);
     InitRegistry();
     context.GetCurrent().Welcome();
 
