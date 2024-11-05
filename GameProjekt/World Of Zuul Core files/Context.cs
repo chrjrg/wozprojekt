@@ -2,8 +2,11 @@
  */
 
 class Context {
+
   Space current;
   bool done = false;
+
+  Space prev;
   
   public Context (Space node) {
     current = node;
@@ -11,6 +14,10 @@ class Context {
   
   public Space GetCurrent() {
     return current;
+  }
+
+  public Space GetPrev(){
+    return prev; 
   }
 
   public string GetCurrentName() {
@@ -22,7 +29,7 @@ class Context {
     if (next==null) {
       Console.WriteLine("You are confused, and walk in a circle looking for '"+direction+"'. In the end you give up 😩");
     } else {
-      current.Goodbye();
+      prev = current;
       current = next;
       current.Welcome();
     }

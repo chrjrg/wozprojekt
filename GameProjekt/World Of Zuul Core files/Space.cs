@@ -10,6 +10,7 @@ class Space : Node {
 
   }
   
+  
   public void Welcome () {
     test?.Invoke();
     Console.WriteLine("You are now at "+name);
@@ -26,4 +27,7 @@ class Space : Node {
   public override Space FollowEdge (string direction) {
     return (Space) (base.FollowEdge(direction));
   }
+
+  
+
 }

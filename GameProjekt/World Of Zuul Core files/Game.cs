@@ -26,7 +26,7 @@ class Game {
   static void Main (string[] byargs) {
     //Intro.ShowIntro();
     InitRegistry();
-    context.GetCurrent().Welcome();
+    context.(GetCurrent).Welcome();
 
     
     while (context.IsDone()==false) {
@@ -35,5 +35,7 @@ class Game {
       if (line!=null) registry.Dispatch(line);
     }
     Console.WriteLine("Game Over 😥");
+    Console.WriteLine(context.GetPrev());
+
   }
 }
