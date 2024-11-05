@@ -12,6 +12,10 @@ class Context {
   public Space GetCurrent() {
     return current;
   }
+
+  public string GetCurrentName() {
+    return current.GetName();
+  }
   
   public void Transition (string direction) {
     Space next = current.FollowEdge(direction);

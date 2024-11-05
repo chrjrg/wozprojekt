@@ -3,7 +3,7 @@ using static Anim;
 
 /*
   - DriveAnim(GameAssets.Car, 50, 25); - Viser anim med følge syntaks <GameAssets.(Objekt), afstand, sleeptimer tid>
-
+  - Intro.ShowIntro(); - Viser spillets indledende intro;
 */
 
 
@@ -24,7 +24,7 @@ class Game {
   }
   
   static void Main (string[] byargs) {
-    DriveAnim(Car, Wind, 50, 25);
+    //Intro.ShowIntro();
     InitRegistry();
     context.GetCurrent().Welcome();
 

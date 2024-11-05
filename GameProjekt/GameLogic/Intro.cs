@@ -1,3 +1,5 @@
+using static Anim;
+
 namespace GameLogic{
     public class Intro {
 
@@ -23,12 +25,12 @@ namespace GameLogic{
         private void BaseTyping(int tid){
             Console.ForegroundColor = ConsoleColor.White;
             textTimer = tid;
-            CharSplit();
+            CharSplit(text);
         }
         private void GreenTyping(int tid){
             Console.ForegroundColor = ConsoleColor.Green;
             textTimer = tid;
-            CharSplit();
+            CharSplit(text);
         }
 
 
@@ -70,13 +72,6 @@ namespace GameLogic{
 
         
 
-        public void CharSplit(){
-            foreach (char letter in text){
-                Console.Write(letter);
-                System.Threading.Thread.Sleep(textTimer);
-
-            } 
-        }
 
     }
 }

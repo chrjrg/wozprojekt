@@ -2,11 +2,16 @@
  */
 
 class Space : Node {
+
+  public Action? test { get; set; }
+
   public Space (String name) : base(name)
   {
+
   }
   
   public void Welcome () {
+    test?.Invoke();
     Console.WriteLine("You are now at "+name);
     HashSet<string> exits = edges.Keys.ToHashSet();
     Console.WriteLine("Current exits are:");

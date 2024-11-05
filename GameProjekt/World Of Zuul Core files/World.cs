@@ -1,25 +1,23 @@
 /* World class for modeling the entire in-game world
  */
+ using static GameAssets;
+ using static Anim;
 
 class World {
   Space entry;
   
   public World () {
-    Space entry    = new Space("Entry");
-    Space corridor = new Space("Corridor");
-    Space cave     = new Space("Cave");
-    Space pit      = new Space("Darkest Pit");
-    Space outside  = new Space("Outside");
+    Space entry = new Space("Christiansborg");
+    Space wind  = new Space("Vindanlæg");
+    Space atom  = new Space("Atomkraftværk");
+    Space water = new Space("Vandanlæg");
+    Space solar = new Space("Solanlæg");
     
-    entry.AddEdge("door", corridor);
-    entry.AddEdge("Jens", corridor);
-    corridor.AddEdge("door", cave);
-    cave.AddEdge("north", pit);
-    cave.AddEdge("south", outside);
-    pit.AddEdge("door", cave);
-    outside.AddEdge("door", cave);
-    
+    entry.AddEdge("Vindanlæg", wind);
+    entry.AddEdge("Atomkraftværk", atom);
     this.entry = entry;
+
+    wind.test =() =>     {DriveAnim(Car, Wind, 90, 25); locationAnim("LOKATION: ");}; 
   }
   
   public Space GetEntry () {

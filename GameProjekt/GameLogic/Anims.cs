@@ -4,36 +4,37 @@ using GameLogic;
 
 public static class Anim
 {
-    public static void DriveAnim(Shape leftShape, Shape rightShape, int initialSpacing, int fart)
+
+    public static void DriveAnim(Shape venste, Shape hoejre, int initialSpacing, int fart)
     {
-        string[] leftAsciiArt = leftShape.GetAsciiArt();
-        string[] rightAsciiArt = rightShape.GetAsciiArt();
+        string[] left = venste.GetAsciiArt();
+        string[] right = hoejre.GetAsciiArt();
 
         // Justér højden på venstre og højre ASCII-tegninger
-        int maxHeight = Math.Max(leftAsciiArt.Length, rightAsciiArt.Length);
-        leftAsciiArt = AdjustHeight(leftAsciiArt, maxHeight);
-        rightAsciiArt = AdjustHeightFromBottom(rightAsciiArt, maxHeight);
+        int maxHeight = Math.Max(left.Length, right.Length);
+        left = AdjustHeight(left, maxHeight);
+        right = AdjustHeightFromBottom(right, maxHeight);
 
         // Find længden af den længste linje i venstre ASCII-tegning
-        int maxLeftWidth = GetMaxLineLength(leftAsciiArt);
+        int maxLeftWidth = GetMaxLineLength(left);
 
         // Indstil en bufferafstand, så venstre ikke kommer helt over til højre
-        int finalSpacing = initialSpacing / 2;
+        int finalSpacing = initialSpacing / 5;
 
         // Animation af venstre ASCII-tegning mod højre ASCII-tegning
         for (int step = 0; step < initialSpacing - finalSpacing; step++)
         {
             Console.Clear();
 
-            // Generér hele animationen som én blok per iteration
+            // Generér hele animationen som én blok per iteration - Heranvendes et nested loop
             for (int i = 0; i < maxHeight; i++)
             {
                 // Tilføj dynamisk mellemrum foran venstre ASCII-tegning
-                string leftLine = new string(' ', step) + leftAsciiArt[i];
+                string leftLine = new string(' ', step) + left[i];
 
                 // Beregn mellemrummet mellem venstre og højre ASCII-tegninger baseret på maxLeftWidth
-                int dynamicSpacing = initialSpacing - step + (maxLeftWidth - leftAsciiArt[i].Length);
-                string rightLine = new string(' ', dynamicSpacing) + rightAsciiArt[i];
+                int dynamicSpacing = initialSpacing - step + (maxLeftWidth - left[i].Length);
+                string rightLine = new string(' ', dynamicSpacing) + right[i];
 
                 // Skriv linjen med både venstre og højre ASCII-tegning
                 Console.WriteLine(leftLine + rightLine);
@@ -82,4 +83,18 @@ public static class Anim
         }
         return maxLength;
     }
+
+    public static void locationAnim(string text){
+        CharSplit(text);
+    }
+
+    
+    public static void CharSplit(string text){
+        foreach (char letter in text){
+            Console.Write(letter);
+            System.Threading.Thread.Sleep(10);
+        } 
+    }
+
+
 }
