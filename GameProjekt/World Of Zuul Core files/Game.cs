@@ -9,6 +9,7 @@ using static Anim;
 
 class Game {
   static World world = new World();
+
   static Context  context  = new Context(world.GetEntry());
   static ICommand fallback = new CommandUnknown();
   static Registry registry = new Registry(context, fallback);
@@ -26,6 +27,17 @@ class Game {
   static void Main (string[] byargs) {
     //Intro.ShowIntro();
     InitRegistry();
+    Param[] param = new Param[]{
+      new Param("Balance: ",1000000000," kr."),
+      new Param("Energiforsnyning: ",2," GW."),
+      new Param("CO\u2082: ",1," Tons")
+    };
+
+    foreach(Param p in param){
+      Console.WriteLine(p.getStatus());
+
+    }
+    
     context.GetCurrent().Welcome();
 
     

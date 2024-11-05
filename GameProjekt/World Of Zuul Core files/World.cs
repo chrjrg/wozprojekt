@@ -17,7 +17,7 @@ class World {
     entry.AddEdge("Atomkraftværk", atom);
     this.entry = entry;
 
-    wind.test =() =>     {DriveAnim(Car, Wind, 90, 25); locationAnim("LOKATION: ");}; 
+    wind.test =() =>     {DriveAnim(Car, Atom, 90, 25); locationAnim("LOKATION: ");}; 
   }
   
   public Space GetEntry () {
