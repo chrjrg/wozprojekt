@@ -2,9 +2,7 @@ using System;
 using System.Threading;
 using GameLogic;
 
-namespace Anims
-{
-    class Anim
+    public static class Anim
     {
         public static void DriveAnim(Shape shape, int spacesCount)
         {
@@ -39,4 +37,4 @@ namespace Anims
             }
         }
     }
-}
+

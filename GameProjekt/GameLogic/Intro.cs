@@ -1,7 +1,5 @@
-using System.Timers;
-
 namespace GameLogic{
-    class Intro {
+    public class Intro {
 
 
         string[] prompt = {"Velkommen til Power Simulator \n",
@@ -22,12 +20,12 @@ namespace GameLogic{
 
         public int textTimer;
 
-        public void BaseTyping(int tid){
+        private void BaseTyping(int tid){
             Console.ForegroundColor = ConsoleColor.White;
             textTimer = tid;
             CharSplit();
         }
-        public void GreenTyping(int tid){
+        private void GreenTyping(int tid){
             Console.ForegroundColor = ConsoleColor.Green;
             textTimer = tid;
             CharSplit();

@@ -1,9 +1,5 @@
-using System.Reflection.Metadata;
-using System;
-using System.Reflection.Metadata.Ecma335;
-
 namespace GameLogic{
-    class Shape{
+    public class Shape{
         protected string[] asciiArt = Array.Empty<string>();
         
 
@@ -21,7 +17,7 @@ namespace GameLogic{
     }
 
 
-    class Wind : Shape{
+    public class Wind : Shape{
         public Wind(){
             asciiArt = new string[]
             {
