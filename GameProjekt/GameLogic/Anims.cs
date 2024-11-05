@@ -4,10 +4,11 @@ using GameLogic;
 
     public static class Anim
     {
-        public static void DriveAnim(Shape shape, int spacesCount)
+        public static void DriveAnim(Shape shape, int spacesCount, int fart)
         {
             string[] asciiArt = shape.GetAsciiArt();
             string spacing = "";
+            int sleepTimer = fart;
 
             // Bevæg ASCII-kunsten ved at tilføje mellemrum ét ad gangen
             for (int step = 0; step < spacesCount; step++)
@@ -25,7 +26,7 @@ using GameLogic;
                 
                 // Vis den opdaterede ASCII-kunst
                 DisplayAnim(updatedArt);
-                Thread.Sleep(50);
+                Thread.Sleep(fart);
             }
         }
 

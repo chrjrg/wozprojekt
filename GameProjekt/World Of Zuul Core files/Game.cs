@@ -1,14 +1,17 @@
 using static GameAssets;
 using static Anim;
 
+/*
+  - DriveAnim(GameAssets.Car, 50, 25); - Viser anim med følge syntaks <GameAssets.(Objekt), afstand, sleeptimer tid>
+
+*/
+
+
 class Game {
   static World world = new World();
   static Context  context  = new Context(world.GetEntry());
   static ICommand fallback = new CommandUnknown();
   static Registry registry = new Registry(context, fallback);
-
-
-
 
 
   private static void InitRegistry () {
@@ -21,7 +24,7 @@ class Game {
   }
   
   static void Main (string[] byargs) {
-    DriveAnim(GameAssets.Car, 50);
+    DriveAnim(GameAssets.Car, 50, 25);
     InitRegistry();
     context.GetCurrent().Welcome();
 
