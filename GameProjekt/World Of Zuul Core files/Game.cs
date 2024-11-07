@@ -21,21 +21,21 @@ class Game {
     registry.Register("bye", cmdExit);
     registry.Register("go", new CommandGo());
     registry.Register("help", new CommandHelp(registry));
+    registry.Register("go back", new CommandGoBack());
+    
+
   }
   
   static void Main (string[] byargs) {
-    //Intro.ShowIntro();
+    // Intro.ShowIntro();
     InitRegistry();
-    context.(GetCurrent).Welcome();
+    context.GetCurrent().Welcome();
 
-    
     while (context.IsDone()==false) {
       Console.Write("> ");
       string? line = Console.ReadLine();
-      if (line!=null) registry.Dispatch(line);
-    }
-    Console.WriteLine("Game Over 😥");
-    Console.WriteLine(context.GetPrev());
-
+      if (line!=null)  registry.Dispatch(line);
   }
+  Console.WriteLine("Game Over 😥");;
+}
 }

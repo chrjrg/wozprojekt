@@ -4,37 +4,42 @@
 class Context {
 
   Space current;
+  Space previous;
   bool done = false;
 
-  Space prev;
-  
-  public Context (Space node) {
-    current = node;
+  public Context(Space start) {
+    current = start;
+    previous = start; // undgå null warning
   }
   
   public Space GetCurrent() {
     return current;
   }
 
-  public Space GetPrev(){
-    return prev; 
-  }
 
   public string GetCurrentName() {
     return current.GetName();
   }
   
   public void Transition (string direction) {
+    previous = current;
     Space next = current.FollowEdge(direction);
     if (next==null) {
       Console.WriteLine("You are confused, and walk in a circle looking for '"+direction+"'. In the end you give up 😩");
     } else {
-      prev = current;
       current = next;
       current.Welcome();
     }
   }
-  
+
+   public void TransitionBack() {
+      Space temp = current;
+      current = previous;
+      previous = temp;
+      Console.WriteLine("You have returned to " + current.GetName());
+      current.WelcomeBack();
+  }
+
   public void MakeDone () {
     done = true;
   }

@@ -14,7 +14,7 @@ class Node {
   }
   
   public void AddEdge (string name, Node node) {
-    edges.Add(name, node);
+    edges.Add(name.ToLower(), node);
   }
   
   public virtual Node FollowEdge (string direction) {

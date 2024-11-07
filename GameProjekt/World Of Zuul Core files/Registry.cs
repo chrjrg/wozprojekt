@@ -12,16 +12,35 @@ class Registry {
   }
   
   public void Register (string name, ICommand command) {
+    //commands[name.ToLower()] = command; 
     commands.Add(name, command);
+
   }
-  
+public void Dispatch(string line) {
+
+    line = line.ToLower(); // Convert to lowercase 
+    // check if entire command is in line (e.g., "go back")
+    if (commands.ContainsKey(line)) {
+        string cmd = line;
+        string[] parameter = new string[0]; // no parameters in this case
+        GetCommand(cmd).Execute(context, cmd, parameter);
+        return;
+    }
+
+    // Fallback if standard 
+    string[] elements = line.Split(" ");
+    string command = elements[0];
+    string[] parameters = GetParameters(elements);
+    (commands.ContainsKey(command) ? GetCommand(command) : fallback).Execute(context, command, parameters);
+}
+  /*
   public void Dispatch (string line) {
     string[] elements = line.Split(" ");
     string command = elements[0];
     string[] parameters = GetParameters(elements);
     (commands.ContainsKey(command) ? GetCommand(command) : fallback).Execute(context, command, parameters);
   }
-  
+*/
   public ICommand GetCommand (string commandName) {
     return commands[commandName];
   }
