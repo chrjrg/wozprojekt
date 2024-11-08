@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /Users/peterleth/Desktop/1semester/wozprojekt/GameProjekt/bin/Debug/net8.0/GameProjekt
 /Users/peterleth/Desktop/1semester/wozprojekt/GameProjekt/bin/Debug/net8.0/GameProjekt.deps.json
 /Users/peterleth/Desktop/1semester/wozprojekt/GameProjekt/bin/Debug/net8.0/GameProjekt.runtimeconfig.json
@@ -13,3 +14,20 @@
 /Users/peterleth/Desktop/1semester/wozprojekt/GameProjekt/obj/Debug/net8.0/GameProjekt.pdb
 /Users/peterleth/Desktop/1semester/wozprojekt/GameProjekt/obj/Debug/net8.0/GameProjekt.genruntimeconfig.cache
 /Users/peterleth/Desktop/1semester/wozprojekt/GameProjekt/obj/Debug/net8.0/ref/GameProjekt.dll
+=======
+C:\Users\chris\code\wozprojekt\Gameprojekt\bin\Debug\net8.0\GameProjekt.exe
+C:\Users\chris\code\wozprojekt\Gameprojekt\bin\Debug\net8.0\GameProjekt.deps.json
+C:\Users\chris\code\wozprojekt\Gameprojekt\bin\Debug\net8.0\GameProjekt.runtimeconfig.json
+C:\Users\chris\code\wozprojekt\Gameprojekt\bin\Debug\net8.0\GameProjekt.dll
+C:\Users\chris\code\wozprojekt\Gameprojekt\bin\Debug\net8.0\GameProjekt.pdb
+C:\Users\chris\code\wozprojekt\Gameprojekt\obj\Debug\net8.0\GameProjekt.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chris\code\wozprojekt\Gameprojekt\obj\Debug\net8.0\GameProjekt.AssemblyInfoInputs.cache
+C:\Users\chris\code\wozprojekt\Gameprojekt\obj\Debug\net8.0\GameProjekt.AssemblyInfo.cs
+C:\Users\chris\code\wozprojekt\Gameprojekt\obj\Debug\net8.0\GameProjekt.csproj.CoreCompileInputs.cache
+C:\Users\chris\code\wozprojekt\Gameprojekt\obj\Debug\net8.0\GameProjekt.sourcelink.json
+C:\Users\chris\code\wozprojekt\Gameprojekt\obj\Debug\net8.0\GameProjekt.dll
+C:\Users\chris\code\wozprojekt\Gameprojekt\obj\Debug\net8.0\refint\GameProjekt.dll
+C:\Users\chris\code\wozprojekt\Gameprojekt\obj\Debug\net8.0\GameProjekt.pdb
+C:\Users\chris\code\wozprojekt\Gameprojekt\obj\Debug\net8.0\GameProjekt.genruntimeconfig.cache
+C:\Users\chris\code\wozprojekt\Gameprojekt\obj\Debug\net8.0\ref\GameProjekt.dll
+>>>>>>> 7cc0a5312cc0fb29949cfde6b00d8c8bf93998f1
