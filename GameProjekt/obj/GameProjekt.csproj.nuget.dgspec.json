@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/chr/projects/wozprojekt/GameProjekt/GameProjekt.csproj": {}
+    "C:\\Users\\chris\\code\\wozprojekt\\gameprojekt\\GameProjekt.csproj": {}
   },
   "projects": {
-    "/Users/chr/projects/wozprojekt/GameProjekt/GameProjekt.csproj": {
+    "C:\\Users\\chris\\code\\wozprojekt\\gameprojekt\\GameProjekt.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/chr/projects/wozprojekt/GameProjekt/GameProjekt.csproj",
+        "projectUniqueName": "C:\\Users\\chris\\code\\wozprojekt\\gameprojekt\\GameProjekt.csproj",
         "projectName": "GameProjekt",
-        "projectPath": "/Users/chr/projects/wozprojekt/GameProjekt/GameProjekt.csproj",
-        "packagesPath": "/Users/chr/.nuget/packages/",
-        "outputPath": "/Users/chr/projects/wozprojekt/GameProjekt/obj/",
+        "projectPath": "C:\\Users\\chris\\code\\wozprojekt\\gameprojekt\\GameProjekt.csproj",
+        "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\chris\\code\\wozprojekt\\gameprojekt\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/chr/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -58,7 +58,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
