@@ -1,7 +1,7 @@
 /* Space class for modeling spaces (rooms, caves, ...)
  */
 
-class Space : Node {
+public class Space : Node {
 
   public Action? test { get; set; }
 
@@ -12,7 +12,10 @@ class Space : Node {
   
   public void Welcome () {
     test?.Invoke();
-    Console.WriteLine("You are now at "+name);
+    Console.ForegroundColor = ConsoleColor.Blue;
+    Console.WriteLine(name);
+    Console.WriteLine("");
+    Console.ResetColor();
     HashSet<string> exits = edges.Keys.ToHashSet();
     Console.WriteLine("Current exits are:");
     foreach (String exit in exits) {
@@ -23,7 +26,8 @@ class Space : Node {
   public void Goodbye () {
   }
   
-  public override Space FollowEdge (string direction) {
-    return (Space) (base.FollowEdge(direction));
+  public override Node? FollowEdge(string direction)
+  {
+      return base.FollowEdge(direction);
   }
 }

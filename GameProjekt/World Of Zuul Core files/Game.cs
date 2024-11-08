@@ -1,4 +1,4 @@
-using static GameAssets;
+using static GameLogic.GameAssets;
 using static Anim;
 
 /*
@@ -7,7 +7,7 @@ using static Anim;
 */
 
 
-class Game {
+public class Game {
   static World world = new World();
 
   static Context  context  = new Context(world.GetEntry());
@@ -22,12 +22,14 @@ class Game {
     registry.Register("bye", cmdExit);
     registry.Register("go", new CommandGo());
     registry.Register("help", new CommandHelp(registry));
+    registry.Register("clear",new CommandClear());
   }
   
   static void Main (string[] byargs) {
+    ClearConsole();
     //Intro.ShowIntro();
     InitRegistry();
-    Param[] param = new Param[]{
+ /*    Param[] param = new Param[]{
       new Param("Balance: ",1000000000," kr."),
       new Param("Energiforsnyning: ",2," GW."),
       new Param("CO\u2082: ",1," Tons")
@@ -37,8 +39,10 @@ class Game {
       Console.WriteLine(p.getStatus());
 
     }
-    
+     */
     context.GetCurrent().Welcome();
+    //balance.getStatus();
+    
 
     
     while (context.IsDone()==false) {

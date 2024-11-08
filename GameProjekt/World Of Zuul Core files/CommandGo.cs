@@ -11,6 +11,8 @@ class CommandGo : BaseCommand, ICommand {
       Console.WriteLine("I don't seem to know where that is 🤔");
       return;
     }
+
     context.Transition(parameters[0]);
+
   }
 }
