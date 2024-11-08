@@ -14,3 +14,13 @@ class CommandGo : BaseCommand, ICommand {
     context.Transition(parameters[0]);
   }
 }
+
+class CommandGoBack : BaseCommand, ICommand {
+  public CommandGoBack () {
+    description = "Go back from previous space";
+  }
+  
+  public void Execute (Context context, string command, string[] parameters) {
+    context.TransitionBack();
+  }
+}
