@@ -6,6 +6,7 @@
 class World {
   
   Space entry;
+  
 
   public World () {
     Space entry = new Space("Christiansborg");
@@ -13,8 +14,9 @@ class World {
     Space wind  = new Space("Vindanlæg");
     Space solar = new Space("Solanlæg");
     Space water = new Space("Vandanlæg");
-    this.entry = entry;
     
+    this.entry = entry;
+
     // Add edges for entry (Christiansborg)
     entry.AddEdge("atomkraftværk", atom);
     entry.AddEdge("Vandanlæg", water);
@@ -42,10 +44,11 @@ class World {
     wind.AddEdge("Solanlæg", solar);
     wind.AddEdge("Christiansborg", entry);
     
+    atom.test =() => {DriveAnim(Car, Wind, 90, 25); locationAnim("LOKATION: ");}; 
+    water.test =() => {DriveAnim(Car, Wind, 90, 25); locationAnim("LOKATION: ");}; 
+    solar.test =() => {DriveAnim(Car, Wind, 90, 25); locationAnim("LOKATION: ");}; 
+    wind.test =() => {DriveAnim(Car, Wind, 90, 25); locationAnim("LOKATION: ");}; 
 
-
-
-    wind.test =() =>     {DriveAnim(Car, Wind, 90, 25); locationAnim("LOKATION: ");}; 
 
   }
   
