@@ -1,2 +1,4 @@
+# Ignorer build- og outputmapper
 .DS_Store
-/obj
+obj/
+bin/
