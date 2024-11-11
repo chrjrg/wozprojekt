@@ -35,7 +35,14 @@ class Game {
       Console.Write("> ");
       string? line = Console.ReadLine();
       if (line!=null)  registry.Dispatch(line);
-  }
-  Console.WriteLine("Game Over 😥");;
+    }
+    Console.WriteLine("Game Over 😥");;
+    TextDatabase db = new TextDatabase();
+    string filePath = Path.Combine(Directory.GetCurrentDirectory(), "World Of Zuul Core files/data.txt");
+    db.LoadFile(filePath);
+  
+    Console.WriteLine(db.GetSection("Text1"));
+    Console.WriteLine(db.GetSection("Text2"));
+    Console.WriteLine(db.GetSection("Text3"));
 }
 }
