@@ -20,6 +20,8 @@ class CommandHelp : BaseCommand, ICommand {
       if (length>max) max = length;
     }
     
+
+  
     // present list of commands
     Console.WriteLine("Commands:");
     foreach (String commandName in commandNames) {

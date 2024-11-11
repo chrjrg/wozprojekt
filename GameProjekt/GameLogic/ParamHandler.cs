@@ -14,7 +14,7 @@ class Param{
     }
 
     public string getStatus(){
-        return paramName + curValue + paramType;
+        return paramName + ": "+ curValue +""+ paramType;
     }
 
     public double getValue(){

@@ -17,6 +17,8 @@ namespace GameLogic{
         "TID: ",
         "13:32",
         };
+        
+
 
         public string text = "";
 
