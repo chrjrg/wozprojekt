@@ -44,7 +44,7 @@ class World {
     wind.AddEdge("Solanlæg", solar);
     wind.AddEdge("Christiansborg", entry);
     
-    // atom.test =() => {DriveAnim(Car, Wind, 90, 25); locationAnim("LOKATION: ");}; 
+     atom.test =() => {DriveAnim(Car, Atom, 90, 25); locationAnim("LOKATION: ");}; 
     // water.test =() => {DriveAnim(Car, Wind, 90, 25); locationAnim("LOKATION: ");}; 
     // solar.test =() => {DriveAnim(Car, Wind, 90, 25); locationAnim("LOKATION: ");}; 
     // wind.test =() => {DriveAnim(Car, Wind, 90, 25); locationAnim("LOKATION: ");}; 
