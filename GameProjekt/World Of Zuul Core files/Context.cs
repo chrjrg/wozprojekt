@@ -3,15 +3,18 @@
 
 public class Context {
   Space current;
+  Space previous;
   bool done = false;
-  
-  public Context (Space node) {
-    current = node;
+
+  public Context(Space start) {
+    current = start;
+    previous = start; // undgå null warning
   }
   
   public Space GetCurrent() {
     return current;
   }
+
 
   public string GetCurrentName() {
     return current.GetName();
@@ -34,12 +37,19 @@ public class Context {
       return;
     
     } else {
-      current.Goodbye();
       current = next;
       current.Welcome();
     }
   }
-  
+
+   public void TransitionBack() {
+      Space temp = current;
+      current = previous;
+      previous = temp;
+      Console.WriteLine("You have returned to " + current.GetName());
+      current.WelcomeBack();
+  }
+
   public void MakeDone () {
     done = true;
   }

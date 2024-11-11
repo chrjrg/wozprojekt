@@ -48,8 +48,8 @@ public class Game {
     while (context.IsDone()==false) {
       Console.Write("> ");
       string? line = Console.ReadLine();
-      if (line!=null) registry.Dispatch(line);
-    }
-    Console.WriteLine("Game Over 😥");
+      if (line!=null)  registry.Dispatch(line);
   }
+  Console.WriteLine("Game Over 😥");;
+}
 }

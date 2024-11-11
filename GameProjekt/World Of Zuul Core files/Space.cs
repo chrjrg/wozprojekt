@@ -10,6 +10,7 @@ public class Space : Node {
 
   }
   
+  
   public void Welcome () {
     test?.Invoke();
     Console.ForegroundColor = ConsoleColor.Blue;
@@ -19,7 +20,18 @@ public class Space : Node {
     HashSet<string> exits = edges.Keys.ToHashSet();
     Console.WriteLine("Current exits are:");
     foreach (String exit in exits) {
-      Console.WriteLine(" - "+exit);
+        string formattedExit = char.ToUpper(exit[0]) + exit.Substring(1).ToLower();
+        Console.WriteLine(" - "+formattedExit);
+    }
+  }
+
+  public void WelcomeBack () {
+    test?.Invoke();
+    HashSet<string> exits = edges.Keys.ToHashSet();
+    Console.WriteLine("Current exits are:");
+    foreach (String exit in exits) {
+        string formattedExit = char.ToUpper(exit[0]) + exit.Substring(1).ToLower();
+        Console.WriteLine(" - "+formattedExit);
     }
   }
   
@@ -30,4 +42,7 @@ public class Space : Node {
   {
       return base.FollowEdge(direction);
   }
+
+  
+
 }
