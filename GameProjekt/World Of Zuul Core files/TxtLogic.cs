@@ -12,6 +12,7 @@ public class TextDatabase
 {
     private static readonly Lazy<TextDatabase> instance = new(() => new TextDatabase()); // Singleton instance. Lazy means it's only created when accessed, and only once.
     private Dictionary<string, string> dataSections; // Dictionary to store the sections
+    
 
     // Private constructor to prevent external instantiation (Singleton pattern)
     private TextDatabase()
@@ -62,7 +63,7 @@ public class TextDatabase
     // Method to retrieve a specific section by name
     public string GetSection(string sectionName)
     {
-        if (dataSections.TryGetValue(sectionName, out string? sectionContent))
+        if (dataSections.TryGetValue(sectionName, out string? sectionContent)) // Try to get the section content
         {
             return sectionContent;
         }
