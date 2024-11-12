@@ -12,6 +12,7 @@ class Game {
   static Context  context  = new Context(world.GetEntry());
   static ICommand fallback = new CommandUnknown();
   static Registry registry = new Registry(context, fallback);
+  static Quiz quiz = new Quiz();
 
 
   private static void InitRegistry () {
@@ -21,13 +22,13 @@ class Game {
     registry.Register("bye", cmdExit);
     registry.Register("go", new CommandGo());
     registry.Register("help", new CommandHelp(registry));
+    registry.Register("clear", new CommandClear());
     registry.Register("go back", new CommandGoBack());
     
 
   }
   
   static void Main (string[] byargs) {
-    // Intro.ShowIntro();
     InitRegistry();
     context.GetCurrent().Welcome();
 
