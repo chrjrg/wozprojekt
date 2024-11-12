@@ -4,9 +4,13 @@ using GameLogic;
 
 public static class Anim
 {
+    public static bool isAnimating = false;
+
 
     public static void DriveAnim(Shape venste, Shape hoejre, int initialSpacing, int fart)
     {
+        isAnimating = true; // Start af animation
+
         string[] left = venste.GetAsciiArt();
         string[] right = hoejre.GetAsciiArt();
 
@@ -42,6 +46,7 @@ public static class Anim
 
             Thread.Sleep(fart);
         }
+        isAnimating = false; // Slut af animation
     }
 
     private static string[] AdjustHeight(string[] art, int targetHeight)
