@@ -1,5 +1,7 @@
 using static GameAssets;
 using static Anim;
+using System.Linq.Expressions;
+
 
 /*
   - DriveAnim(GameAssets.Car, 50, 25); - Viser anim med følge syntaks <GameAssets.(Objekt), afstand, sleeptimer tid>
@@ -37,6 +39,23 @@ class Game {
     //quiz.initQuiz();
     InitRegistry();
     context.GetCurrent().Welcome();
+
+
+
+
+   Parameters money = new Parameters("Budget",100,"kr");
+   Parameters co2 = new Parameters("CO\u2082",0,"Tons");
+   Parameters energy = new Parameters("Energi",0,"GW");
+
+
+  System.Console.WriteLine(money.GetStatus());
+
+
+
+  
+   
+
+      
     
 
 
