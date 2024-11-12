@@ -8,8 +8,8 @@ public class Quiz
 {
     // Array til spørgsmål
     public string[] qPrompt = {
-        "Du skal nu skrive dit navn: <Poul>",
-        "Du skal nu skrive dit fødselsår: <96>",
+        "Du skal nu skrive dit navn - F.eks: Poul",
+        "Du skal nu skrive dit fødselsår - F.eks: 96",
         "1. Hvad er hovedstaden i Danmark?",
         "2. Hvad er 2 + 2?",
         "3. Hvilket år blev Danmark medlem af EU?",

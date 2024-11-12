@@ -4,6 +4,7 @@ using static Anim;
 /*
   - DriveAnim(GameAssets.Car, 50, 25); - Viser anim med følge syntaks <GameAssets.(Objekt), afstand, sleeptimer tid>
   - Intro.ShowIntro(); - Viser spillets indledende intro;
+  - quiz.initQuiz(); - Henter methoden til at vise vores quiz i konsollen. 
 */
 
 
@@ -12,7 +13,6 @@ class Game {
   static Context  context  = new Context(world.GetEntry());
   static ICommand fallback = new CommandUnknown();
   static Registry registry = new Registry(context, fallback);
-  static Quiz quiz = new Quiz();
 
 
   private static void InitRegistry () {
@@ -29,6 +29,7 @@ class Game {
   }
   
   static void Main (string[] byargs) {
+    quiz.initQuiz();
     InitRegistry();
     context.GetCurrent().Welcome();
 
