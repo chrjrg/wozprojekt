@@ -37,5 +37,19 @@ class Game {
       if (line!=null)  registry.Dispatch(line);
   }
   Console.WriteLine("Game Over 😥");;
+
+  //works together with file Parameters.cs
+  Parameters[] p = new Parameters[]
+    {
+      new Parameters("Budget", 10, "kr"),
+     new Parameters("Energiforsyning", 0, "kW"),
+     new Parameters("CO2-Udledning", 0, "tons")
+    };
+  
+  foreach (Parameters param in p){
+
+    System.Console.WriteLine(param.GetStatus());
+  }
 }
+
 }

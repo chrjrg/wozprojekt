@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\chris\\.nuget\\packages\\": {}
+    "/Users/josefinejuulchristensen/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\chris\\code\\wozprojekt\\gameprojekt\\GameProjekt.csproj",
+      "projectUniqueName": "/Users/josefinejuulchristensen/GitHubRepositories/OOP/Semesterprojekt/wozprojekt/GameProjekt/GameProjekt.csproj",
       "projectName": "GameProjekt",
-      "projectPath": "C:\\Users\\chris\\code\\wozprojekt\\gameprojekt\\GameProjekt.csproj",
-      "packagesPath": "C:\\Users\\chris\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\chris\\code\\wozprojekt\\gameprojekt\\obj\\",
+      "projectPath": "/Users/josefinejuulchristensen/GitHubRepositories/OOP/Semesterprojekt/wozprojekt/GameProjekt/GameProjekt.csproj",
+      "packagesPath": "/Users/josefinejuulchristensen/.nuget/packages/",
+      "outputPath": "/Users/josefinejuulchristensen/GitHubRepositories/OOP/Semesterprojekt/wozprojekt/GameProjekt/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\chris\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/josefinejuulchristensen/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -64,7 +64,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.402/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
