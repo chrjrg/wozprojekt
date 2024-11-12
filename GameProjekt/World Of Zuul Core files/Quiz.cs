@@ -19,11 +19,11 @@ public class Quiz
 
 
 
-    string userName;
-    string DOB;
+    string userName="";
+    string DOB="";
 
     // Array til svar
-    public string[] ansPrompt;
+    public string[] ansPrompt={""};
 
     // Konstruktør, hvor vi undlader initQuiz for at undgå dobbeltkørsel
     public Quiz() { }
@@ -62,15 +62,20 @@ public class Quiz
                     break;
             }
         }
+        if (userName != null && DOB != null)
+        {
+            QuizAnswer(userName,DOB);
+        }
 
-        QuizAnswer(userName,DOB);
 
         Console.Clear();
     }
 
     public void QuizAnswer(string name, string dateOfBirth){
+
+
         // Definer stien til mappen, hvor filen skal gemmes
-        string textPath = Path.Combine(Directory.GetCurrentDirectory(), "Data");
+        string textPath = Path.Combine(Directory.GetCurrentDirectory(), "data");
 
         // Tjekker om DataMappen er oprettet hos brugeren
         if (!Directory.Exists(textPath))
