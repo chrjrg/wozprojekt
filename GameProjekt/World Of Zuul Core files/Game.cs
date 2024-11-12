@@ -31,11 +31,17 @@ class Game {
     InitRegistry();
     //context.GetCurrent().Welcome();
 
-    Console.WriteLine(GameAssets.budget);
-    Console.WriteLine(GameAssets.energi);
-    Console.WriteLine(GameAssets.co2);
+    Console.WriteLine(budget.GetStatus());
+    Console.WriteLine(energi.GetStatus());
+    Console.WriteLine(co2.GetStatus());
 
-    Test.BuyEnergy(EnergyType.AtomType, 3);
+    Test.BuyEnergy(AtomType, 3);
+
+    Console.WriteLine(budget.GetStatus());
+    Console.WriteLine(energi.GetStatus());
+    Console.WriteLine(co2.GetStatus());
+
+
 
 
 

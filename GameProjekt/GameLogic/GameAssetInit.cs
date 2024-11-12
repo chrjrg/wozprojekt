@@ -22,10 +22,10 @@ public static class GameAssets
     }
 
     // Statisk metode til at få energityper
-    public static EnergyType AtomType = new EnergyType("Atomkraft", 10000, 500, 200);
-    public static EnergyType WindType = new EnergyType("Vindmølle", 20000, 1000, 50);
-    public static EnergyType WaterType = new EnergyType("Vandkraft", 30000, 2000, 25);
-    public static EnergyType SolarType = new EnergyType("Solcelle", 15000, 700, 10);
+    public static EnergyType AtomType = new EnergyType("Atomkraft", 20, 500, 200);
+    public static EnergyType WindType = new EnergyType("Vindmølle", 10, 1000, 50);
+    public static EnergyType WaterType = new EnergyType("Vandkraft", 30, 2000, 25);
+    public static EnergyType SolarType = new EnergyType("Solcelle", 15, 700, 10);
 
 
     public static Resource budget = new Resource("Budget",10000,"kr");

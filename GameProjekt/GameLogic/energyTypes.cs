@@ -1,4 +1,4 @@
-
+using static GameAssets;
 public class EnergyType
 {
     public string Name { get; }
@@ -19,9 +19,6 @@ public class EnergyType
 
 public static class Test
 {
-    public static Resource budget = new Resource("Budget", 100000, "kr");
-    public static Resource energy = new Resource("Energi", 0, "kW");
-    public static Resource co2 = new Resource("CO₂-udledning", 0, "tons");
 
     public static void BuyEnergy(EnergyType energyType, int quantity)
     {
@@ -32,7 +29,7 @@ public static class Test
         if (budget.GetValue() >= totalCost)
         {
             budget.Adjust(-totalCost);
-            energy.Adjust(totalEnergyOutput);
+            energi.Adjust(totalEnergyOutput);
             co2.Adjust(totalCO2Emission);
 
             Console.WriteLine($"Købt {quantity} {energyType.Name} til en samlet pris på {totalCost} kr. " +
