@@ -1,24 +1,26 @@
 using System.Text;
-
 /*
 Syntax for use of database:
-Initialize the database (for each file you want to load):
-    TextDatabase db = new TextDatabase();
-    db.LoadFile(Path.Combine(Directory.GetCurrentDirectory(), "World Of Zuul Core files/data.txt").ToString());
+// Access the singleton instance in file:
+    TextDatabase db = TextDatabase.Instance;
+
 Use example:
     Console.WriteLine(db.GetSection("test"));
-This would print the content of the section [Text1] from the loaded file.
+This would print the content of the section [Text1] from the loaded file, if it exists.
 */
-
-class TextDatabase
+public class TextDatabase
 {
-    
+    private static readonly Lazy<TextDatabase> instance = new(() => new TextDatabase()); // Singleton instance. Lazy means it's only created when accessed, and only once.
     private Dictionary<string, string> dataSections; // Dictionary to store the sections
 
-    public TextDatabase()
+    // Private constructor to prevent external instantiation (Singleton pattern)
+    private TextDatabase()
     {
-        dataSections = new Dictionary<string, string>(); // Initialize the dictionary
+        dataSections = new Dictionary<string, string>();
     }
+
+    // Public property to access the singleton instance
+    public static TextDatabase Instance => instance.Value;
 
     // Load the file and parse it into sections
     public void LoadFile(string filePath)
@@ -31,31 +33,25 @@ class TextDatabase
 
             foreach (var line in lines)
             {
-                if (line.StartsWith("[") && line.EndsWith("]")) // checks for section headers
+                if (line.StartsWith("[") && line.EndsWith("]"))
                 {
-                    // Save the previous section if we have one
                     if (currentSection != null)
                     {
-                        dataSections[currentSection] = sectionContent.ToString().Trim();
+                        dataSections[currentSection] = sectionContent.ToString().Trim(); // Save the previous section if we have one
                         sectionContent.Clear();
                     }
-                    // Set the new section name
                     currentSection = line.Trim('[', ']');
                 }
                 else if (currentSection != null)
                 {
-                    // Append line to the current section
                     sectionContent.AppendLine(line);
                 }
             }
 
-            // Save the last section
             if (currentSection != null)
             {
                 dataSections[currentSection] = sectionContent.ToString().Trim();
             }
-
-            //Console.WriteLine("File loaded successfully.");
         }
         catch (Exception ex) 
         {
@@ -77,6 +73,3 @@ class TextDatabase
         }
     }
 }
-
-
-

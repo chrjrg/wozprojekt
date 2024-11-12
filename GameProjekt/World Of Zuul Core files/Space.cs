@@ -1,16 +1,13 @@
 /* Space class for modeling spaces (rooms, caves, ...)
  */
-
 class Space : Node {
 
   public Action? test { get; set; }
 
   public Space (String name) : base(name)
   {
-
   }
-  
-  
+
   public void Welcome () {
     test?.Invoke();
     Console.WriteLine("You are now at "+name);

@@ -27,9 +27,9 @@ class Game {
   }
   
   static void Main (string[] byargs) {
-    // initilize text database 
-    TextDatabase db = new TextDatabase();
-    db.LoadFile(Path.Combine(Directory.GetCurrentDirectory(), "World Of Zuul Core files/data.txt").ToString());
+    // initilize text database and load file
+    TextDatabase db = TextDatabase.Instance;
+    db.LoadFile(Path.Combine(Directory.GetCurrentDirectory(), "World Of Zuul Core files/data.txt").ToString()); // Load the file, we do this in main to avoid loading the file multiple times
 
     // Intro.ShowIntro();
     InitRegistry();
@@ -42,6 +42,6 @@ class Game {
     }
 
     Console.WriteLine("Game Over 😥");
-    Console.WriteLine(db.GetSection("test"));
+    Console.WriteLine(db.GetSection("test")); // test af database
 }
 }
