@@ -1,6 +1,10 @@
 /* Space class for modeling spaces (rooms, caves, ...)
  */
+
 class Space : Node {
+
+public class Space : Node {
+
 
   public Action? test { get; set; }
 
