@@ -1,26 +1,37 @@
 using System.Text;
 
+/*
+Syntax for use of database:
+Initialize the database (for each file you want to load):
+    TextDatabase db = new TextDatabase();
+    db.LoadFile(Path.Combine(Directory.GetCurrentDirectory(), "World Of Zuul Core files/data.txt").ToString());
+Use example:
+    Console.WriteLine(db.GetSection("test"));
+This would print the content of the section [Text1] from the loaded file.
+*/
+
 class TextDatabase
 {
-    private Dictionary<string, string> dataSections;
+    
+    private Dictionary<string, string> dataSections; // Dictionary to store the sections
 
     public TextDatabase()
     {
-        dataSections = new Dictionary<string, string>();
+        dataSections = new Dictionary<string, string>(); // Initialize the dictionary
     }
 
     // Load the file and parse it into sections
     public void LoadFile(string filePath)
     {
-        try
+        try 
         {
-            string[] lines = File.ReadAllLines(filePath);
-            StringBuilder sectionContent = new StringBuilder();
-            string currentSection = null;
+            string[] lines = File.ReadAllLines(filePath); // Read all lines from the file
+            StringBuilder sectionContent = new StringBuilder(); // StringBuilder to store the content of the current section
+            string? currentSection = null; // "?" means it can be null
 
             foreach (var line in lines)
             {
-                if (line.StartsWith("[") && line.EndsWith("]"))
+                if (line.StartsWith("[") && line.EndsWith("]")) // checks for section headers
                 {
                     // Save the previous section if we have one
                     if (currentSection != null)
@@ -44,19 +55,18 @@ class TextDatabase
                 dataSections[currentSection] = sectionContent.ToString().Trim();
             }
 
-            Console.WriteLine("File loaded successfully.");
+            //Console.WriteLine("File loaded successfully.");
         }
-        catch (Exception ex)
+        catch (Exception ex) 
         {
             Console.WriteLine($"Error loading file: {ex.Message}");
         }
     }
 
-
-    // Function to retrieve a specific section by name
+    // Method to retrieve a specific section by name
     public string GetSection(string sectionName)
     {
-        if (dataSections.TryGetValue(sectionName, out string sectionContent))
+        if (dataSections.TryGetValue(sectionName, out string? sectionContent))
         {
             return sectionContent;
         }

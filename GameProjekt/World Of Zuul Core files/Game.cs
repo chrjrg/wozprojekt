@@ -27,6 +27,10 @@ class Game {
   }
   
   static void Main (string[] byargs) {
+    // initilize text database 
+    TextDatabase db = new TextDatabase();
+    db.LoadFile(Path.Combine(Directory.GetCurrentDirectory(), "World Of Zuul Core files/data.txt").ToString());
+
     // Intro.ShowIntro();
     InitRegistry();
     context.GetCurrent().Welcome();
@@ -36,13 +40,8 @@ class Game {
       string? line = Console.ReadLine();
       if (line!=null)  registry.Dispatch(line);
     }
-    Console.WriteLine("Game Over 😥");;
-    TextDatabase db = new TextDatabase();
-    string filePath = Path.Combine(Directory.GetCurrentDirectory(), "World Of Zuul Core files/data.txt");
-    db.LoadFile(filePath);
-  
-    Console.WriteLine(db.GetSection("Text1"));
-    Console.WriteLine(db.GetSection("Text2"));
-    Console.WriteLine(db.GetSection("Text3"));
+
+    Console.WriteLine("Game Over 😥");
+    Console.WriteLine(db.GetSection("test"));
 }
 }

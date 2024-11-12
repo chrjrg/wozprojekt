@@ -1,8 +1,8 @@
+[test]
+This is a test case for the text database
+
 [Text1]
-Text1 is here
+Text1 is right here
 
 [Text2]
-Text2 is right here
-
-[Text3]
-Text3 is right over here
+Text2 is right over here
