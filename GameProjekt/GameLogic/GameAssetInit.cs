@@ -3,6 +3,7 @@ using GameLogic;
 
 public static class GameAssets
 {
+    public static TextDatabase db = TextDatabase.Instance;
     static World world = new World();
     public static Intro Intro = new Intro();
     public static Shape Wind = new Wind();
