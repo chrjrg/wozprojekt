@@ -21,8 +21,8 @@ public static class GameAssets
         throw new NotImplementedException();
     }
 
-    // Statisk metode til at få energityper
-    public static EnergyType AtomType = new EnergyType("Atomkraft", 20, 500, 200);
+    // Statisk metode til at få energityper. initilisere energityper.
+    public static EnergyType AtomType = new EnergyType("Atomkraft", 21, 500, 200);
     public static EnergyType WindType = new EnergyType("Vindmølle", 10, 1000, 50);
     public static EnergyType WaterType = new EnergyType("Vandkraft", 30, 2000, 25);
     public static EnergyType SolarType = new EnergyType("Solcelle", 15, 700, 10);
