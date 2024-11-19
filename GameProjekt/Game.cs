@@ -23,14 +23,13 @@ class Game {
     registry.Register("clear", new CommandClear());
     registry.Register("go back", new CommandGoBack());
     registry.Register("kb", new CommandKeybind());
+    registry.Register("interact", new CommandInteract());
     
 
   }
   
   static void Main (string[] byargs) {
 
-    // initilize text database and load file as a singleton
-    //TextDatabase db = TextDatabase.Instance;
     db.LoadFile(Path.Combine(Directory.GetCurrentDirectory(), "World Of Zuul Core files/data.txt").ToString()); // Load the file, we do this in main to avoid loading the file multiple times
 
     // Intro.ShowIntro();

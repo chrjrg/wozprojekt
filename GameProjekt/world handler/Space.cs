@@ -2,6 +2,7 @@
  */
 
 public class Space : Node {
+  public bool alreadyBeenHere = false;
 
 
   public Action? test { get; set; }
@@ -11,6 +12,7 @@ public class Space : Node {
   }
 
   public void Welcome () {
+    Visited();
     test?.Invoke();
     Console.WriteLine("You are now at "+name);
     HashSet<string> exits = edges.Keys.ToHashSet();
@@ -38,6 +40,17 @@ public class Space : Node {
     return (Space) (base.FollowEdge(direction));
   }
 
-  
 
+  public void Visited() {
+    if (alreadyBeenHere==true) {
+      Console.WriteLine("You have been here before");
+    } else {
+      // Call info funktion????
+      alreadyBeenHere = true;
+      // Console.WriteLine("You have not been here before");
+    }
+  }
 }
+
+
+
