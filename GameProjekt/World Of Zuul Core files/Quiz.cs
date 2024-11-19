@@ -19,7 +19,7 @@ public class Quiz
 
 
 
-    string userName="";
+    public string userName="";
     string DOB="";
 
     // Array til svar
@@ -27,6 +27,13 @@ public class Quiz
 
     // Konstruktør, hvor vi undlader initQuiz for at undgå dobbeltkørsel
     public Quiz() { }
+
+    
+    public string GetUserName()
+    {
+        return userName;
+    }
+    
 
     public void initQuiz(){
         ansPrompt = new string[qPrompt.Length]; // Initialiser array til svar

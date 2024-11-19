@@ -1,11 +1,12 @@
 using System.Text;
 /*
 Syntax for use of database:
-// Access the singleton instance in file:
-    TextDatabase db = TextDatabase.Instance;
+// Use "using static GameAssets" to access the singleton instance:
+    using static GameAssets;
 
 Use example:
     Console.WriteLine(db.GetSection("test"));
+
 This would print the content of the section [Text1] from the loaded file, if it exists.
 */
 public class TextDatabase

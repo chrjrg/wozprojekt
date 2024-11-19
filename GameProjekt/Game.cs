@@ -27,6 +27,14 @@ class Game {
   }
   
   static void Main (string[] byargs) {
+<<<<<<< HEAD:GameProjekt/World Of Zuul Core files/Game.cs
+=======
+
+    // initilize text database and load file as a singleton
+    //TextDatabase db = TextDatabase.Instance;
+    db.LoadFile(Path.Combine(Directory.GetCurrentDirectory(), "World Of Zuul Core files/data.txt").ToString()); // Load the file, we do this in main to avoid loading the file multiple times
+
+>>>>>>> f28a38b2421d76b656ad3499a952e882f2eea5a7:GameProjekt/Game.cs
     // Intro.ShowIntro();
     InitRegistry();
     //context.GetCurrent().Welcome();
