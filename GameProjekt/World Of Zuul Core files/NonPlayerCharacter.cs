@@ -1,208 +1,171 @@
 using static GameAssets;
 using static Anim;
 
-public class NPC
-{
-    public string name { get; set; }
+public abstract class NPC {
+  public string name;
+  protected bool exitInteraction;
+  public NPC(string name) {
+    this.name = name;
+    this.exitInteraction = false;
+  }
 
-    public NPC(string name)
-    {
-        this.name = name;
-    }
+  public string GetName() {
+    return name;
+  }
 
-    public virtual void Interact()
-    {}
+  public void Interact(Context context) {
+    string currentLocation = context.GetCurrentName();
+    Console.WriteLine($"You interact with {currentLocation}");
+        switch (context.GetCurrentName())
+        {
+            case "Christiansborg":
+                Console.WriteLine("Velkommen til Christiansborg");
+                break;
+            case "Vindanlæg":
+                Console.WriteLine("Velkommen til Vindanlæg");
+                break;
+            case "Vandanlæg":
+                break;
+            case "Solanlæg":
+                break;
+            case "Atomkraftværk" :
+                break;
+            default:
+                break;
+                
+        }
+        PerformAction(context);   
+     }
+    public abstract void PerformAction(Context context);
+    public abstract void DisplayMandatoryIntro(Context context);
 }
 
-    public class Expert : NPC
-    {
-        private string current;
 
-        public Expert(string name) : base(name) 
-        {
-        }
+public class Expert : NPC {
+  private string current;
 
-        public void DisplayMandatoryIntro(Context context)
-        {
-            current = context.GetCurrentName().ToString();
+  public Expert(string name) : base(name) { }
 
-            switch (current)
-            {
-                case "Atomkraftværk":
-                    Anim.CharSplit(db.GetSection("test"));
-                    break;
-                case "Vandanlæg":
-                    Anim.CharSplit(db.GetSection("test"));
-                    break;
-                case "Vindanlæg":
-                    Anim.CharSplit(db.GetSection("test"));
-                    break;
-                case "Solanlæg":
-                    Anim.CharSplit(db.GetSection("test"));
-                    break;
-                default:
-                    break;
-            }
+  public override void PerformAction(Context context) {
+  }
 
-            Console.WriteLine("Vil du foretage et køb? Svar ja = J nej = N");
-            string prompt = Console.ReadLine();
-            if (prompt == "J")
-            {
-                Buy();
-            }
-            else if (prompt == "N")
-            {
-                Console.WriteLine("Vil du have mere information fra ekspert eller tilbage til rummet? Svar Info = I Tilbage = T");
-                prompt = Console.ReadLine();
-                if (prompt == "I")
-                {
-                    DisplayMoreInfo(context);
-                }
-                else if (prompt == "T")
-                {
-                    CommandGoBack();
-                }
-            }
-        }
+  public override void DisplayMandatoryIntro(Context context) {
+    current = context.GetCurrentName().ToString();
+    DisplaySection("test");
 
-        public void DisplayMoreInfo(Context context)
-        {
-            current = context.GetCurrentName().ToString();
+    Console.WriteLine("Vil du foretage et køb? Svar ja = J nej = N");
+    string prompt = Console.ReadLine();
+    if (prompt == "J") {
+      Buy();
+    } else if (prompt == "N") {
+      Console.WriteLine("Vil du have mere information fra ekspert eller tilbage til rummet? Svar Info = I Tilbage = T");
+      prompt = Console.ReadLine();
+      if (prompt == "I") {
+        DisplayMoreInfo(context);
+      } else if (prompt == "T") {
+        CommandGoBack();
+      }
+    }
+  }
 
-            switch (current)
-            {
-                case "Atomkraftværk":
-                    Anim.CharSplit(db.GetSection("Atom ekspert"));
-                    break;
-                case "Vandanlæg":
-                    Anim.CharSplit(db.GetSection("Vand ekspert"));
-                    break;
-                case "Vindanlæg":
-                    Anim.CharSplit(db.GetSection("Vind ekspert"));
-                    break;
-                case "Solanlæg":
-                    Anim.CharSplit(db.GetSection("Sol ekspert"));
-                    break;
-                default:
-                    break;
-            }
-        }
+  public void DisplayMoreInfo(Context context) {
+    current = context.GetCurrentName().ToString();
+    DisplaySection($"{current} ekspert");
+  }
 
-        public void Buy()
-        {
-            Console.WriteLine("Vil du købe? ");
-            string prompt = Console.ReadLine();
-            //SignContract();
-        }
+  private void DisplaySection(string section) {
+    Anim.CharSplit(db.GetSection(section));
+  }
 
-        private void CommandGoBack()
-        {
-            // not sure if this is needed 
-           
-        }
-    }   
-    public class Secretary : NPC
-{
-    public Secretary(string name) : base(name) {}
+  public void Buy() {
+    Console.WriteLine("Vil du købe? ");
+    string prompt = Console.ReadLine();
+    //SignContract();
+  }
+
+  private void CommandGoBack() {
+    // Implement if needed
+  }
+}
+
+public class Secretary : NPC {
+  public Secretary(string name) : base(name) { }
+    
+    public override void PerformAction(Context context) {
+        UserChoiceSecretary();
         
-     public override void Interact()
-    {
-        UserChoiceSecratary();
     }
 
-    public void UserChoiceSecratary()
-    {
-        // Displays choices. get status, EndGame(Skal der her være mulighed for at underskrive det endelige elnet?)
-        Console.WriteLine("Hvad kan jeg hjælpe dig med?");
-        Console.WriteLine("Hvis du vil se dit elnets status, skriv: GetStatus");
-        Console.WriteLine("Hvis du vil afslutte spillet og aflevere dit endelige elnet, skriv: Submit");
-
-        string? UserInput = Console.ReadLine();
-
-        if(UserInput == "GetStatus")
-        {
-            Status();
-        }
-            
-        else if(UserInput== "submit")
-        {
-            Submit();
-        }
-       
-        else
-        {
-            System.Console.WriteLine("Det forstod jeg ikke");
-        }
+    public override void DisplayMandatoryIntro(Context context) {
+        Console.WriteLine("Velkommen til sekretæren");
+        UserChoiceSecretary();
     }
 
-    public void Status()
-    {
-        Console.WriteLine("Status:");
-        Console.WriteLine(GameAssets.budget.GetStatus());
-        Console.WriteLine(GameAssets.energi.GetStatus());
-        Console.WriteLine(GameAssets.co2.GetStatus());
+  public void UserChoiceSecretary() {
+    Console.WriteLine("Hvad kan jeg hjælpe dig med?");
+    Console.WriteLine("Hvis du vil se dit elnets status, skriv: GetStatus");
+    Console.WriteLine("Hvis du vil afslutte spillet og aflevere dit endelige elnet, skriv: Submit");
 
-        Console.WriteLine("Vil du indlevere dit elnet? skriv: Submit");
-        Console.WriteLine("Vil du fortsætte spillet? skriv: GoBack");
-
-        string? UserInput = Console.ReadLine();
-
-        if(UserInput == "Submit")
-        {
-            Submit();
-        }
-        else if(UserInput == "GoBack")
-        {
-            //???
-        }
-        else
-        {
-            Console.WriteLine("Det forstod jeg ikke");
-        }
-
+    string? userInput = Console.ReadLine();
+    if (userInput == "GetStatus") {
+      Status();
+    } else if (userInput == "Submit") {
+      Submit();
+    } else {
+      Console.WriteLine("Det forstod jeg ikke");
     }
+  }
 
-    public void Submit()
-    {
-        Console.WriteLine("Dit endelige elnet:");
-        Console.WriteLine(GameAssets.budget.GetStatus());
-        Console.WriteLine(GameAssets.energi.GetStatus());
-        Console.WriteLine(GameAssets.co2.GetStatus());
+  public void Status() {
+    Console.WriteLine("Status:");
+    Console.WriteLine(GameAssets.budget.GetStatus());
+    Console.WriteLine(GameAssets.energi.GetStatus());
+    Console.WriteLine(GameAssets.co2.GetStatus());
 
-        //Print antal af forskellige energiformer.
+    Console.WriteLine("Vil du indlevere dit elnet? skriv: Submit");
+    Console.WriteLine("Vil du fortsætte spillet? skriv: GoBack");
 
-        Console.WriteLine("Indsender data...");
-        Evaluate();
-
-        Console.WriteLine("Vil du afslutte spiller? skriv: EndGame");
-        Console.WriteLine("Vil du fortsætte spillet? skriv: GoBack");
-
-        string? UserInput = Console.ReadLine();
-
-         if(UserInput == "EndGame")
-        {
-            EndGame();
-        }
-        else if(UserInput == "GoBack")
-        {
-            //???
-        }
-        else
-        {
-            Console.WriteLine("Det forstod jeg ikke");
-        }
-
+    string? userInput = Console.ReadLine();
+    if (userInput == "Submit") {
+      Submit();
+    } else if (userInput == "GoBack") {
+      // Implement if needed
+    } else {
+      Console.WriteLine("Det forstod jeg ikke");
     }
+  }
 
-    private void Evaluate()
-    {
-        Console.WriteLine("Spillet afsluttes...");
-        //???
+  public void Submit() {
+    Console.WriteLine("Dit endelige elnet:");
+    Console.WriteLine(GameAssets.budget.GetStatus());
+    Console.WriteLine(GameAssets.energi.GetStatus());
+    Console.WriteLine(GameAssets.co2.GetStatus());
+
+    // Print antal af forskellige energiformer.
+
+    Console.WriteLine("Indsender data...");
+    Evaluate();
+
+    Console.WriteLine("Vil du afslutte spiller? skriv: EndGame");
+    Console.WriteLine("Vil du fortsætte spillet? skriv: GoBack");
+
+    string? userInput = Console.ReadLine();
+    if (userInput == "EndGame") {
+      EndGame();
+    } else if (userInput == "GoBack") {
+      // Implement if needed
+    } else {
+      Console.WriteLine("Det forstod jeg ikke");
     }
+  }
 
-    private void EndGame()
-    {
+  private void Evaluate() {
+    Console.WriteLine("Spillet afsluttes...");
+    // Implement if needed
+  }
 
-    }
-
+  private void EndGame() {
+    Console.WriteLine("Spillet er afsluttet");
+    // Implement if needed
+  }
 }

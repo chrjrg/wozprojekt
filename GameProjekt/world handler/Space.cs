@@ -4,7 +4,6 @@
 public class Space : Node {
   public bool alreadyBeenHere = false;
 
-
   public Action? test { get; set; }
 
   public Space (String name) : base(name)
@@ -47,9 +46,37 @@ public class Space : Node {
     } else {
       // Call info funktion????
       alreadyBeenHere = true;
-      // Console.WriteLine("You have not been here before");
+      //Console.WriteLine("You have not been here before");
     }
   }
+
+  // NPC interaction
+
+  private string name;
+  private Dictionary<string, NPC> npcs = new Dictionary<string, NPC>();
+
+
+  public string GetName() {
+    return name;
+  }
+
+  public void AddNPC(string name, NPC npc) {
+    npcs[name] = npc;
+  }
+
+  public NPC GetNPC(string name) {
+    if (npcs.ContainsKey(name)) {
+      return npcs[name];
+    } else {
+      return null; // Return null if the NPC is not found
+    }
+  }
+
+    public List<string> GetNPCNames() {
+    return new List<string>(npcs.Keys);
+  }
+
+
 }
 
 

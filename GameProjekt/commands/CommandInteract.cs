@@ -1,23 +1,27 @@
-/* Command for interacting with "sekretær" or "ekspert" 
- */
-
 class CommandInteract : BaseCommand, ICommand {
-  public CommandInteract () {
+  public CommandInteract() {
     description = "Interact with a non-player character";
   }
-  
-  public void Execute (Context context, string command, string[] parameters) {
-    /*if (GuardEq(parameters, 1)) {
-      Console.WriteLine("Who do you want to interact with?");
-      if (context.GetCurrent().GetNPC(parameters[0]) == null) {
-        Console.WriteLine("There is no one here by that name.");
-        return;
+
+  public void Execute(Context context, string command, string[] parameters) {
+    if (parameters.Length < 2) {
+      List<string> npcNames = context.GetCurrent().GetNPCNames();
+      if (npcNames.Count == 0) {
+        Console.WriteLine("There are no NPCs in this room.");
       } else {
-        context.GetCurrent().GetNPC(parameters[0]).Interact();
-        return;
+        Console.WriteLine("NPCs in this room:");
+        foreach (string npcName in npcNames) {
+          Console.WriteLine($"- {npcName}");
+        }
       }
-      
+      return;
     }
-    */
+
+    NPC npc = context.GetCurrent().GetNPC(parameters[1]);
+    if (npc == null) {
+      Console.WriteLine("There is no one here by that name.");
+    } else {
+      npc.Interact(context);
+    }
   }
-}
+} 
