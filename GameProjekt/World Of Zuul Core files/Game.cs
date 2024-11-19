@@ -31,18 +31,18 @@ class Game {
     InitRegistry();
     //context.GetCurrent().Welcome();
 
+    //Printer start status for parametrende.
     Console.WriteLine(budget.GetStatus());
     Console.WriteLine(energi.GetStatus());
     Console.WriteLine(co2.GetStatus());
 
-    Test.BuyEnergy(AtomType, 3);
+    //Her kaldes metoden fra filen energyTypes. For at teste, er der indsat en energitype og et antal.
+   // Test.BuyEnergy(AtomType, 3);
 
-    Console.WriteLine(budget.GetStatus());
-    Console.WriteLine(energi.GetStatus());
-    Console.WriteLine(co2.GetStatus());
-
-
-
+    // Printer parametrende efter købet, hvor parametrende er opdaterede.
+    //Console.WriteLine(budget.GetStatus());
+    //Console.WriteLine(energi.GetStatus());
+    //Console.WriteLine(co2.GetStatus());
 
 
 

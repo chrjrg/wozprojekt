@@ -1,9 +1,10 @@
 using static GameAssets;
 
+//Her opretter vi klassen Resource, som indeholder vores parametre/resources.
 public class Resource
 {
-    private double value;
     private string name;
+    private double value;
     private string unit;
 
 
@@ -14,11 +15,12 @@ public class Resource
         this.unit = unit;
     }
 
+    //Metoder, der kan hente de variable.
     public double GetValue() => value;
 
-    public void Adjust(double amount) => value += amount;
+    public void Adjust(double amount) => value += amount;  //Denne kan tilføje en amount til value, hvis nødvendigt.
 
-    public string GetStatus() => $"{name}: {value} {unit}";
+    public string GetStatus() => $"{name}: {value} {unit}"; //Denne henter status for parametrende.
 
     
 }
