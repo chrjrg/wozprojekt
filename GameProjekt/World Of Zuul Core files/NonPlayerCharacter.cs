@@ -111,18 +111,34 @@ public class NPC
     }
 
 
-    public void SecretaryIntro(){
-        string[] initMessage = TextDatabase.Instance.GetSectionArray("SecIntro");
+public void SecretaryIntro()
+{
+    Console.Clear();
+    string[] initMessage = TextDatabase.Instance.GetSectionArray("SecIntro");
 
-       /* foreach(string text in initMessage){
-            CharSplit(text,15);
-            Thread.Sleep(100);
-            System.Console.WriteLine();
-        }
-        Thread.Sleep(1000);*/
-
-
+    foreach (string text in initMessage)
+    {
+        CharSplit(text, 15);
+        Thread.Sleep(100);
+        System.Console.WriteLine();
     }
+    // Bed brugeren om at trykke på en tast for at starte quizzen
+    Console.ForegroundColor = ConsoleColor.Green;
+    Console.WriteLine("\nTryk på en vilkårlig tast for at starte quizzen...");
+    Console.ReadKey(true);
+    Console.ForegroundColor = ConsoleColor.White;
+
+    // Start quizzen
+    if (quiz != null)
+    {
+        quiz.StartQuiz();
+    }
+    else
+    {
+        Console.WriteLine("Quiz-objektet er ikke initialiseret!");
+    }  
+}
+
 
     public void UserChoiceSecratary()
     {

@@ -1,4 +1,5 @@
 using static Anim;
+using static GameAssets;
 
 namespace GameLogic{
     public class Intro {
@@ -41,11 +42,19 @@ namespace GameLogic{
 
 
         public void ShowIntro(){
-            for(int i=0;i<prompt.Length;i++){
+            Console.WriteLine("DEBUG: Indlæser Intro-sektion...");
+            for (int i = 0; i < prompt.Length; i++)
+            {
+                Console.WriteLine($"{prompt[i]}"); // Debug-udskrift af linjerne
+            }
 
+            // Kør normal intro-logik
+            for (int i = 0; i < prompt.Length; i++)
+            {
                 text = prompt[i];
 
-                switch (i){
+                switch (i)
+                {
                     case 0:
                         Console.Clear();
                         GreenTyping(50);
@@ -66,13 +75,28 @@ namespace GameLogic{
                         System.Threading.Thread.Sleep(5000);
                         Console.Clear();
                         break;
-                        
+
                     default:
                         BaseTyping(10);
                         break;
                 }
 
                 System.Threading.Thread.Sleep(500);
+            }
+            // Bed brugeren om at trykke på en tast for at fortsætte til næste sektion
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("\nTryk på en vilkårlig tast for at fortsætte");
+            Console.ReadKey(true);
+            Console.ForegroundColor = ConsoleColor.White;
+
+            // Gå videre til Secretary-intro
+            if (secretary != null)
+            {
+                secretary.SecretaryIntro();
+            }
+            else
+            {
+                Console.WriteLine("Secretary-objektet er ikke initialiseret!");
             }
         }
     }

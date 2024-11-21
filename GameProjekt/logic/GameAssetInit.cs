@@ -9,8 +9,9 @@ public static class GameAssets
     public static Shape Wind = new Wind();
     public static Shape Atom = new Atom();
     public static Shape Car = new Car();
-    public static Secretary secretary = new Secretary("Hej");
+    public static Secretary secretary = new Secretary("Sussane");
     public static Quiz quiz = new Quiz();
+
 
     public static Context  context  = new Context(world.GetEntry());
 

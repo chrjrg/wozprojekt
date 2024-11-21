@@ -10,31 +10,42 @@ public class Quiz
     // Constructoren - Dvs. At når vi initiliaserer quiz objektet, så skal den load spørgsmålene fra data filen. 
     public Quiz()
     {
-        LoadQuestions(); // Indlæser methoden - Læs nedenfor hvad der sker
+        try
+        {
+            LoadQuestions();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"DEBUG: Fejl under initialisering af Quiz: {ex.Message}");
+        }
     }
 
     // Metode til at indlæse spørgsmål fra vores datafil.
-    private void LoadQuestions()
+private void LoadQuestions()
+{
+    Console.WriteLine("DEBUG: Indlæser spørgsmål...");
+    questions.Clear();
+
+    // Hent quizsektioner fra "QuizSections"
+    string[] sectionNames = TextDatabase.Instance.GetSectionArray("QuizSections");
+
+    foreach (var sectionName in sectionNames)
     {
-        questions.Clear(); // Ryd eksisterende spørgsmål
+        // Hent indholdet af sektionen
+        string[] lines = TextDatabase.Instance.GetSectionArray(sectionName);
 
-        string[] sectionNames = TextDatabase.Instance.GetSectionArray("QuizSections"); // Henter sektioner fra datafilen.
-
-        foreach (var sectionName in sectionNames)
+        if (lines.Length > 0)
         {
-            // Hent hele sektionen som én samlet tekst.
-            string[] lines = TextDatabase.Instance.GetSectionArray(sectionName);
-
-            if (lines.Length > 0)
-            {
-                // Kombiner hele sektionens tekst
-                string sectionContent = string.Join(Environment.NewLine, lines);
-
-                // Tilføj sektionen som et spørgsmål
-                questions.Add(new Question(sectionName, sectionContent));
-            }
+            string questionContent = string.Join(Environment.NewLine, lines);
+            questions.Add(new Question(sectionName, questionContent));
+            Console.WriteLine($"DEBUG: Spørgsmål tilføjet: {sectionName}");
         }
     }
+
+    Console.WriteLine($"DEBUG: {questions.Count} spørgsmål indlæst.");
+}
+
+
 
     public void StartQuiz()
     {

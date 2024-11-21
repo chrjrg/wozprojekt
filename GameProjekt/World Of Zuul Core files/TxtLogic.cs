@@ -75,20 +75,20 @@ public class TextDatabase
         }
     }
 
-    // Method to retrieve a section as a string array
-    public string[] GetSectionArray(string sectionName)
+public string[] GetSectionArray(string sectionName)
+{
+    if (dataSections.TryGetValue(sectionName, out string? sectionContent))
     {
-        if (dataSections.TryGetValue(sectionName, out string? sectionContent))
-        {
-            Console.WriteLine($"DEBUG: Sektionen '{sectionName}' fundet:");
-            Console.WriteLine(sectionContent);
-            return sectionContent.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-        }
-        else
-        {
-            Console.WriteLine($"DEBUG: Sektionen '{sectionName}' ikke fundet.");
-            return Array.Empty<string>();
-        }
+        // Fjern utilsigtet filtrering af sektioner
+        return sectionContent.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
     }
+    else
+    {
+        Console.WriteLine($"Section '{sectionName}' not found.");
+        return Array.Empty<string>();
+    }
+}
+
+
 
 }
