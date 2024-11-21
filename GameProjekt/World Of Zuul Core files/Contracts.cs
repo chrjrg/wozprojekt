@@ -30,7 +30,7 @@ class Contract
         }
     }
 
-    public bool SignContract(string input)
+    /*public bool SignContract(string input)
     {
         if(input==quiz.GetUserName())
         {
@@ -42,7 +42,7 @@ class Contract
             System.Console.WriteLine($"Kontrakten blev ikke Underskrevet");
             return false;
         }   
-    }
+    }*/
 }
 
      

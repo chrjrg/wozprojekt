@@ -6,3 +6,142 @@ Text1 is right here
 
 [Text2]
 Text2 is right over here
+
+
+[Intro]
+Velkommen til Power Simulator
+Der er super travlt inde på Christiansborg op til det kommende valg i 2025, og der er derfor brug for din hjælp!
+Miljøministeren ønsker at komme med udkast til hvordan Danmarks energinet skal se ud inden 2030, som led i Parisaftalen.
+Han har dog svært ved at vide hvilken retning han skal gå, når det kommer til at vælge energiform.
+Du har nu til opgave at at udforske og vælge hvilken energiforsyning vi skal bruge i Danmark!
+
+LOKATION:
+Christiansborg
+DATO: 
+27. Januar 2025
+TID: 
+13:32
+
+[QuizSections]
+Question1
+Question2
+Question3
+Question4
+Question5
+Question6
+Question7
+Question8
+Question9
+Question10
+Question11
+Question12
+
+[Question1]
+Hvad er dit navn?
+
+[Question2]
+Hvad er dit fødselsår?
+
+[Question3]
+Kapacitetsfaktorer
+Hvilken kapacitetsfaktor har et typisk atomkraftværk?
+1. 30%
+2. 50%
+3. 90%
+4. 100%
+
+[Question4]
+Solenergiens begrænsning
+Hvor mange fulde timer om året kan et solcelleanlæg maksimalt producere strøm i Danmark (uden hensyn til effektivitet)?
+1. 8760 timer (hele året)
+2. 4380 timer (halvåret)
+3. 1500 timer
+4. 2000 timer
+
+[Question5]
+Omkostninger
+Hvor meget koster det cirka at opføre 1 MW solcelleanlæg i Danmark?
+1. 1 million DKK
+2. 2 millioner DKK
+3. 5 millioner DKK
+4. 10 millioner DKK
+
+[Question6]
+CO₂ ved etablering
+Hvor meget CO₂ udleder et atomkraftværk i gennemsnit under etableringen?
+1. 50.000 tons
+2. 100.000 tons
+3. 500.000 tons
+4. 1 million tons
+
+[Question7]
+Danmarks energiforbrug
+Hvad er Danmarks gennemsnitlige årlige elforbrug?
+1. 25.000 GWh
+2. 35.000 GWh
+3. 45.000 GWh
+4. 50.000 GWh
+
+[Question8]
+Vindenergi
+Hvad er kapacitetsfaktoren for en typisk vindmølle i Danmark?
+1. 10%
+2. 20%
+3. 30%
+4. 50%
+
+[Question9]
+Energimix
+Hvilken energikilde dækker i dag den største andel af Danmarks energiforbrug?
+1. Atomkraft
+2. Vindenergi
+3. Solenergi
+4. Vandkraft
+
+[Question10]
+Omkostningseffektivitet
+Hvilken energikilde har den laveste samlede pris pr. GWh produceret over dens livscyklus?
+1. Atomkraft
+2. Vandkraft
+3. Solcelleanlæg
+4. Vindmølleparker
+
+[Question11]
+Solenergiens styrke
+Hvor meget energi kan et solcelleanlæg producere pr. kvadratmeter under optimale forhold?
+1. 50 watt
+2. 150 watt
+3. 200 watt
+4. 300 watt
+
+[Question12]
+Vandkraft i Danmark
+Hvorfor er vandkraft ikke en stor energikilde i Danmark?
+1. For dyrt
+2. For lidt regn og vandløb
+3. Teknologien er umoden
+4. CO₂-udledning er for høj
+
+
+
+
+
+
+[SecIntro]
+Hej, jeg hedder Sussane. Jeg vil være din ’spindoktor’ gennem din rejse med at skabe Danmarks fremtidige energiforsyning. 
+Før vi kaster os ud i at bruge skatteydernes penge, er det vigtigt, at du er klædt godt på til at tage de rigtige beslutninger.
+Når vi taler om energiforsyning, er der utallige faktorer i spil, som påvirker, hvilke løsninger vi kan vælge.
+Det er komplekst, og det kræver en del overvejelser. Men bare rolig! Jeg er her for at gøre det lettere for dig.
+For at undgå, at du bliver helt gråhåret før vi når i mål, har jeg fjernet alt det politiske, moralske og juridiske bøvl. 
+Vi fokuserer kun på fire hovedfaktorer: Pris (P), Energiproduktion (E), CO₂-udledning (C) og Kapacitetsfaktor (K). Din succes vil blive målt ud fra, hvor godt du balancerer de tre første – Pris, Produktion og CO₂.
+Men du skal stadig have styr på, hvad de betyder! Det er især vigtigt at forstå kapacitetsfaktoren, for det er her, mange tidligere miljøministre har fejlet.
+  
+Kort fortalt er kapacitetsfaktoren et mål for, hvor effektivt en energitype udnytter sin kapacitet. For eksempel: Hvis du har en energikilde, der kan producere 10 MW, og kapacitetsfaktoren er 90%, 
+så får du faktisk kun 9 MW brugbar energi. Det er altså en vigtig nøgle til at forstå, hvad du får for pengene.
+Nå men du har ventet nok nu. Jeg vil lade dig gøre dine ting. Du kan finde mig igen tilbage på Christiansborg på mit kontor. 
+Det her du kan aflevere dit forslag og få en opdatering på hvilke valg du har taget. 
+  
+  
+Og hov! Sidste ting... Jeg skal lige have dig til at svare på nogle spørgsmål inden du kan få lov til at give den gas! 
+Da det hele er nyt, skal du bare forsøge dit bedste (Gæt), senere finder vi ud af om du har lært noget af din rejse.
+

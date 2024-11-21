@@ -74,4 +74,21 @@ public class TextDatabase
             return string.Empty;
         }
     }
+
+    // Method to retrieve a section as a string array
+    public string[] GetSectionArray(string sectionName)
+    {
+        if (dataSections.TryGetValue(sectionName, out string? sectionContent))
+        {
+            Console.WriteLine($"DEBUG: Sektionen '{sectionName}' fundet:");
+            Console.WriteLine(sectionContent);
+            return sectionContent.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+        }
+        else
+        {
+            Console.WriteLine($"DEBUG: Sektionen '{sectionName}' ikke fundet.");
+            return Array.Empty<string>();
+        }
+    }
+
 }

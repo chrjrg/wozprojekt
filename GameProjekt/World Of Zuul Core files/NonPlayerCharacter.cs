@@ -29,16 +29,16 @@ public class NPC
             switch (current)
             {
                 case "Atomkraftværk":
-                    Anim.CharSplit(db.GetSection("test"));
+                    Anim.CharSplit(db.GetSection("test"),25);
                     break;
                 case "Vandanlæg":
-                    Anim.CharSplit(db.GetSection("test"));
+                    Anim.CharSplit(db.GetSection("test"),25);
                     break;
                 case "Vindanlæg":
-                    Anim.CharSplit(db.GetSection("test"));
+                    Anim.CharSplit(db.GetSection("test"),25);
                     break;
                 case "Solanlæg":
-                    Anim.CharSplit(db.GetSection("test"));
+                    Anim.CharSplit(db.GetSection("test"),25);
                     break;
                 default:
                     break;
@@ -72,16 +72,16 @@ public class NPC
             switch (current)
             {
                 case "Atomkraftværk":
-                    Anim.CharSplit(db.GetSection("Atom ekspert"));
+                    Anim.CharSplit(db.GetSection("Atom ekspert"),25);
                     break;
                 case "Vandanlæg":
-                    Anim.CharSplit(db.GetSection("Vand ekspert"));
+                    Anim.CharSplit(db.GetSection("Vand ekspert"),25);
                     break;
                 case "Vindanlæg":
-                    Anim.CharSplit(db.GetSection("Vind ekspert"));
+                    Anim.CharSplit(db.GetSection("Vind ekspert"),25);
                     break;
                 case "Solanlæg":
-                    Anim.CharSplit(db.GetSection("Sol ekspert"));
+                    Anim.CharSplit(db.GetSection("Sol ekspert"),25);
                     break;
                 default:
                     break;
@@ -108,6 +108,20 @@ public class NPC
      public override void Interact()
     {
         UserChoiceSecratary();
+    }
+
+
+    public void SecretaryIntro(){
+        string[] initMessage = TextDatabase.Instance.GetSectionArray("SecIntro");
+
+       /* foreach(string text in initMessage){
+            CharSplit(text,15);
+            Thread.Sleep(100);
+            System.Console.WriteLine();
+        }
+        Thread.Sleep(1000);*/
+
+
     }
 
     public void UserChoiceSecratary()

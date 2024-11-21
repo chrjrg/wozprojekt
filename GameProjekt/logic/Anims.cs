@@ -90,14 +90,14 @@ public static class Anim
     }
 
     public static void locationAnim(string text){
-        CharSplit(text);
+        CharSplit(text,25);
     }
 
     
-    public static void CharSplit(string text){
+    public static void CharSplit(string text, int textimer){
         foreach (char letter in text){
             Console.Write(letter);
-            System.Threading.Thread.Sleep(10);
+            System.Threading.Thread.Sleep(textimer);
         } 
     }
 
