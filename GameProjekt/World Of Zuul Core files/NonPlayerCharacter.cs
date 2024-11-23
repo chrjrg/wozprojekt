@@ -16,24 +16,7 @@ public abstract class NPC {
   public void Interact(Context context) {
     string currentLocation = context.GetCurrentName();
     Console.WriteLine($"You interact with {currentLocation}");
-        switch (context.GetCurrentName())
-        {
-            case "Christiansborg":
-                Console.WriteLine("Velkommen til Christiansborg");
-                break;
-            case "Vindanlæg":
-                Console.WriteLine("Velkommen til Vindanlæg");
-                break;
-            case "Vandanlæg":
-                break;
-            case "Solanlæg":
-                break;
-            case "Atomkraftværk" :
-                break;
-            default:
-                break;
-                
-        }
+    
         PerformAction(context);   
      }
     public abstract void PerformAction(Context context);
@@ -47,6 +30,7 @@ public class Expert : NPC {
   public Expert(string name) : base(name) { }
 
   public override void PerformAction(Context context) {
+    DisplaySection("test");
   }
 
   public override void DisplayMandatoryIntro(Context context) {
@@ -93,7 +77,6 @@ public class Secretary : NPC {
     
     public override void PerformAction(Context context) {
         UserChoiceSecretary();
-        
     }
 
     public override void DisplayMandatoryIntro(Context context) {
@@ -103,20 +86,22 @@ public class Secretary : NPC {
 
   public void UserChoiceSecretary() {
     Console.WriteLine("Hvad kan jeg hjælpe dig med?");
-    Console.WriteLine("Hvis du vil se dit elnets status, skriv: GetStatus");
+    Console.WriteLine("Hvis du vil se dit elnets status, skriv: Status");
     Console.WriteLine("Hvis du vil afslutte spillet og aflevere dit endelige elnet, skriv: Submit");
 
-    string? userInput = Console.ReadLine();
-    if (userInput == "GetStatus") {
+    string userInput = Console.ReadLine().ToLower();
+    if (userInput == "status") {
       Status();
-    } else if (userInput == "Submit") {
+    } else if (userInput == "submit") {
       Submit();
     } else {
       Console.WriteLine("Det forstod jeg ikke");
+      UserChoiceSecretary();
     }
   }
 
   public void Status() {
+    Console.Clear();
     Console.WriteLine("Status:");
     Console.WriteLine(GameAssets.budget.GetStatus());
     Console.WriteLine(GameAssets.energi.GetStatus());
@@ -125,7 +110,7 @@ public class Secretary : NPC {
     Console.WriteLine("Vil du indlevere dit elnet? skriv: Submit");
     Console.WriteLine("Vil du fortsætte spillet? skriv: GoBack");
 
-    string? userInput = Console.ReadLine();
+    string? userInput = Console.ReadLine().ToLower();
     if (userInput == "Submit") {
       Submit();
     } else if (userInput == "GoBack") {
@@ -146,14 +131,14 @@ public class Secretary : NPC {
     Console.WriteLine("Indsender data...");
     Evaluate();
 
-    Console.WriteLine("Vil du afslutte spiller? skriv: EndGame");
-    Console.WriteLine("Vil du fortsætte spillet? skriv: GoBack");
+    Console.WriteLine("Vil du afslutte spiller? skriv: Slut");
+    Console.WriteLine("Vil du fortsætte spillet? skriv: Tilbage");
 
-    string? userInput = Console.ReadLine();
-    if (userInput == "EndGame") {
+    string? userInput = Console.ReadLine().ToLower();
+    if (userInput == "slut") {
       EndGame();
-    } else if (userInput == "GoBack") {
-      // Implement if needed
+    } else if (userInput == "tilbage") {
+       
     } else {
       Console.WriteLine("Det forstod jeg ikke");
     }

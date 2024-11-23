@@ -9,6 +9,7 @@ class CommandInteract : BaseCommand, ICommand {
       if (npcNames.Count == 0) {
         Console.WriteLine("There are no NPCs in this room.");
       } else {
+        Console.Clear();
         Console.WriteLine("NPCs in this room:");
         foreach (string npcName in npcNames) {
           Console.WriteLine($"- {npcName}");

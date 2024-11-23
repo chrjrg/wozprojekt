@@ -5,6 +5,7 @@ public static class GameAssets
 {
     public static TextDatabase db = TextDatabase.Instance;
     static World world = new World();
+    static Space startSpace = new Space("Starting Point");
     public static Intro Intro = new Intro();
     public static Shape Wind = new Wind();
     public static Shape Atom = new Atom();
