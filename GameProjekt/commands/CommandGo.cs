@@ -24,3 +24,15 @@ class CommandGoBack : BaseCommand, ICommand {
     context.TransitionBack();
   }
 }
+
+class CommandGoBackHere : BaseCommand, ICommand {
+  public CommandGoBackHere () {
+    description = "Go back to the same space";
+  }
+  
+  public void Execute (Context context, string command, string[] parameters) {
+    Console.Clear();
+    context.TransitionBackHere();
+  }
+  }
+  

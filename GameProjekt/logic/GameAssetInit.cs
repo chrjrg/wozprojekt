@@ -4,8 +4,10 @@ using GameLogic;
 public static class GameAssets
 {
     public static TextDatabase db = TextDatabase.Instance;
-    static World world = new World();
-    static Space startSpace = new Space("Starting Point");
+    public static World world = new World();
+    public static Context context = new Context(world.GetEntry());
+    
+
     public static Intro Intro = new Intro();
     public static Shape Wind = new Wind();
     public static Shape Atom = new Atom();
@@ -13,7 +15,7 @@ public static class GameAssets
 
 
     public static Quiz quiz = new Quiz();
-    public static Context  context  = new Context(world.GetEntry());
+    
 
     public static UserInputHandler inputHandler = new UserInputHandler(context);
 

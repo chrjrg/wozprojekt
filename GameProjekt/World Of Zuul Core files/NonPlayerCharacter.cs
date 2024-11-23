@@ -14,13 +14,14 @@ public abstract class NPC {
   }
 
   public void Interact(Context context) {
-    string currentLocation = context.GetCurrentName();
-    Console.WriteLine($"You interact with {currentLocation}");
-    
-        PerformAction(context);   
-     }
-    public abstract void PerformAction(Context context);
+    Console.Clear();
+    string currentLocation = context.GetCurrentName().ToString();
+    Console.WriteLine($"You interact with {GetName()} in {currentLocation}\n");
+    PerformAction(context);   
+  }
+
     public abstract void DisplayMandatoryIntro(Context context);
+    public abstract void PerformAction(Context context);
 }
 
 
@@ -29,28 +30,38 @@ public class Expert : NPC {
 
   public Expert(string name) : base(name) { }
 
-  public override void PerformAction(Context context) {
-    DisplaySection("test");
-  }
-
   public override void DisplayMandatoryIntro(Context context) {
     current = context.GetCurrentName().ToString();
-    DisplaySection("test");
-
-    Console.WriteLine("Vil du foretage et køb? Svar ja = J nej = N");
-    string prompt = Console.ReadLine();
-    if (prompt == "J") {
-      Buy();
-    } else if (prompt == "N") {
-      Console.WriteLine("Vil du have mere information fra ekspert eller tilbage til rummet? Svar Info = I Tilbage = T");
-      prompt = Console.ReadLine();
-      if (prompt == "I") {
-        DisplayMoreInfo(context);
-      } else if (prompt == "T") {
-        CommandGoBack();
-      }
+    switch (current)
+    {
+      case "Atomkraftværk":
+        DisplaySection("AtomEkspertIntro");
+        break;
+      case "Vandanlæg":
+        DisplaySection("VandEkspertIntro");
+        break;
+      case "Solanlæg":  
+        DisplaySection("SolEkspertIntro");
+        break;
+      case "Vindanlæg":  
+        DisplaySection("VindEkspertIntro");
+        break;
+      default:  
+        break;
     }
   }
+
+  public override void PerformAction(Context context) {
+    Space currentSpace = context.GetCurrent();
+    if (!currentSpace.alreadyBeenHere) //
+    {
+      DisplayMandatoryIntro(context);
+      currentSpace.alreadyBeenHere = true;
+    } else {
+      // call normal expert interaction
+    }
+  }
+
 
   public void DisplayMoreInfo(Context context) {
     current = context.GetCurrentName().ToString();
@@ -58,7 +69,7 @@ public class Expert : NPC {
   }
 
   private void DisplaySection(string section) {
-    Anim.CharSplit(db.GetSection(section));
+    Anim.CharSplit(db.GetSection(section) + "\n");
   }
 
   public void Buy() {
@@ -73,6 +84,7 @@ public class Expert : NPC {
 }
 
 public class Secretary : NPC {
+
   public Secretary(string name) : base(name) { }
     
     public override void PerformAction(Context context) {
@@ -154,3 +166,24 @@ public class Secretary : NPC {
     // Implement if needed
   }
 }
+
+/*
+  public override void DisplayMandatoryIntro(Context context) {
+    current = context.GetCurrentName().ToString();
+    DisplaySection("test");
+
+    Console.WriteLine("Vil du foretage et køb? Svar ja = J nej = N");
+    string prompt = Console.ReadLine();
+    if (prompt == "J") {
+      Buy();
+    } else if (prompt == "N") {
+      Console.WriteLine("Vil du have mere information fra ekspert eller tilbage til rummet? Svar Info = I Tilbage = T");
+      prompt = Console.ReadLine();
+      if (prompt == "I") {
+        DisplayMoreInfo(context);
+      } else if (prompt == "T") {
+        CommandGoBack();
+      }
+    }
+  }
+  */

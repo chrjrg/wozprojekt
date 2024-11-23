@@ -22,6 +22,7 @@ class Game {
     registry.Register("help", new CommandHelp(registry));
     registry.Register("clear", new CommandClear());
     registry.Register("go back", new CommandGoBack());
+    registry.Register("back", new CommandGoBackHere());
     registry.Register("kb", new CommandKeybind());
     registry.Register("interact", new CommandInteract());
     
@@ -29,23 +30,20 @@ class Game {
   }
   
   static void Main (string[] byargs) {
-
     db.LoadFile(Path.Combine(Directory.GetCurrentDirectory(), "World Of Zuul Core files/data.txt").ToString()); // Load the file, we do this in main to avoid loading the file multiple times
 
     // Intro.ShowIntro();
     //quiz.initQuiz();
     InitRegistry();
     context.GetCurrent().Welcome();
-    
-
 
     while (context.IsDone()==false) {
       Console.Write("> ");
       string? line = Console.ReadLine();
       if (line!=null)  registry.Dispatch(line);
+      // Console.WriteLine(context); .... For debugging
     }
 
     Console.WriteLine("Game Over 😥");
-    Console.WriteLine(db.GetSection("test")); // test af database
 }
 }

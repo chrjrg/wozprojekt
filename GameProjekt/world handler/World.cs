@@ -3,7 +3,7 @@
  using static GameAssets;
  using static Anim;
 
-class World {
+public class World {
   
   Space entry;
   
@@ -15,8 +15,6 @@ class World {
     Space solar = new Space("Solanlæg");
     Space water = new Space("Vandanlæg");
 
-    
-    
     this.entry = entry;
 
     // Add edges for entry (Christiansborg)
@@ -47,7 +45,6 @@ class World {
 
     // Add NPC's to rooms
     entry.AddNPC("sekretær", new Secretary("sekretær"));
-    entry.AddNPC("ekspert", new Expert("ekspert"));
     atom.AddNPC("ekspert", new Expert("ekspert"));
     water.AddNPC("ekspert", new Expert("ekspert"));
     solar.AddNPC("ekspert", new Expert("ekspert"));
