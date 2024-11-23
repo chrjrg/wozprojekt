@@ -18,7 +18,7 @@ class Registry {
   public void Dispatch(string line) {
     line = line.ToLower(); // Convert to lowercase 
     // Check if the command is an NPC name
-    NPC npc = context.GetCurrent().GetNPC(line);
+    NPC? npc = context.GetCurrent()?.GetNPC(line);
     if (npc != null) {
       npc.Interact(context);
       return;

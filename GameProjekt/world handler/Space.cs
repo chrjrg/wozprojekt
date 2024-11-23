@@ -41,7 +41,7 @@ public class Space : Node {
   
   
   public override Space FollowEdge (string direction) {
-    return (Space) (base.FollowEdge(direction));
+      return (Space) (base.FollowEdge(direction))!;
   }
 
 
@@ -57,11 +57,11 @@ public class Space : Node {
 
   // NPC interaction
 
-  private string name;
+  private new readonly string name; 
   private Dictionary<string, NPC> npcs = new Dictionary<string, NPC>();
 
 
-  public string GetName() {
+  public new string GetName() {
     return string.IsNullOrEmpty(name) ? "Unnamed Space" : name;
   }
 
@@ -69,7 +69,7 @@ public class Space : Node {
     npcs[name] = npc;
   }
 
-  public NPC GetNPC(string name) {
+  public NPC? GetNPC(string name) {
     if (npcs.ContainsKey(name)) {
       return npcs[name];
     } else {
@@ -80,6 +80,4 @@ public class Space : Node {
     public List<string> GetNPCNames() {
     return new List<string>(npcs.Keys);
   }
-
-
 }

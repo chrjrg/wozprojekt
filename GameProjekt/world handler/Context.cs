@@ -28,16 +28,16 @@ public class Context {
         current = space;
     }
 
-    public string GetCurrentName()
+    public string GetCurrentName() // This is used to get the name of the current location
     {
-      return current?.GetName() ?? "Unknown Location"; //
+      return current?.GetName() ?? "Unknown Location"; 
     }
   
   public void Transition (string direction) {
     previous = current;
     Space next = current.FollowEdge(direction);
     if (next==null) {
-      Console.WriteLine("You are confused, and walk in a circle looking for '"+direction+"'. In the end you give up 😩");
+      Console.WriteLine("Der er ingen udgang i den retning. Prøv en anden retning.");
     } else {
       current = next;
       current.Welcome();
@@ -54,19 +54,20 @@ public class Context {
 
     
    public void TransitionBackHere() {
+      Console.Clear();
       Console.WriteLine("You have returned to " + current.GetName());
       current.WelcomeBack();
   }
 
-  public void MakeDone () {
+  public void MakeDone () { // MakeDone is a boolean that is used to check if the game is done
     done = true;
   }
   
-  public bool IsDone () {
+  public bool IsDone () { // Isdone is a boolean that is used to check if the game is done
     return done;
   }
 
-  public override string ToString()
+  public override string ToString() // This is for debugging
   {
     return $"Context(Current: {GetCurrentName()}, Previous: {previous?.GetName() ?? "None"})";
   }

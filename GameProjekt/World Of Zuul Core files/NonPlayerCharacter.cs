@@ -22,13 +22,17 @@ public abstract class NPC {
 
     public abstract void DisplayMandatoryIntro(Context context);
     public abstract void PerformAction(Context context);
+
+    
 }
 
 
 public class Expert : NPC {
   private string current;
 
-  public Expert(string name) : base(name) { }
+  public Expert(string name) : base(name) {
+      current = string.Empty;
+  }
 
   public override void DisplayMandatoryIntro(Context context) {
     current = context.GetCurrentName().ToString();
@@ -50,20 +54,20 @@ public class Expert : NPC {
         break;
     }
   }
-
+  
   public override void PerformAction(Context context) {
     Space currentSpace = context.GetCurrent();
-    if (!currentSpace.alreadyBeenHere) //
+    if (!currentSpace.alreadyBeenHere) 
     {
       DisplayMandatoryIntro(context);
       currentSpace.alreadyBeenHere = true;
     } else {
       // call normal expert interaction
     }
-  }
+  } 
 
 
-  public void DisplayMoreInfo(Context context) {
+  public void DisplayInfo (Context context) {
     current = context.GetCurrentName().ToString();
     DisplaySection($"{current} ekspert");
   }
@@ -74,13 +78,10 @@ public class Expert : NPC {
 
   public void Buy() {
     Console.WriteLine("Vil du købe? ");
-    string prompt = Console.ReadLine();
+    string prompt = Console.ReadLine()!;
     //SignContract();
   }
 
-  private void CommandGoBack() {
-    // Implement if needed
-  }
 }
 
 public class Secretary : NPC {
@@ -88,12 +89,18 @@ public class Secretary : NPC {
   public Secretary(string name) : base(name) { }
     
     public override void PerformAction(Context context) {
+      Space currentSpace = context.GetCurrent();
+      if (!currentSpace.alreadyBeenHere) 
+      {
+        DisplayMandatoryIntro(context);
+        currentSpace.alreadyBeenHere = true;
+      } else {
         UserChoiceSecretary();
+      }
     }
 
     public override void DisplayMandatoryIntro(Context context) {
-        Console.WriteLine("Velkommen til sekretæren");
-        UserChoiceSecretary();
+      DisplaySection("SekretærIntro");
     }
 
   public void UserChoiceSecretary() {
@@ -101,7 +108,8 @@ public class Secretary : NPC {
     Console.WriteLine("Hvis du vil se dit elnets status, skriv: Status");
     Console.WriteLine("Hvis du vil afslutte spillet og aflevere dit endelige elnet, skriv: Submit");
 
-    string userInput = Console.ReadLine().ToLower();
+    Console.Write("> ");
+    string userInput = Console.ReadLine()!.ToLower();
     if (userInput == "status") {
       Status();
     } else if (userInput == "submit") {
@@ -120,15 +128,16 @@ public class Secretary : NPC {
     Console.WriteLine(GameAssets.co2.GetStatus());
 
     Console.WriteLine("Vil du indlevere dit elnet? skriv: Submit");
-    Console.WriteLine("Vil du fortsætte spillet? skriv: GoBack");
+    Console.WriteLine("Vil du fortsætte spillet? skriv: Back");
 
-    string? userInput = Console.ReadLine().ToLower();
-    if (userInput == "Submit") {
+    Console.Write("> ");
+    string userInput = Console.ReadLine()!.ToLower();
+    if (userInput == "submit") {
       Submit();
-    } else if (userInput == "GoBack") {
-      // Implement if needed
+    } else if (userInput == "back") {
+      context.TransitionBackHere();
     } else {
-      Console.WriteLine("Det forstod jeg ikke");
+      Console.WriteLine("Det forstod jeg ikke? Prøv igen");
     }
   }
 
@@ -146,9 +155,10 @@ public class Secretary : NPC {
     Console.WriteLine("Vil du afslutte spiller? skriv: Slut");
     Console.WriteLine("Vil du fortsætte spillet? skriv: Tilbage");
 
-    string? userInput = Console.ReadLine().ToLower();
+    Console.Write("> ");
+    string userInput = Console.ReadLine()!.ToLower();
     if (userInput == "slut") {
-      EndGame();
+      context.MakeDone();
     } else if (userInput == "tilbage") {
        
     } else {
@@ -156,13 +166,12 @@ public class Secretary : NPC {
     }
   }
 
+    private void DisplaySection(string section) {
+    Anim.CharSplit(db.GetSection(section) + "\n");
+    }
+
   private void Evaluate() {
     Console.WriteLine("Spillet afsluttes...");
-    // Implement if needed
-  }
-
-  private void EndGame() {
-    Console.WriteLine("Spillet er afsluttet");
     // Implement if needed
   }
 }

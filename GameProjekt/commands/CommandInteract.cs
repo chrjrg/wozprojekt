@@ -18,11 +18,11 @@ class CommandInteract : BaseCommand, ICommand {
       return;
     }
 
-    NPC npc = context.GetCurrent().GetNPC(parameters[1]);
+    NPC? npc = context.GetCurrent().GetNPC(parameters[1]); 
     if (npc == null) {
-      Console.WriteLine("There is no one here by that name.");
+      Console.WriteLine("There is no one here by that name."); 
     } else {
-      npc.Interact(context);
+      npc.Interact(context); //
     }
   }
 } 

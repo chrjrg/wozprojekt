@@ -15,11 +15,13 @@ Dette er introen til Vind
 Dette er introen til Vand
 
 
-
 [SolEkspertIntro]
 Dette er introen til Sol
 
 
-
 [VindEkspertIntro]
 Dette er introen til Atom
+
+
+[SekretærIntro]
+Dette er introen til sekretæren.
