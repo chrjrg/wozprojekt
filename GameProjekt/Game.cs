@@ -11,7 +11,7 @@ class Game {
   static void Main (string[] byargs) {
     TextDatabase db = TextDatabase.Instance;
     db.LoadFile(Path.Combine(Directory.GetCurrentDirectory(), "World Of Zuul Core files/data.txt").ToString()); // Load the file, we do this in main to avoid loading the file multiple times
-    Intro.ShowIntro();
+    //Intro.ShowIntro();
     InitRegistry();
     
     context.GetCurrent().Welcome();

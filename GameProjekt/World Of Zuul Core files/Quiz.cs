@@ -35,7 +35,7 @@ private void LoadQuestions()
         string[] lines = TextDatabase.Instance.GetSectionArray(sectionName);
 
         if (lines.Length > 0)
-        {
+        { 
             string questionContent = string.Join(Environment.NewLine, lines);
             questions.Add(new Question(sectionName, questionContent));
             Console.WriteLine($"DEBUG: Spørgsmål tilføjet: {sectionName}");
