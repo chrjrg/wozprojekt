@@ -5,7 +5,7 @@ namespace GameLogic{
     public class Intro {
 
 
-        string[] prompt = TextDatabase.Instance.GetSectionArray("Intro");
+        string[] prompt = db.GetSectionArray("Intro");
 
         public string text = "";
 

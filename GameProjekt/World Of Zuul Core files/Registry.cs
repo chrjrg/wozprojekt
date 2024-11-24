@@ -15,9 +15,14 @@ public class Registry {
     commands.Add(name, command);
 
   }
-public void Dispatch(string line) {
-
+  public void Dispatch(string line) {
     line = line.ToLower(); // Convert to lowercase 
+    // Check if the command is an NPC name
+    NPC? npc = context.GetCurrent()?.GetNPC(line);
+    if (npc != null) {
+      npc.Interact(context);
+      return;
+    }
     // check if entire command is in line (e.g., "go back")
     if (commands.ContainsKey(line)) {
         string cmd = line;
@@ -32,6 +37,7 @@ public void Dispatch(string line) {
     string[] parameters = GetParameters(elements);
     (commands.ContainsKey(command) ? GetCommand(command) : fallback).Execute(context, command, parameters);
 }
+  
 
   public ICommand GetCommand (string commandName) {
     return commands[commandName];
@@ -49,6 +55,5 @@ public void Dispatch(string line) {
       output[i] = input[i+1];
     }
     return output;
-  }
+  } 
 }
-

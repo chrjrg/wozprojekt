@@ -7,6 +7,25 @@ Text1 is right here
 [Text2]
 Text2 is right over here
 
+[AtomEkspertIntro]
+Dette er introen til Vind
+
+
+[VandEkspertIntro]
+Dette er introen til Vand
+
+
+[SolEkspertIntro]
+Dette er introen til Sol
+
+
+[VindEkspertIntro]
+Dette er introen til Atom
+
+
+[SekretærIntro]
+Dette er introen til sekretæren.
+
 
 [Intro]
 Velkommen til Power Simulator

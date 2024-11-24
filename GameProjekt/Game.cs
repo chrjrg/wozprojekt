@@ -15,15 +15,15 @@ class Game {
     InitRegistry();
     
     context.GetCurrent().Welcome();
-    
-
 
     while (context.IsDone()==false) {
       Console.Write("> ");
       string? line = Console.ReadLine();
       if (line!=null)  registry.Dispatch(line);
-  }
-  Console.WriteLine("Game Over 😥");;
+      // Console.WriteLine(context); .... For debugging
+    }
+
+    Console.WriteLine("Game Over 😥");
 }
 
 }

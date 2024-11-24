@@ -4,7 +4,10 @@ using GameLogic;
 public static class GameAssets
 {
     public static TextDatabase db = TextDatabase.Instance;
-    static World world = new World();
+    public static World world = new World();
+    public static Context context = new Context(world.GetEntry());
+    
+
     public static Intro Intro = new Intro();
     public static Shape Wind = new Wind();
     public static Shape Atom = new Atom();
@@ -12,7 +15,6 @@ public static class GameAssets
     public static Secretary secretary = new Secretary("Sussane");
     public static Quiz quiz = new Quiz();
 
-    public static Context  context  = new Context(world.GetEntry());
     static ICommand fallback = new CommandUnknown();
     public static Registry registry = new Registry(context, fallback);
 
@@ -48,6 +50,8 @@ public static class GameAssets
         registry.Register("go back", new CommandGoBack());
         registry.Register("kb",new CommandKeybind());
         registry.Register("clear", new CommandClear());
+        registry.Register("interact", new CommandInteract());
+        registry.Register("back", new CommandGoBackHere());
     }
 }
 

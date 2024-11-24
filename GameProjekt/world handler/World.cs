@@ -3,7 +3,7 @@
  using static GameAssets;
  using static Anim;
 
-class World {
+public class World {
   
   Space entry;
   
@@ -14,7 +14,7 @@ class World {
     Space wind  = new Space("Vindanlæg");
     Space solar = new Space("Solanlæg");
     Space water = new Space("Vandanlæg");
-    
+
     this.entry = entry;
 
     // Add edges for entry (Christiansborg)
@@ -22,8 +22,7 @@ class World {
     entry.AddEdge("Vandanlæg", water);
     entry.AddEdge("Solanlæg", solar);
     entry.AddEdge("Vindanlæg", wind);
-  
-    
+
     // Add edges for atom (north room)
     atom.AddEdge("Vandanlæg", water);
     atom.AddEdge("Vindanlæg", wind);
@@ -43,9 +42,17 @@ class World {
     wind.AddEdge("Atomkraftværk", atom);
     wind.AddEdge("Solanlæg", solar);
     wind.AddEdge("Christiansborg", entry);
+
+    // Add NPC's to rooms
+    entry.AddNPC("sekretær", new Secretary("sekretær"));
+    atom.AddNPC("ekspert", new Expert("ekspert"));
+    water.AddNPC("ekspert", new Expert("ekspert"));
+    solar.AddNPC("ekspert", new Expert("ekspert"));
+    wind.AddNPC("ekspert", new Expert("ekspert"));
+
     
-    atom.test =() => {DriveAnim(Car, Atom, 90, 25); Atom.Show(1);}; 
-    wind.test =() => {DriveAnim(Car, Wind, 90, 25); Wind.Show(1);}; 
+    // atom.test =() => {DriveAnim(Car, Atom, 90, 25); Atom.Show(1);}; 
+    // wind.test =() => {DriveAnim(Car, Wind, 90, 25); Wind.Show(1);}; 
     // solar.test =() => {DriveAnim(Car, Wind, 90, 25); locationAnim("LOKATION: ");}; 
     // wind.test =() => {DriveAnim(Car, Wind, 90, 25); locationAnim("LOKATION: ");}; 
 
