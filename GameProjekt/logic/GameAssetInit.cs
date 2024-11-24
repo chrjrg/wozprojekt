@@ -12,8 +12,9 @@ public static class GameAssets
     public static Secretary secretary = new Secretary("Sussane");
     public static Quiz quiz = new Quiz();
 
-
     public static Context  context  = new Context(world.GetEntry());
+    static ICommand fallback = new CommandUnknown();
+    public static Registry registry = new Registry(context, fallback);
 
     public static UserInputHandler inputHandler = new UserInputHandler(context);
 
@@ -35,6 +36,19 @@ public static class GameAssets
     public static Resource budget = new Resource("Budget",10000,"kr");
     public static Resource energi = new Resource("Energi",0,"kW");
     public static Resource co2 = new Resource("CO2",0,"tons");
+
+
+    public static void InitRegistry () {
+        ICommand cmdExit = new CommandExit();
+        registry.Register("exit", cmdExit);
+        registry.Register("quit", cmdExit);
+        registry.Register("bye", cmdExit);
+        registry.Register("go", new CommandGo());
+        registry.Register("help", new CommandHelp(registry));
+        registry.Register("go back", new CommandGoBack());
+        registry.Register("kb",new CommandKeybind());
+        registry.Register("clear", new CommandClear());
+    }
 }
 
 

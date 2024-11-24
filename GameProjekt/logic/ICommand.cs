@@ -1,7 +1,7 @@
 /* Command interface
  */
 
-interface ICommand {
+public interface ICommand {
   void Execute (Context context, string command, string[] parameters);
   string GetDescription ();
 }

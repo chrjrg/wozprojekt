@@ -128,6 +128,7 @@ Hvorfor er vandkraft ikke en stor energikilde i Danmark?
 
 
 [SecIntro]
+SUSSANNE:
 Hej, jeg hedder Sussane. Jeg vil være din ’spindoktor’ gennem din rejse med at skabe Danmarks fremtidige energiforsyning. 
 Før vi kaster os ud i at bruge skatteydernes penge, er det vigtigt, at du er klædt godt på til at tage de rigtige beslutninger.
 Når vi taler om energiforsyning, er der utallige faktorer i spil, som påvirker, hvilke løsninger vi kan vælge.
