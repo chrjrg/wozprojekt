@@ -34,6 +34,7 @@ public class Context {
     }
   
   public void Transition (string direction) {
+    Console.Clear();
     previous = current;
     Space next = current.FollowEdge(direction);
     if (next==null) {
@@ -54,7 +55,6 @@ public class Context {
 
     
    public void TransitionBackHere() {
-      Console.Clear();
       Console.WriteLine("You have returned to " + current.GetName());
       current.WelcomeBack();
   }

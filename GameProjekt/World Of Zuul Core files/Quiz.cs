@@ -90,7 +90,10 @@ private void LoadQuestions()
         SaveResults();
     }
 
-
+public string GetUserName()
+{
+    return userName;
+}
 
 
 private void SaveResults()

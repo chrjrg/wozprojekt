@@ -1,8 +1,10 @@
 /* Space class for modeling spaces (rooms, caves, ...)
  */
 
+
 public class Space : Node {
   public bool alreadyBeenHere = false;
+  public bool selectedInfo = false;
 
   public Action? test { get; set; }
 

@@ -8,6 +8,12 @@ public class Resource
     private string unit;
 
 
+    public static int WindAmount=0;
+    public static int WaterAmount=0;
+    public static int SunAmount=0;
+    public static int AtomAmount=0;
+
+
     public Resource(string name,double initialValue,string unit)
     {
         this.name = name;
@@ -21,6 +27,4 @@ public class Resource
     public void Adjust(double amount) => value += amount;  //Denne kan tilføje en amount til value, hvis nødvendigt.
 
     public string GetStatus() => $"{name}: {value} {unit}"; //Denne henter status for parametrende.
-
-    
 }

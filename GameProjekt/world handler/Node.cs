@@ -19,7 +19,6 @@ public class Node {
   
   public virtual Node? FollowEdge(string direction)
   {
-      Console.WriteLine($"Tilgængelige edges fra {this.name}: {string.Join(", ", edges.Keys)}");
 
       if (edges.ContainsKey(direction))
       {
