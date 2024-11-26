@@ -20,7 +20,10 @@ public class Contract
                 int WindAntal=int.Parse(Console.ReadLine()!);//tager spillerindput for hvor mange der skal købes
                 if (WindAntal > 0)
                 {
-                    string UpdatedContract=ContractTextWind.Replace("ANTAL",WindAntal.ToString());//erstatter ordet ANTAL i teksten Contracttext med nummered Antal som string
+                    string UpdatedContract=ContractTextWind
+                    .Replace("ANTAL", WindAntal.ToString())//erstatter ordet ANTAL i teksten Contracttext med nummered Antal som string
+                    .Replace("NAVN", quiz.GetUserName().ToString())
+                    .Replace("DATO", DateTime.Now.ToString("dd/MM/yyyy"));
                     Contract WindContract=new Contract(UpdatedContract);//instansiere Windcontract så SignContract metoden virker på contrakten
                     System.Console.WriteLine(UpdatedContract);//Skriver kontrakten for spilleren
                     bool signiture=WindContract.SignContract();

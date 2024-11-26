@@ -18,7 +18,7 @@ public abstract class NPC {
   public void Interact(Context context) {
     Console.Clear();
     string currentLocation = context.GetCurrentName().ToString();
-    Console.WriteLine($"You interact with {GetName()} in {currentLocation}\n");
+    //Console.WriteLine($"You interact with {GetName()} in {currentLocation}\n");
     PerformAction(context);   
   }
 
@@ -75,7 +75,7 @@ public class Expert : NPC {
   }
 
   private void DisplaySection(string section) {
-    Anim.CharSplit(db.GetSection(section) + "\n",25);
+    Anim.CharSplit(db.GetSection(section) + "\n",10);
   }
 
 
@@ -108,7 +108,6 @@ public class Expert : NPC {
         UserChoiseExpert();
       } else if (userInput == "buy") {
         if (currentSpace.selectedInfo == true) {
-          Console.Clear();
           Contract.CreateContract(context);
         } else {
           UserChoiseExpert();

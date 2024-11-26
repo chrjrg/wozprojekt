@@ -11,17 +11,9 @@ using System.Runtime.InteropServices;
 
 class Game {
   static void Main (string[] byargs) {
-    int width = 100;
-    int height = 30;
-    Console.SetWindowSize(width, height);
-
-    if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows)) {
-      Console.SetBufferSize(width, height);
-    }
-
     TextDatabase db = TextDatabase.Instance;
     db.LoadFile(Path.Combine(Directory.GetCurrentDirectory(), "World Of Zuul Core files/data.txt").ToString()); // Load the file, we do this in main to avoid loading the file multiple times
-    // Intro.ShowIntro();
+    //Intro.ShowIntro();
     InitRegistry();
     
     context.GetCurrent().Welcome();
