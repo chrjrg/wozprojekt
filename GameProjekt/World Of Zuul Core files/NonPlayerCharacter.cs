@@ -123,9 +123,9 @@ public class Secretary : NPC {
   public void Status() {
     Console.Clear();
     Console.WriteLine("Status:");
-    Console.WriteLine(GameAssets.budget.GetStatus());
-    Console.WriteLine(GameAssets.energi.GetStatus());
-    Console.WriteLine(GameAssets.co2.GetStatus());
+    budget.GetStatus();
+    energi.GetStatus();
+    co2.GetStatus();
 
     Console.WriteLine("Vil du indlevere dit elnet? skriv: Submit");
     Console.WriteLine("Vil du fortsætte spillet? skriv: Back");
@@ -143,9 +143,9 @@ public class Secretary : NPC {
 
   public void Submit() {
     Console.WriteLine("Dit endelige elnet:");
-    Console.WriteLine(GameAssets.budget.GetStatus());
-    Console.WriteLine(GameAssets.energi.GetStatus());
-    Console.WriteLine(GameAssets.co2.GetStatus());
+    budget.GetStatus();
+    energi.GetStatus();
+    co2.GetStatus();
 
     // Print antal af forskellige energiformer.
 

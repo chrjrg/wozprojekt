@@ -21,8 +21,7 @@ public class EnergyType
 public static class Test
 {
     //Denne metode kaldes når der købes nye energiformer. Den ændre parametrende, alt efter energitype og antal.
-    public static void BuyEnergy(EnergyType energyType, int quantity)
-    {
+    public static void BuyEnergy(EnergyType energyType, int quantity) {  
         double totalCost = energyType.Price * quantity;
         double totalEnergyOutput = energyType.EnergyOutput * quantity;
         double totalCO2Emission = energyType.CO2Emission * quantity;
@@ -33,6 +32,8 @@ public static class Test
             energi.Adjust(totalEnergyOutput);  //tilføjer Energiforsyningen fra den købte energiform til parameteren energyOutput.
             co2.Adjust(totalCO2Emission); //Tilføjer co2 udledningen fra den købte energiform til parameteren co2Emission.
 
+            inventory.AddEnergy(energyType, quantity); // Opdater lager
+
             Console.WriteLine($"Købt {quantity} {energyType.Name} til en samlet pris på {totalCost} kr. " +
                               $"Energi tilføjet: {totalEnergyOutput} kW, CO₂-udledning tilføjet: {totalCO2Emission} tons.");
         }
@@ -40,5 +41,65 @@ public static class Test
         {
             Console.WriteLine("Ikke nok penge til dette køb."); //Hvis ikke penge nok printer den, dene besked.
         }
+    }
+    public static void ShowInventory(){
+        inventory.PrintInventory(); // Udskriv lagerstatus
+    }
+}
+
+public class EnergyInventory
+{
+    // Dictionary til at gemme antallet af hver energitype
+    private Dictionary<string, int> energyCounts = new Dictionary<string, int>();
+
+    // Tilføj købt energi
+    public void AddEnergy(EnergyType energyType, int quantity)
+    {
+        if (energyCounts.ContainsKey(energyType.Name))
+        {
+            energyCounts[energyType.Name] += quantity; // Opdater antallet
+        }
+        else
+        {
+            energyCounts[energyType.Name] = quantity; // Opret ny energitype med antal
+        }
+    }
+
+    // Hent antallet for en specifik energitype
+    public int GetQuantity(EnergyType energyType)
+    {
+        return energyCounts.ContainsKey(energyType.Name) ? energyCounts[energyType.Name] : 0;
+    }
+
+    // Udskriv lagerstatus
+    public void PrintInventory()
+    {
+        if (!energyCounts.Any()){
+            return;
+        } else {
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.Write("Energilager: ");
+            Console.ForegroundColor = ConsoleColor.White; 
+            Console.Write("Oversigt over energikilder");
+            Console.WriteLine("");
+
+            Console.WriteLine("______________________________________________");
+            Console.WriteLine("");
+            foreach (var energy in energyCounts)
+            {     
+   
+                Console.ForegroundColor = ConsoleColor.DarkBlue;
+                Console.Write($"{energy.Key}: ");Console.ForegroundColor = ConsoleColor.White;
+                Console.Write($"{energy.Value}");Console.Write(" stk.");System.Console.WriteLine("");
+                
+
+            }
+            Console.WriteLine("______________________________________________");
+            Console.WriteLine("");
+            Console.ResetColor();
+
+        }
+
+
     }
 }

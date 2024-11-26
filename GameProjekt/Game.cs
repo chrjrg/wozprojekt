@@ -12,6 +12,11 @@ class Game {
     TextDatabase db = TextDatabase.Instance;
     db.LoadFile(Path.Combine(Directory.GetCurrentDirectory(), "World Of Zuul Core files/data.txt").ToString()); // Load the file, we do this in main to avoid loading the file multiple times
     //Intro.ShowIntro();
+    Test.BuyEnergy(AtomType,1);
+    Test.BuyEnergy(WindType,1);
+    Test.BuyEnergy(SolarType,1);
+    Resource.DisplayAllStatuses(budget,energi,co2);
+
     InitRegistry();
     
     context.GetCurrent().Welcome();
@@ -24,6 +29,6 @@ class Game {
     }
 
     Console.WriteLine("Game Over 😥");
-}
+  }
 
 }
