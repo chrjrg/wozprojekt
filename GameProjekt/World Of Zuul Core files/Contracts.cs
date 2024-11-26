@@ -22,9 +22,9 @@ public class Contract
                 {
                     string UpdatedContract=ContractTextWind.Replace("ANTAL",WindAntal.ToString());//erstatter ordet ANTAL i teksten Contracttext med nummered Antal som string
                     Contract WindContract=new Contract(UpdatedContract);//instansiere Windcontract så SignContract metoden virker på contrakten
-                    System.Console.WriteLine(WindContract);//Skriver kontrakten for spilleren
+                    System.Console.WriteLine(UpdatedContract);//Skriver kontrakten for spilleren
                     bool signiture=WindContract.SignContract();
-                    if(signiture==true)
+                    if(signiture==true && Test.BuyEnergy(WindType,WindAntal) == true)
                     {
                         for (int i = 0; i < WindAntal; i++)
                         {
@@ -49,7 +49,7 @@ public class Contract
                     Contract WaterContract=new Contract(UpdatedContract);//Instansiere Windcontract så SignContract metoden virker på contrakten
                     System.Console.WriteLine(UpdatedContract);//Skriver kontrakten for spilleren
                     bool signiture=WaterContract.SignContract();
-                    if(signiture==true)
+                    if(signiture==true && Test.BuyEnergy(WaterType,WaterAntal) == true)
                     {
                         for (int i = 0; i < WaterAntal; i++) //øger mængden af vandværker gennem forloopet
                         {
@@ -65,16 +65,16 @@ public class Contract
                 }
                 break;
             case "Solanlæg":
-                string ContractTextSun=db.GetSection("WindContract");//laver en string ud fra textdatabasen
+                string ContractTextSun=db.GetSection("SunContract");//laver en string ud fra textdatabasen
                 System.Console.WriteLine($"Hvor mange vindmøller vil du købe");
                 int SunAntal=int.Parse(Console.ReadLine()!);//tager spillerindput for hvor mange der skal købes
                 if (SunAntal > 0)
                 {
                     string UpdatedContract=ContractTextSun.Replace("ANTAL",SunAntal.ToString());//erstatter ordet ANTAL i teksten Contracttext med nummered Antal som string
                     Contract SunContract=new Contract(UpdatedContract);//instansiere Windcontract så SignContract metoden virker på contrakten
-                    System.Console.WriteLine(SunContract);//Skriver kontrakten for spilleren
+                    System.Console.WriteLine(UpdatedContract);//Skriver kontrakten for spilleren
                     bool signiture=SunContract.SignContract();
-                    if(signiture==true)
+                    if(signiture==true && Test.BuyEnergy(SolarType,SunAntal) == true)
                     {
                         for (int i = 0; i < SunAntal; i++)
                         {
@@ -91,16 +91,16 @@ public class Contract
                 }
                 break;
             case "Atomkraftværk" :
-                string ContractTextAtom=db.GetSection("WindContract");//laver en string ud fra textdatabasen
+                string ContractTextAtom=db.GetSection("AtomContract");//laver en string ud fra textdatabasen
                 System.Console.WriteLine($"Hvor mange vindmøller vil du købe");
                 int AtomAntal=int.Parse(Console.ReadLine()!);//tager spillerindput for hvor mange der skal købes
                 if (AtomAntal > 0)
                 {
                     string UpdatedContract=ContractTextAtom.Replace("ANTAL",AtomAntal.ToString());//erstatter ordet ANTAL i teksten Contracttext med nummered Antal som string
                     Contract AtomContract=new Contract(UpdatedContract);//instansiere Windcontract så SignContract metoden virker på contrakten
-                    System.Console.WriteLine(AtomContract);//Skriver kontrakten for spilleren
+                    System.Console.WriteLine(UpdatedContract);//Skriver kontrakten for spilleren
                     bool signiture=AtomContract.SignContract();
-                    if(signiture==true)
+                    if(signiture==true && Test.BuyEnergy(AtomType,AtomAntal) == true)
                     {
                         for (int i = 0; i < AtomAntal; i++)
                         {
@@ -121,12 +121,12 @@ public class Contract
 //SignContract skal få brugeren til at skrive sit input så det kan tjekkes
     public bool SignContract()
     {
-        System.Console.WriteLine($"Hvis du gerne vil købe så skriv dit brugernavn, ellers annuleres købet (ja)");
+        System.Console.WriteLine($"Hvis du gerne vil købe så skriv ja, ellers nej");
         string input=Console.ReadLine()!;//tager spillerinput
         if(input=="ja")//Sammenligner spillerindput med username for underskrivelse af kontrakten
         {
             Console.Clear();
-            System.Console.WriteLine($"Kontrakten er underskrevet");
+            System.Console.WriteLine($"Kontrakten er underskrevet" + "\n");
             context.TransitionBackHere();
             return true;
         }

@@ -165,8 +165,20 @@ Det her du kan aflevere dit forslag og få en opdatering på hvilke valg du har 
 Og hov! Sidste ting... Jeg skal lige have dig til at svare på nogle spørgsmål inden du kan få lov til at give den gas! 
 Da det hele er nyt, skal du bare forsøge dit bedste (Gæt), senere finder vi ud af om du har lært noget af din rejse.
 
+[WindContract]
+Vind kontrakt her
+ANTAL
+
+[SunContract]
+Sol kontrakt her
+ANTAL
+
+[AtomContract]
+Atom konrakt her
+ANTAL
+
 [WaterContract]
-Hejhejhej
+Vand kontrakt her
 ANTAL
 
 [Vandanlæg ekspert]

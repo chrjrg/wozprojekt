@@ -28,6 +28,5 @@ public class Node {
       Console.WriteLine($"Ingen edge fundet for '{direction}'");
       return null;
   }
-
 }
 
