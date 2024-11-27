@@ -10,6 +10,7 @@ class CommandHelp : BaseCommand, ICommand {
   }
   
   public void Execute (Context context, string command, string[] parameters) {
+    Console.Clear();
     string[] commandNames = registry.GetCommandNames();
     Array.Sort(commandNames);
     

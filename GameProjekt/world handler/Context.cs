@@ -38,7 +38,7 @@ public class Context {
     previous = current;
     Space next = current.FollowEdge(direction);
     if (next==null) {
-      Console.WriteLine("Der er ingen udgang i den retning. Prøv en anden retning.");
+      TransitionBackHere();
     } else {
       current = next;
       current.Welcome();

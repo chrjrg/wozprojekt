@@ -23,7 +23,6 @@ public class Quiz
     // Metode til at indlæse spørgsmål fra vores datafil.
 private void LoadQuestions()
 {
-    Console.WriteLine("DEBUG: Indlæser spørgsmål...");
     questions.Clear();
 
     // Hent quizsektioner fra "QuizSections"
@@ -38,11 +37,8 @@ private void LoadQuestions()
         { 
             string questionContent = string.Join(Environment.NewLine, lines);
             questions.Add(new Question(sectionName, questionContent));
-            Console.WriteLine($"DEBUG: Spørgsmål tilføjet: {sectionName}");
         }
     }
-
-    Console.WriteLine($"DEBUG: {questions.Count} spørgsmål indlæst.");
 }
 
 

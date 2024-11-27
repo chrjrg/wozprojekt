@@ -10,7 +10,7 @@ public class Resource
 
     public static int WindAmount=0;
     public static int WaterAmount=0;
-    public static int SunAmount=0;
+    public static int SolarAmount=0;
     public static int AtomAmount=0;
 
 
