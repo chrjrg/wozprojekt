@@ -1,7 +1,5 @@
 using static GameAssets;
 using static Anim;
-using System.Runtime.InteropServices;
-
 
 /*
   - DriveAnim(GameAssets.Car, 50, 25); - Viser anim med følge syntaks <GameAssets.(Objekt), afstand, sleeptimer tid>
@@ -11,13 +9,17 @@ using System.Runtime.InteropServices;
 
 class Game {
   static void Main (string[] byargs) {
-    Console.Clear();
     TextDatabase db = TextDatabase.Instance;
     db.LoadFile(Path.Combine(Directory.GetCurrentDirectory(), "World Of Zuul Core files/data.txt").ToString()); // Load the file, we do this in main to avoid loading the file multiple times
     InitRegistry();
     //Intro.ShowIntro();
-    //Resource.DisplayAllStatuses(budget,energi,co2);
+    EnergyStore.BuyEnergy(AtomType,1);
+    EnergyStore.BuyEnergy(WindType,1);
+    EnergyStore.BuyEnergy(SolarType,1);
+    EnergyStore.BuyEnergy(WaterType,1);
 
+    Resource.DisplayAllStatuses(budget,energi,co2);
+    
     context.GetCurrent().Welcome();
 
     while (context.IsDone()==false) {

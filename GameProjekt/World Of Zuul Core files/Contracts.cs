@@ -54,10 +54,10 @@ public class Contract
         // Display contract and ask for signature
         Contract contract = new Contract(updatedContract);
         Console.WriteLine(updatedContract);
-        if (contract.SignContract() && Inventory.BuyEnergy(energyType, antal))
+        if (contract.SignContract() && EnergyStore.BuyEnergy(energyType, antal)) // If contract is signed and purchase is successful
         {
             resourceAmount += antal; // Update resource amount
-            Inventory.BuyEnergy(energyType, antal); // Finalize purchase
+            //EnergyStore.BuyEnergy(energyType, antal); // Finalize purchase
             Console.WriteLine($"\nKøbet er gennemført! Du har nu købt {antal} {itemName}\n");
             context.TransitionBackHere();
         }
@@ -84,5 +84,5 @@ public class Contract
             SignContract();
             return false;
         }   
-        }   
-    }
+    }   
+}

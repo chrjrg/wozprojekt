@@ -148,7 +148,7 @@ public class Secretary : NPC {
     Console.Write("> ");
     string userInput = Console.ReadLine()!.ToLower();
     if (userInput == "status") {
-      Status();
+      Resource.DisplayAllStatuses(budget,energi,co2);
     } else if (userInput == "submit") {
       Submit();
     } else {
@@ -157,26 +157,7 @@ public class Secretary : NPC {
     }
   }
 
-  public void Status() {
-    Console.Clear();
-    Console.WriteLine("Status:");
-    budget.GetStatus();
-    energi.GetStatus();
-    co2.GetStatus();
 
-    Console.WriteLine("Vil du indlevere dit elnet? skriv: Submit");
-    Console.WriteLine("Vil du fortsætte spillet? skriv: Back");
-
-    Console.Write("> ");
-    string userInput = Console.ReadLine()!.ToLower();
-    if (userInput == "submit") {
-      Submit();
-    } else if (userInput == "back") {
-      context.TransitionBackHere();
-    } else {
-      Console.WriteLine("Det forstod jeg ikke? Prøv igen");
-    }
-  }
 
   public void Submit() {
     Console.WriteLine("Dit endelige elnet:");
@@ -239,6 +220,8 @@ public class Secretary : NPC {
           Console.WriteLine("Quiz-objektet er ikke initialiseret!");
       }  
   }
+
+
 }
 
 /*

@@ -1,8 +1,9 @@
+/*
+Class for energy types and inventory management
+*/
 using static GameAssets;
 
-//Klassen indeholder oplysninger om pris, navn, energyoutput og co2udledning.
-//Klassen EnergyType bruges i GameAssetInit til at definere energityperne og tildele dem navn og værdier.
-public class EnergyType
+public class EnergyType // This class is used to create new energy types, with the parameters: Name, Price, EnergyOutput and CO2Emission.
 {
     public string Name { get; }
     public double Price { get; }
@@ -18,11 +19,9 @@ public class EnergyType
     }
 }
 
-public static class Inventory
+public static class EnergyStore // This class is used to manage the inventory of energy types.
 {
-    //Denne metode kaldes når der købes nye energiformer. Den ændre parametrende, alt efter energitype og antal.
-    public static bool BuyEnergy(EnergyType energyType, int quantity)
-    {
+    public static bool BuyEnergy(EnergyType energyType, int quantity) {  
         double totalCost = energyType.Price * quantity;
         double totalEnergyOutput = energyType.EnergyOutput * quantity;
         double totalCO2Emission = energyType.CO2Emission * quantity;
@@ -32,6 +31,8 @@ public static class Inventory
             budget.Adjust(-totalCost); //trækker totalCost fra budget
             energi.Adjust(totalEnergyOutput);  //tilføjer Energiforsyningen fra den købte energiform til parameteren energyOutput.
             co2.Adjust(totalCO2Emission); //Tilføjer co2 udledningen fra den købte energiform til parameteren co2Emission.
+
+            inventory.AddEnergy(energyType, quantity); // Opdater lagerstatus
             return true;
         }
         else
@@ -40,12 +41,12 @@ public static class Inventory
             return false;
         }
     }
-    public static void ShowInventory(){
+        public static void ShowInventory(){
         inventory.PrintInventory(); // Udskriv lagerstatus
-    }
+        }
 }
 
-public class EnergyInventory
+public class EnergyInventory // This class is used to manage the inventory of energy types.
 {
     // Dictionary til at gemme antallet af hver energitype
     private Dictionary<string, int> energyCounts = new Dictionary<string, int>();
@@ -95,9 +96,10 @@ public class EnergyInventory
             Console.WriteLine("______________________________________________");
             Console.WriteLine("");
             Console.ResetColor();
-
+            context.ClickNext();
+            Console.Clear();
+            secretary.UserChoiceSecretary();
         }
-
 
     }
 }

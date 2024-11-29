@@ -85,6 +85,7 @@ public class Resource{
 
     public static void DisplayAllStatuses(params Resource[] resources)
     {
+        Console.Clear();
         Console.ForegroundColor = ConsoleColor.White; 
         Console.WriteLine("______________________________________________");Console.WriteLine("");
         Console.ForegroundColor = ConsoleColor.Green;
@@ -105,9 +106,10 @@ public class Resource{
         Console.ResetColor();
         Console.WriteLine("______________________________________________");
         System.Console.WriteLine("");
-        Inventory.ShowInventory();
+        EnergyStore.ShowInventory();
     }
-
-
 }
+
+
+
 
