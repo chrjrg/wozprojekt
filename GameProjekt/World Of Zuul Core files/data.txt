@@ -1,26 +1,164 @@
-[test]
-This is a test case for the text database
+[CommandKeyExit]
+slut
 
-[Text1]
-Text1 is right here
+[CommandKeyGo]
+gå
 
-[Text2]
-Text2 is right over here
+[CommandKeyHelp]
+hjælp
+
+[CommandKeyGoBack]
+gå tilbage
+
+[CommandKeyKeybind]
+kb
+
+[CommandKeyClear]
+ryd
+
+[CommandKeyInteract]
+snak
+
+[CommandKeyBack]
+tilbage
+
+
+
+[BaseCommandDescription]
+Udokumenteret
+
+[CommandClearDescription]
+Rydder hele konsollen for bedre overblik
+
+[CommandExitDescription]
+Slutter spillet
+
+[CommandGoDescription]
+Navigerer spilleren til en ny lokation
+
+[CommandGoBackDescription]
+Går tilbage til forrige lokation
+
+[CommandGoBackHereDescription]
+Går tilbage til samme lokation
+
+[CommandGoLocationError]
+Jeg ser ikke ud til at vide, hvor det er 🤔
+
+[CommandHelpDescription]
+Viser en liste over tilgængelige kommandoer og deres funktioner
+
+[CommandHelpHeader]
+Kommandoer:
+
+[CommandInteractDescription]
+Interagere med personer i rummet
+
+[CommandInteractHeader]
+Skriv navnet på personen for at interagere
+
+[CommandInteractHeader2]
+Skriv back for at gå tilbage
+
+[CommandInteractNPCs]
+Personer i rummet: 
+
+[CommandInteractNoNPCs]
+Der er ingen personer i rummet...
+
+[CommandInteractNPCError]
+Der er ingen her med det navn...
+
+[CommandKeybindDescription]
+Keybind mode. Naviger med piletasterne (ESC: Afslut | C: Renser konsol)
+
+[CommandUnknownHeader]
+Jeg forstod ikke
+
+
+
+[TextXXX]
+
+[TextXXX]
+
+[TextXXX]
+
+[TextXXX]
+
+
+
+[TextXXX]
+
+[TextXXX]
+
+[TextXXX]
+
+[TextXXX]
+
+[TextXXX]
+
+[TextXXX]
+
+[TextXXX]
+
 
 [AtomEkspertIntro]
-Dette er introen til Vind
+Hej mit navn er Claus,
+Velkommen til atomkraftværket. 
+
+Vi befinder os i et energi-produktionsanlæg, der genererer energi ved hjælp af kernekraft.  Atomkraftværket tager små mængder uran eller andre radioaktive materialer og spalter det i en fusionsproces, hvilket frigiver store mængder energi. 
+
+Det enkelte kraftværk producerer 1750 GWt om året, hvilket forsyner hundredetusinder af husstande med strøm.
+Atomkraftværket er en af de mest energieffektive og stabile energikilder, der findes.
+
+Du får nu mulighed for at købe atomkraftværker til elnettet og tilegne dig viden om fordele og ulemper for atomkraftværker.
+
 
 
 [VandEkspertIntro]
-Dette er introen til Vand
+Hej mit navn er Thorbjørn!
+Velkommen til vandkraftværket. 
+
+Jeg vil gerne gøre dig klogere på denne energiform ved at informere dig om både fordele og ulemper:
+
+Vandenergi er stort set ikke afhængig af vejrforhold, hvilket gør det til en stabil energikilde. Energien kan nemt produceres kontinuerligt kun afhængig af den vandstrøm man skaber. Derfor kan der reguleres i strømproduktionen efter efterspørgsel, hvilket gør vandkraft velegnet til at balancere et elnet, der justerer i forhold til energibehovet.
+
+Vandkraftværker har en levetid på ca. 200 år, hvilket er den bedste blandt energiformerne. 
+
+Under drift producerer vandkraft ingen drivhusgasser eller luftforurening, dermed kun forurening i forbindelse med opførsel og nedrivning. 
+
+
+Vandkraft kræver særlige geografiske forhold, som fx floder med stærk strøm eller større vandfald. Ligeledes er der behov for store højdeforskelle i form af bjerge.
+
+Henvend dig endelig igen hvis du ønsker mere information. 
+
 
 
 [SolEkspertIntro]
-Dette er introen til Sol
+Hej min navn er Abu Bakr al-Baghdadi!
+
+Velkommen til solcelleanlægget. 
+
+Jeg vil gerne gøre dig klogere på denne energiform ved at informere dig om både fordele og ulemper:
+
+Solen er en vedvarende energikilde, som vi formentlig aldrig løber tør for. Grundet  Danmarks nordiske lokalitet kan et solcelleanlæg i forhold til stråler og dagslys under optimale forhold maksimalt producere strøm i omkring 1.574 fulde soltimer pr. år uden hensyn til tab ved vejrforhold. 
+
+Man forventer med en dansk lokalitet at et solcelleanlæg kan producere ca. 150-170 kWh per kvadratmeter per år. 
+
+Solenergi kan produceres i form af solpaneler, dog vil der altid være en udledning i forbindelse med produktion, transport, installation og bortskaffelse af disse solpaneler. Solanlæg har kun en levetid på 30 dage i forhold til atomkraftværker, som holder omkring 60 år. Solanlæg er omkostningsfuldt at etablere med en pris på 2 mio DKK for 1 MW, som skal tage levetiden i betragtning. 
+
+Solanlæg kræver et stor overflade areal, hvilket vil optage en del landjord, som æstetisk kan genere naboer og være omkostningsfuldt for staten at opkøbe jord.
+
 
 
 [VindEkspertIntro]
-Dette er introen til Atom
+Hej, mit navn er Hanne,
+Velkommen til vindmølleparken.
+
+Danmark er global frontløber inden for vindenergi og det har været en stor del af energiproduktionen siden 1980’erne. Både land- og havvindmølleparker bidrager til energiproduktionen og dækker en betydelig del af det danske energiforbrug. Vindenergi er en CO2-neutral energiform og bidrager dermed til den grønne omstilling.
+
+Du får nu muligheden for at tilegne dig ny viden om fordele og ulemper ved vindenergi, samt muligheden for at købe vindmølleparker til elnettet. 
+
 
 
 [SekretærIntro]
@@ -165,3 +303,41 @@ Det her du kan aflevere dit forslag og få en opdatering på hvilke valg du har 
 Og hov! Sidste ting... Jeg skal lige have dig til at svare på nogle spørgsmål inden du kan få lov til at give den gas! 
 Da det hele er nyt, skal du bare forsøge dit bedste (Gæt), senere finder vi ud af om du har lært noget af din rejse.
 
+[Contract]
+Jeg, NAVN, bekræfter hermed at have købt energikilden TYPE i mængden ANTAL. 
+Med min underskrift bekræfter jeg at have modtaget information om energikilden, samt at jeg ikke kan foretage ændringer efterfølgende. 
+DATO
+Underskrift: _______________________
+
+
+[SunContract]
+Sol kontrakt her
+ANTAL
+
+[AtomContract]
+Atom konrakt her
+ANTAL
+
+[WaterContract]
+Vand kontrakt her
+ANTAL
+
+
+
+[Vandanlæg ekspert]
+Vand osv..
+
+[Vindanlæg ekspert]
+Vind osv..
+
+[Atomkraftværk ekspert]
+Vi befinder os i et energi-produktionsanlæg, der genererer energi ved hjælp af kernekraft.  Atomkraftværket tager små mængder uran eller andre radioaktive materialer og spalter det i en fusionsproces, hvilket frigiver store mængder energi. 
+
+Det enkelte kraftværk producerer 1750 GWt om året, hvilket forsyner hundredetusinder af husstande med strøm.
+Atomkraftværket er en af de mest energieffektive og stabile energikilder, der findes.
+
+Du får nu mulighed for at købe atomkraftværker til elnettet og tilegne dig viden om fordele og ulemper for atomkraftværker.
+
+
+[Solanlæg ekspert]
+Sol osv..

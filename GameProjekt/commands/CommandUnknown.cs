@@ -1,8 +1,10 @@
-/* Fallback for when a command is not implemented
- */
+/* 
+Fallback for when a command is not implemented
+*/
+using static GameAssets;
 
 class CommandUnknown : BaseCommand, ICommand {
   public void Execute (Context context, string command, string[] parameters) {
-    Console.WriteLine("Woopsie, I don't understand '"+command+"' 😕");
+    Console.WriteLine(db.GetSection("CommandUnknownHeader") + " '"+command+"' 😕");
   }
 }

@@ -1,5 +1,6 @@
 /* Node class for modeling graphs
  */
+using static GameAssets;
 
 public class Node {
   protected string name;
@@ -19,7 +20,6 @@ public class Node {
   
   public virtual Node? FollowEdge(string direction)
   {
-      Console.WriteLine($"Tilgængelige edges fra {this.name}: {string.Join(", ", edges.Keys)}");
 
       if (edges.ContainsKey(direction))
       {
@@ -29,6 +29,5 @@ public class Node {
       Console.WriteLine($"Ingen edge fundet for '{direction}'");
       return null;
   }
-
 }
 

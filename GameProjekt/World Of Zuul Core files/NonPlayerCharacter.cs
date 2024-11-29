@@ -1,9 +1,11 @@
 using static GameAssets;
 using static Anim;
+using System.Collections.Concurrent;
 
 public abstract class NPC {
-  public string name;
-  protected bool exitInteraction;
+    public string name;
+    protected bool exitInteraction;
+
   public NPC(string name) {
     this.name = name;
     this.exitInteraction = false;
@@ -16,7 +18,7 @@ public abstract class NPC {
   public void Interact(Context context) {
     Console.Clear();
     string currentLocation = context.GetCurrentName().ToString();
-    Console.WriteLine($"You interact with {GetName()} in {currentLocation}\n");
+    //Console.WriteLine($"You interact with {GetName()} in {currentLocation}\n");
     PerformAction(context);   
   }
 
@@ -47,24 +49,24 @@ public class Expert : NPC {
       case "Solanlæg":  
         DisplaySection("SolEkspertIntro");
         break;
-      case "Vindanlæg":  
+      case "p":  
         DisplaySection("VindEkspertIntro");
         break;
       default:  
         break;
     }
   }
-  
+
   public override void PerformAction(Context context) {
     Space currentSpace = context.GetCurrent();
     if (!currentSpace.alreadyBeenHere) 
     {
       DisplayMandatoryIntro(context);
+      ClickNext();
       currentSpace.alreadyBeenHere = true;
-    } else {
-      // call normal expert interaction
-    }
-  } 
+    } 
+      UserChoiseExpert();
+    }  
 
 
   public void DisplayInfo (Context context) {
@@ -73,13 +75,48 @@ public class Expert : NPC {
   }
 
   private void DisplaySection(string section) {
-    Anim.CharSplit(db.GetSection(section) + "\n",25);
+    Anim.CharSplit(db.GetSection(section) + "\n",10);
   }
 
-  public void Buy() {
-    Console.WriteLine("Vil du købe? ");
-    string prompt = Console.ReadLine()!;
-    //SignContract();
+
+  public void ClickNext() {
+      Console.ForegroundColor = ConsoleColor.Green;
+      Console.WriteLine("\nTryk på en vilkårlig tast for at fortsætte");
+      Console.ReadKey(true);
+      Console.ForegroundColor = ConsoleColor.White;
+  }
+
+  public void UserChoiseExpert() {
+      Console.Clear();
+      Space currentSpace = context.GetCurrent();
+
+      DisplayInfo(context);
+      if (currentSpace.selectedInfo == false) {
+        Console.WriteLine("Se info før du kan købe");
+      }
+      Console.WriteLine("Vil du have info? Skriv info");
+      Console.WriteLine("Vil du fortage et køb? Skriv buy");
+      Console.WriteLine("Vil du talbage til spillet? Skriv back");
+
+      Console.Write("> ");
+      string userInput = Console.ReadLine()!.ToLower();
+      if (userInput == "info") {
+        Console.Clear();
+        Console.WriteLine("Info tekst her");
+        currentSpace.selectedInfo = true;
+        ClickNext();
+        UserChoiseExpert();
+      } else if (userInput == "buy") {
+        if (currentSpace.selectedInfo == true) {
+          Contract.CreateContract(context);
+        } else {
+          UserChoiseExpert();
+        }
+      } else if (userInput == "back") {
+        context.TransitionBackHere();
+      } else {
+        Console.WriteLine("Det forstod jeg ikke");
+      }
   }
 
 }
@@ -152,14 +189,15 @@ public class Secretary : NPC {
     Console.WriteLine("Indsender data...");
     Evaluate();
 
-    Console.WriteLine("Vil du afslutte spiller? skriv: Slut");
-    Console.WriteLine("Vil du fortsætte spillet? skriv: Tilbage");
+    Console.WriteLine("Vil du afslutte spiller? skriv: End");
+    Console.WriteLine("Vil du fortsætte spillet? skriv: Back");
 
     Console.Write("> ");
     string userInput = Console.ReadLine()!.ToLower();
-    if (userInput == "slut") {
+    if (userInput == "end") {
       context.MakeDone();
-    } else if (userInput == "tilbage") {
+    } else if (userInput == "back") {
+      context.TransitionBackHere();
        
     } else {
       Console.WriteLine("Det forstod jeg ikke");
@@ -204,9 +242,7 @@ public class Secretary : NPC {
 }
 
 /*
-  public override void DisplayMandatoryIntro(Context context) {
-    current = context.GetCurrentName().ToString();
-    DisplaySection("test");
+
 
     Console.WriteLine("Vil du foretage et køb? Svar ja = J nej = N");
     string prompt = Console.ReadLine();
@@ -221,5 +257,5 @@ public class Secretary : NPC {
         CommandGoBack();
       }
     }
-  }
+  
   */

@@ -1,13 +1,11 @@
-//*****************************
-//  CommandClear - Bruges til at rydde konsollen for et bedre overblik.
-//  NEED: Som metode
-//*****************************
-
-
+/*
+Command for clearing the console.
+*/
+using static GameAssets;
 
 class CommandClear : BaseCommand, ICommand {
   public CommandClear () {
-    description = "Rydder hele konsollen for bedre overblik";
+    description = db.GetSection("CommandClearDescription");
   }
   
   public void Execute (Context context, string command, string[] parameters) {

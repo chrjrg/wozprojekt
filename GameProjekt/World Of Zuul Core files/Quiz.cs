@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using static GameAssets;
 
 public class Quiz
 {
@@ -86,7 +87,10 @@ private void LoadQuestions()
         SaveResults();
     }
 
-
+public string GetUserName()
+{
+    return userName;
+}
 
 
 private void SaveResults()

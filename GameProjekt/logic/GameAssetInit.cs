@@ -44,17 +44,14 @@ public static class GameAssets
 
 
     public static void InitRegistry () {
-        ICommand cmdExit = new CommandExit();
-        registry.Register("exit", cmdExit);
-        registry.Register("quit", cmdExit);
-        registry.Register("bye", cmdExit);
-        registry.Register("go", new CommandGo());
-        registry.Register("help", new CommandHelp(registry));
-        registry.Register("go back", new CommandGoBack());
-        registry.Register("kb",new CommandKeybind());
-        registry.Register("clear", new CommandClear());
-        registry.Register("interact", new CommandInteract());
-        registry.Register("back", new CommandGoBackHere());
+        registry.Register(db.GetSection("CommandKeyExit"), new CommandExit());
+        registry.Register(db.GetSection("CommandKeyGo"), new CommandGo());
+        registry.Register(db.GetSection("CommandKeyHelp"), new CommandHelp(registry));
+        registry.Register(db.GetSection("CommandKeyGoBack"), new CommandGoBack());
+        registry.Register(db.GetSection("CommandKeyKeybind"),new CommandKeybind());
+        registry.Register(db.GetSection("CommandKeyClear"), new CommandClear());
+        registry.Register(db.GetSection("CommandKeyInteract"), new CommandInteract());
+        registry.Register(db.GetSection("CommandKeyBack"), new CommandGoBackHere());
     }
 }
 

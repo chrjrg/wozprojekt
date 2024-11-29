@@ -1,4 +1,5 @@
 using System;
+using static GameAssets;
 using GameLogic; // Sørg for, at du importerer de nødvendige namespaces
 
 public class UserInputHandler

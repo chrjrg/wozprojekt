@@ -1,5 +1,6 @@
 /* Command registry
  */
+using static GameAssets;
 
 public class Registry {
   Context context;

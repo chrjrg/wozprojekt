@@ -1,28 +1,36 @@
+/* 
+Command for inteacting with non-player characters
+*/
+using static GameAssets;
+
 class CommandInteract : BaseCommand, ICommand {
   public CommandInteract() {
-    description = "Interact with a non-player character";
+    description = db.GetSection("CommandInteractDescription");
   }
 
-  public void Execute(Context context, string command, string[] parameters) {
+  public void Execute(Context context, string command, string[] parameters) { 
     if (parameters.Length < 2) {
-      List<string> npcNames = context.GetCurrent().GetNPCNames();
+      List<string> npcNames = context.GetCurrent().GetNPCNames(); // Get all NPC names
       if (npcNames.Count == 0) {
-        Console.WriteLine("There are no NPCs in this room.");
+        Console.WriteLine(db.GetSection("CommandInteractNoNPCs")); // No NPCs to interact with
       } else {
         Console.Clear();
-        Console.WriteLine("NPCs in this room:");
-        foreach (string npcName in npcNames) {
+        Console.WriteLine(db.GetSection("CommandInteractHeader"));
+        Console.WriteLine(db.GetSection("CommandInteractHeader2") + "\n");
+        Console.WriteLine(db.GetSection("CommandInteractNPCs"));
+        foreach (string npcName in npcNames) { // Print all NPC names
           Console.WriteLine($"- {npcName}");
         }
       }
       return;
     }
 
-    NPC? npc = context.GetCurrent().GetNPC(parameters[1]); 
-    if (npc == null) {
-      Console.WriteLine("There is no one here by that name."); 
+    // Check if the player has provided a valid NPC name
+    NPC? npc = context.GetCurrent().GetNPC(parameters[1]);
+    if (npc == null) { 
+      Console.WriteLine(db.GetSection("CommandInteractNPCError")); 
     } else {
-      npc.Interact(context); //
-    }
-  }
+      npc.Interact(context); // Interact with the NPC
+    } 
+  } 
 } 

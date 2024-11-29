@@ -1,5 +1,6 @@
 /* Context class to hold all context relevant to a session.
  */
+using static GameAssets;
 
 public class Context {
 
@@ -34,10 +35,11 @@ public class Context {
     }
   
   public void Transition (string direction) {
+    Console.Clear();
     previous = current;
     Space next = current.FollowEdge(direction);
     if (next==null) {
-      Console.WriteLine("Der er ingen udgang i den retning. Prøv en anden retning.");
+      TransitionBackHere();
     } else {
       current = next;
       current.Welcome();
@@ -54,7 +56,6 @@ public class Context {
 
     
    public void TransitionBackHere() {
-      Console.Clear();
       Console.WriteLine("You have returned to " + current.GetName());
       current.WelcomeBack();
   }
@@ -71,7 +72,13 @@ public class Context {
   {
     return $"Context(Current: {GetCurrentName()}, Previous: {previous?.GetName() ?? "None"})";
   }
-  
+
+  public void ClickNext() {
+    Console.ForegroundColor = ConsoleColor.Green;
+    Console.WriteLine("\nTryk på en vilkårlig tast for at fortsætte");
+    Console.ReadKey(true);
+    Console.ForegroundColor = ConsoleColor.White;
+  }
 }
 
 

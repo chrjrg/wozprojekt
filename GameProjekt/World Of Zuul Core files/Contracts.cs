@@ -1,48 +1,88 @@
-///* 
-//Klassen contracts skal printe contract teskt fra en .txt fil og have instancer af contracts, med parametrene Context ContractName og ContractTekst for hvert rum af vind vand sol og atomkræft.
-//Disse contracts skal så kunne køre en af to metoder som er SignContract eller Don'tSignContract for enten at gennemføre købet eller anullere købet.
-
 using static GameAssets;
-class Contract 
-{
-    public Contract(string ContractText){}
-    public static void CreateContract()
+
+public class Contract
+{ 
+    private static string? current;
+
+    public Contract(string contractText){}
+    
+    public static void CreateContract(Context context)
     {
-        //check hvilket rum spilleren er i og brug txt fil til dette til skabelsen af kontrakten
-        switch (context.GetCurrentName())
+        current = context.GetCurrentName().ToString();
+        Console.Clear();
+
+        switch (current)
         {
             case "Vindanlæg":
-                Contract WindContract=new Contract(db.GetSection("WindContract"));
-                System.Console.WriteLine(WindContract);
+                HandleContract(context, "WindContract", "vindmøller", WindType, ref Resource.WindAmount);
                 break;
             case "Vandanlæg":
-                Contract WaterContract=new Contract(db.GetSection("WaterContract"));
-                System.Console.WriteLine(WaterContract);
+                HandleContract(context, "WaterContract", "vandanlæg", WaterType, ref Resource.WaterAmount);
                 break;
             case "Solanlæg":
-                Contract SunContract=new Contract(db.GetSection("SunContract"));
-                System.Console.WriteLine(SunContract);
+                HandleContract(context, "SunContract", "solceller", SolarType, ref Resource.SolarAmount);
                 break;
-            case "Atomkraftværk" :
-                Contract AtomContract=new Contract(db.GetSection("AtomContract"));
-                System.Console.WriteLine(AtomContract);
+            case "Atomkraftværk":
+                HandleContract(context, "AtomContract", "reaktorer", AtomType, ref Resource.AtomAmount);
+                break;
+            default:
+                Console.WriteLine("Ukendt lokation.");
                 break;
         }
     }
 
-    /*public bool SignContract(string input)
+    public static void HandleContract(Context context, string contractKey, string itemName, EnergyType energyType, ref int resourceAmount)
     {
-        if(input==quiz.GetUserName())
+        string contractTemplate = db.GetSection("Contract"); // Fetch contract template from database
+        Console.WriteLine($"Hvor mange {itemName} vil du købe?");
+        if (!int.TryParse(Console.ReadLine(), out int antal) || antal <= 0)
         {
-            System.Console.WriteLine($"Kontrakten er underskrevet af {input}");
+            Console.WriteLine("Noget gik galt. Venligst prøv igen og sørg for at bruge hele tal over 0");
+            HandleContract(context, contractKey, itemName, energyType, ref resourceAmount); // Recursive retry
+            return;
+        }
+
+        Console.Clear();
+
+        // Fill in contract details
+        string updatedContract = contractTemplate
+            .Replace("ANTAL", antal.ToString())
+            .Replace("TYPE", itemName)
+            .Replace("NAVN", quiz.GetUserName().ToString())
+            .Replace("DATO", DateTime.Now.ToString("dd/MM/yyyy"));
+
+        // Display contract and ask for signature
+        Contract contract = new Contract(updatedContract);
+        Console.WriteLine(updatedContract);
+        if (contract.SignContract() && Inventory.BuyEnergy(energyType, antal))
+        {
+            resourceAmount += antal; // Update resource amount
+            Inventory.BuyEnergy(energyType, antal); // Finalize purchase
+            Console.WriteLine($"\nKøbet er gennemført! Du har nu købt {antal} {itemName}\n");
+            context.TransitionBackHere();
+        }
+    }
+
+//SignContract skal få brugeren til at skrive sit input så det kan tjekkes
+    public bool SignContract()
+    {
+        System.Console.WriteLine($"Hvis du gerne vil købe så skriv ja, ellers nej");
+        string input=Console.ReadLine()!;//tager spillerinput
+        if(input=="ja")//Sammenligner spillerindput med username for underskrivelse af kontrakten
+        {
+            Console.Clear();
+            // System.Console.WriteLine($"Kontrakten er underskrevet" + "\n");
             return true;
         }
-        else
-        {
-            System.Console.WriteLine($"Kontrakten blev ikke Underskrevet");
+        else if (input=="nej") {
+            Console.Clear();
+            System.Console.WriteLine($"\nKontrakten blev ikke Underskrevet" + "\n");
+            context.TransitionBackHere();
+            return false;
+        } else {
+            Console.WriteLine("\nDet forstod jeg ikke.." + "\n");
+            SignContract();
             return false;
         }   
-    }*/
-}
-
-     
+        }   
+    }

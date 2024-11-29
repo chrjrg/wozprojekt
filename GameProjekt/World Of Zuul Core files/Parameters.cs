@@ -7,6 +7,12 @@ public class Resource{
     private string unit;
 
 
+    public static int WindAmount=0;
+    public static int WaterAmount=0;
+    public static int SolarAmount=0;
+    public static int AtomAmount=0;
+
+
     public Resource(string name,double initialValue,string unit)
     {
         this.name = name;
@@ -99,7 +105,7 @@ public class Resource{
         Console.ResetColor();
         Console.WriteLine("______________________________________________");
         System.Console.WriteLine("");
-        Test.ShowInventory();
+        Inventory.ShowInventory();
     }
 
 

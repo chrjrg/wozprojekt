@@ -1,3 +1,5 @@
+using static GameAssets;
+
 namespace GameLogic{
     public class Shape{
         protected string[] asciiArt = Array.Empty<string>();

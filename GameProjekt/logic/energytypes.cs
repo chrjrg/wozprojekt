@@ -18,10 +18,11 @@ public class EnergyType
     }
 }
 
-public static class Test
+public static class Inventory
 {
     //Denne metode kaldes når der købes nye energiformer. Den ændre parametrende, alt efter energitype og antal.
-    public static void BuyEnergy(EnergyType energyType, int quantity) {  
+    public static bool BuyEnergy(EnergyType energyType, int quantity)
+    {
         double totalCost = energyType.Price * quantity;
         double totalEnergyOutput = energyType.EnergyOutput * quantity;
         double totalCO2Emission = energyType.CO2Emission * quantity;
@@ -31,15 +32,12 @@ public static class Test
             budget.Adjust(-totalCost); //trækker totalCost fra budget
             energi.Adjust(totalEnergyOutput);  //tilføjer Energiforsyningen fra den købte energiform til parameteren energyOutput.
             co2.Adjust(totalCO2Emission); //Tilføjer co2 udledningen fra den købte energiform til parameteren co2Emission.
-
-            inventory.AddEnergy(energyType, quantity); // Opdater lager
-
-            Console.WriteLine($"Købt {quantity} {energyType.Name} til en samlet pris på {totalCost} kr. " +
-                              $"Energi tilføjet: {totalEnergyOutput} kW, CO₂-udledning tilføjet: {totalCO2Emission} tons.");
+            return true;
         }
         else
         {
             Console.WriteLine("Ikke nok penge til dette køb."); //Hvis ikke penge nok printer den, dene besked.
+            return false;
         }
     }
     public static void ShowInventory(){
