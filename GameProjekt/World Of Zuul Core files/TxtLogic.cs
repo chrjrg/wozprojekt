@@ -50,7 +50,7 @@ public class TextDatabase
                 }
             }
 
-            if (currentSection != null)
+            if (currentSection != null) 
             {
                 dataSections[currentSection] = sectionContent.ToString().Trim();
             }
@@ -74,21 +74,18 @@ public class TextDatabase
             return string.Empty;
         }
     }
-
-public string[] GetSectionArray(string sectionName)
-{
-    if (dataSections.TryGetValue(sectionName, out string? sectionContent))
+    
+    public string[] GetSectionArray(string sectionName)
     {
-        // Fjern utilsigtet filtrering af sektioner
-        return sectionContent.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+        if (dataSections.TryGetValue(sectionName, out string? sectionContent))
+        {
+            // Fjern utilsigtet filtrering af sektioner
+            return sectionContent.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+        }
+        else
+        {
+            Console.WriteLine($"Section '{sectionName}' not found.");
+            return Array.Empty<string>();
+        }
     }
-    else
-    {
-        Console.WriteLine($"Section '{sectionName}' not found.");
-        return Array.Empty<string>();
-    }
-}
-
-
-
 }

@@ -27,30 +27,37 @@ public class UserInputHandler
             {
                 case ConsoleKey.UpArrow:
                     Console.Clear();
-                    GoToRoom("atomkraftværk");
+                    GoToRoom(db.GetSection("EnergyAtomName").ToLower());
                     break;
                 case ConsoleKey.DownArrow:
                     Console.Clear();
-                    GoToRoom("vindanlæg");
+                    GoToRoom(db.GetSection("EnergySolarName").ToLower());
                     break;
                 case ConsoleKey.LeftArrow:
                     Console.Clear();
-                    GoToRoom("christiansborg");
+                    GoToRoom(db.GetSection("EnergyWindName").ToLower());
                     break;
                 case ConsoleKey.RightArrow:
                     Console.Clear();
-                    GoToRoom("solanlæg");
+                    GoToRoom(db.GetSection("EnergyWaterName").ToLower());
+                    break;
+                case ConsoleKey.Spacebar:
+                    Console.Clear();
+                    GoToRoom(db.GetSection("EntryName").ToLower());
+                    break;
+                case ConsoleKey.M: // Map?
+                    Console.Clear();
                     break;
                 case ConsoleKey.C:
                     Console.Clear();
                     break;
                 case ConsoleKey.Escape:
                     Console.Clear();
-                    Console.WriteLine("Afslutter tastaturindgang...");
+                    Console.WriteLine(db.GetSection("KeybindExiting"));
                     return;
                 default:
                     Console.Clear();
-                    Console.WriteLine("Ugyldigt tastetryk. Brug piletasterne.");
+                    Console.WriteLine(db.GetSection("KeybindInvalid"));
                     break;
             }
         }

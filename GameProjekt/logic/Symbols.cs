@@ -116,12 +116,3 @@ namespace GameLogic{
     }
 }
 
-/*
-               ----- [Atomkraftværk] ----
-            /                                                   \
-          /                                                       \         
-[Vindanlæg]---[Christiansborg]---[Vindlæg]
-          \                                                       /
-            \                                                   /
-               -------- [Solanlæg] -------
-*/

@@ -77,29 +77,252 @@ Jeg forstod ikke
 
 
 
-[TextXXX]
+[BuyInsufficientFunds]
+Du har ikke nok penge til dette køb.
 
-[TextXXX]
+[EnergyInventoryHeader]
+Energilager: 
 
-[TextXXX]
+[EnergyInventoryHeader2]
+Oversigt over energikilder
 
-[TextXXX]
+[EnergyInventoryUnit]
+stk.
+
+[SecretaryName]
+Sussane
+
+[SecretaryNotFound]
+Secretary-objektet er ikke initialiseret
+
+[UnknownLocation]
+
+
+[EnergyAtomName]
+Atomkraftværk
+
+[EnergyWindName]
+Vindmøllepark
+
+[EnergyWaterName]
+Vandkraftværk
+
+[EnergySolarName]
+Solcellepark
+
+[ContractAtomName]
+reaktorer
+
+[ContractWindName]
+vindmøller
+
+[ContractWaterName]
+vandkraftværker
+
+[ContractSolarName]
+solceller
+
+[EntryName]
+Christiansborg
+
+[NPCExpertName]
+ekspert
+
+[NPCSecretaryName]
+sekretær
+
+[BudgetName]
+Budget
+
+[BudgetUnit]
+kr
+
+[EnergyName]
+Energi
+
+[EnergyUnit]
+GWt
+
+[CO2Unit]
+tons
 
 
 
-[TextXXX]
+[PressAnyKey]
+Tryk på en vilkårlig tast for at fortsætte
 
-[TextXXX]
+[KeybindExiting]
+Afslutter tastaturindgang...
 
-[TextXXX]
+[KeybindInvalid]
+Ugyldigt tastetryk. Brug piletasterne eller space for at navigere.
 
-[TextXXX]
 
-[TextXXX]
 
-[TextXXX]
+[ContextErrorNoLocation]
+Ukendt lokation.
 
-[TextXXX]
+[ContextReturned]
+Du er vendt tilbage til
+
+[ContextNoEdgesFound]
+Ingen edge for stedet
+
+
+
+[WelcomeHeader]
+Du er nu ved 
+
+[CurrentExits]
+Nuværende udgange er:
+
+
+
+[ContractAmount1]
+Hvor mange
+
+[ContractAmount2]
+vil du købe?
+
+[ContractInvalidAmount]
+"Noget gik galt. Venligst prøv igen og sørg for at bruge hele tal over 0"
+
+[ContractSuccessful]
+Købet er gennemført! Du har nu købt
+
+[ContractReplaceAmount]
+ANTAL
+
+[ContractReplaceType]
+TYPE
+
+[ContractReplaceName]
+NAVN
+
+[ContractSign]
+Hvis du gerne vil underskrive, så skriv ja, ellers nej
+
+[BooleanDecisionYes]
+ja
+
+[BooleanDecisionNo]
+nej
+
+[ContractNotSigned]
+Kontrakten blev ikke underksrevet.
+
+[ContractSigned]
+
+[InputError]
+Det forstod jeg ikke..
+
+[Contract]
+Jeg, NAVN, bekræfter hermed at have købt ANTAL TYPE. 
+Med min underskrift bekræfter jeg at have modtaget information om energikilden, samt at jeg ikke kan foretage ændringer efterfølgende. 
+DATE
+Underskrift: _______________________
+
+
+
+[AtomExpertIntro]
+asdasdddsaasdffdsgadsdsfsdfasdff
+
+[AtomExpertShortInfo]
+Info om atomer
+
+[AtomExpertMoreInfo]
+MERE Info om atomer
+
+
+[WaterExpertIntro]
+sdfwerawertwaertaretet
+
+[WaterExpertShortInfo]
+Info om vand
+
+[WaterExpertMoreInfo]
+MERE Info om vand
+
+
+[SolarExpertIntro]
+erataertaertdvcgdesrtfgeratarwgaerg
+
+[SolarExpertShortInfo]
+Info om sol
+
+[SolarExpertMoreInfo]
+MERE Info om sol
+
+
+[WindExpertIntro]
+waserrtwertedfagaedrtwertwerTWETWER
+
+[WindExpertShortInfo]
+Info om vind
+
+[WindExpertMoreInfo]
+MERE Info om vind
+
+
+[ExpertInfoLock]
+Se mere info før du kan købe
+
+[ExpertInfoOption1]
+Vil du have mere info? Skriv
+
+[ExpertInfoOption2]
+Vil du fortage et køb? Skriv
+
+[ExpertInfoOption3]
+Vil du talbage til spillet? Skriv
+
+[ExpertInfoChoice]
+info
+
+[ExpertBuyChoice]
+køb
+
+[ExpertBackChoice]
+tilbage
+
+[SecretaryIntro]
+Dette er introen til sekretæren.
+
+[SecretaryOptionIntro]
+Hvad kan jeg hjælpe dig med?
+
+[SecretaryInfoOption1]
+Vil se dit elnets status? Skriv
+
+[SecretaryInfoOption2]
+Vil afslutte spillet og aflevere dit endelige elnet? Skriv
+
+[SecretaryInfoOption3]
+Vil du tilbage til spillet? Skriv
+
+[SecretaryInfoStatus]
+status
+
+[SecretarySubmitChoice]
+aflever
+
+[SecretaryBackChoice]
+tilbage
+
+
+
+[EndGameOption1]
+Vil du afslutte spiller? Skriv
+
+[EndGameOption2]
+Vil du fortsætte spillet? Skriv
+
+[EndGameSubmitChoice]
+indsend
+
+[EndGameBackChoice]
+tilbage
+
 
 
 [AtomEkspertIntro]
@@ -303,24 +526,9 @@ Det her du kan aflevere dit forslag og få en opdatering på hvilke valg du har 
 Og hov! Sidste ting... Jeg skal lige have dig til at svare på nogle spørgsmål inden du kan få lov til at give den gas! 
 Da det hele er nyt, skal du bare forsøge dit bedste (Gæt), senere finder vi ud af om du har lært noget af din rejse.
 
-[Contract]
-Jeg, NAVN, bekræfter hermed at have købt energikilden TYPE i mængden ANTAL. 
-Med min underskrift bekræfter jeg at have modtaget information om energikilden, samt at jeg ikke kan foretage ændringer efterfølgende. 
-DATO
-Underskrift: _______________________
 
 
-[SunContract]
-Sol kontrakt her
-ANTAL
 
-[AtomContract]
-Atom konrakt her
-ANTAL
-
-[WaterContract]
-Vand kontrakt her
-ANTAL
 
 
 

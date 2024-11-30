@@ -42,7 +42,6 @@ namespace GameLogic{
 
 
         public void ShowIntro(){
-            Console.WriteLine("DEBUG: Indlæser Intro-sektion...");
             for (int i = 0; i < prompt.Length; i++)
             {
                 Console.WriteLine($"{prompt[i]}"); // Debug-udskrift af linjerne
@@ -84,10 +83,8 @@ namespace GameLogic{
                 System.Threading.Thread.Sleep(500);
             }
             // Bed brugeren om at trykke på en tast for at fortsætte til næste sektion
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("\nTryk på en vilkårlig tast for at fortsætte");
-            Console.ReadKey(true);
-            Console.ForegroundColor = ConsoleColor.White;
+            context.ClickNext();
+
 
             // Gå videre til Secretary-intro
             if (secretary != null)
@@ -96,7 +93,7 @@ namespace GameLogic{
             }
             else
             {
-                Console.WriteLine("Secretary-objektet er ikke initialiseret!");
+                Console.WriteLine(db.GetSection("SecretaryNotFound"));
             }
         }
     }

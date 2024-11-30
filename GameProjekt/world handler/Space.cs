@@ -1,6 +1,7 @@
-/* Space class for modeling spaces (rooms, caves, ...)
- */
-
+/* 
+Space class for modeling spaces (rooms)
+*/
+using static GameAssets;
 
 public class Space : Node {
   public bool alreadyBeenHere = false;
@@ -14,11 +15,10 @@ public class Space : Node {
   }
 
   public void Welcome () {
-    // Console.Clear();
     test?.Invoke();
-    Console.WriteLine("You are now at "+name);
+    Console.WriteLine($"{db.GetSection("WelcomeHeader")} '{name}'");
     HashSet<string> exits = edges.Keys.ToHashSet();
-    Console.WriteLine("Current exits are:");
+    Console.WriteLine(db.GetSection("CurrentExits"));
     foreach (String exit in exits) {
         string formattedExit = char.ToUpper(exit[0]) + exit.Substring(1).ToLower();
         Console.WriteLine(" - "+formattedExit);
@@ -27,10 +27,9 @@ public class Space : Node {
   }
 
   public void WelcomeBack () {
-    // Console.Clear();
     test?.Invoke();
     HashSet<string> exits = edges.Keys.ToHashSet();
-    Console.WriteLine("Current exits are:");
+    Console.WriteLine(db.GetSection("CurrentExits"));
     foreach (String exit in exits) {
         string formattedExit = char.ToUpper(exit[0]) + exit.Substring(1).ToLower();
         Console.WriteLine(" - "+formattedExit);
@@ -44,19 +43,6 @@ public class Space : Node {
   public override Space FollowEdge (string direction) {
       return (Space) (base.FollowEdge(direction))!;
   }
-
-
-  /*public void Visited() {
-    if (alreadyBeenHere==true) {
-      Console.WriteLine("You have been here before");
-    } else {
-      // Call info funktion????
-      Console.WriteLine("You have not been here before");
-    }
-  }
-  */
-
-  // NPC interaction
 
   private new readonly string name; 
   private Dictionary<string, NPC> npcs = new Dictionary<string, NPC>();

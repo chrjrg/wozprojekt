@@ -9,6 +9,7 @@ using static Anim;
 
 class Game {
   static void Main (string[] byargs) {
+    Console.Clear();
     TextDatabase db = TextDatabase.Instance;
     db.LoadFile(Path.Combine(Directory.GetCurrentDirectory(), "World Of Zuul Core files/data.txt").ToString()); // Load the file, we do this in main to avoid loading the file multiple times
     InitRegistry();
@@ -18,7 +19,8 @@ class Game {
     EnergyStore.BuyEnergy(SolarType,1);
     EnergyStore.BuyEnergy(WaterType,1);
 
-    Resource.DisplayAllStatuses(budget,energi,co2);
+    //Resource.DisplayAllStatuses(budget,energi,co2);
+    // GameLogic.DisplayStaticMap(map);
     
     context.GetCurrent().Welcome();
 
@@ -26,7 +28,7 @@ class Game {
       Console.Write("> ");
       string? line = Console.ReadLine();
       if (line!=null)  registry.Dispatch(line);
-      // Console.WriteLine(context); .... For debugging
+      //Console.WriteLine(context.ToString()); //.... For debugging
     }
 
     Console.WriteLine("Game Over 😥");

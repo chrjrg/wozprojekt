@@ -37,7 +37,7 @@ public static class EnergyStore // This class is used to manage the inventory of
         }
         else
         {
-            Console.WriteLine("Ikke nok penge til dette køb."); //Hvis ikke penge nok printer den, dene besked.
+            Console.WriteLine(db.GetSection("EnergyInsufficientFunds")); //Hvis ikke penge nok printer den, dene besked.
             return false;
         }
     }
@@ -77,29 +77,21 @@ public class EnergyInventory // This class is used to manage the inventory of en
             return;
         } else {
             Console.ForegroundColor = ConsoleColor.Blue;
-            Console.Write("Energilager: ");
+            Console.Write(db.GetSection("EnergyInventoryHeader") + " ");
             Console.ForegroundColor = ConsoleColor.White; 
-            Console.Write("Oversigt over energikilder");
-            Console.WriteLine("");
-
-            Console.WriteLine("______________________________________________");
-            Console.WriteLine("");
+            Console.Write(db.GetSection("EnergyInventoryHeader2") + "\n");
+            Console.WriteLine("______________________________________________" + "\n");
             foreach (var energy in energyCounts)
             {     
-   
                 Console.ForegroundColor = ConsoleColor.DarkBlue;
                 Console.Write($"{energy.Key}: ");Console.ForegroundColor = ConsoleColor.White;
-                Console.Write($"{energy.Value}");Console.Write(" stk.");System.Console.WriteLine("");
-                
-
+                Console.Write($"{energy.Value}");Console.Write(" " + db.GetSection("EnergyInventoryUnit") + "\n");
             }
-            Console.WriteLine("______________________________________________");
-            Console.WriteLine("");
+            Console.WriteLine("______________________________________________" + "\n");
             Console.ResetColor();
             context.ClickNext();
             Console.Clear();
             secretary.UserChoiceSecretary();
         }
-
     }
 }

@@ -26,7 +26,7 @@ public class Node {
           return edges[direction];
       }
 
-      Console.WriteLine($"Ingen edge fundet for '{direction}'");
+      Console.WriteLine($"{db.GetSection("ContextNoEdgesFound")} '{direction}'");
       return null;
   }
 }

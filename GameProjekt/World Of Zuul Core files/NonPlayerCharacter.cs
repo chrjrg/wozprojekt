@@ -33,24 +33,24 @@ public class Expert : NPC {
   private string current;
 
   public Expert(string name) : base(name) {
-      current = string.Empty;
+      current = string.Empty; 
   }
 
   public override void DisplayMandatoryIntro(Context context) {
     current = context.GetCurrentName().ToString();
     switch (current)
     {
-      case "Atomkraftværk":
-        DisplaySection("AtomEkspertIntro");
+      case var atom when atom == db.GetSection("EnergyAtomName"): 
+        DisplaySection("AtomExpertIntro");
         break;
-      case "Vandanlæg":
-        DisplaySection("VandEkspertIntro");
+      case var water when water == db.GetSection("EnergyWaterName"):
+        DisplaySection("WaterExpertIntro");
         break;
-      case "Solanlæg":  
-        DisplaySection("SolEkspertIntro");
+      case var solar when solar == db.GetSection("EnergySolarName"): 
+        DisplaySection("SolarExpertIntro");
         break;
-      case "p":  
-        DisplaySection("VindEkspertIntro");
+      case var wind when wind == db.GetSection("EnergyWindName"):  
+        DisplaySection("WindExpertIntro");
         break;
       default:  
         break;
@@ -62,7 +62,7 @@ public class Expert : NPC {
     if (!currentSpace.alreadyBeenHere) 
     {
       DisplayMandatoryIntro(context);
-      ClickNext();
+      context.ClickNext();
       currentSpace.alreadyBeenHere = true;
     } 
       UserChoiseExpert();
@@ -71,51 +71,76 @@ public class Expert : NPC {
 
   public void DisplayInfo (Context context) {
     current = context.GetCurrentName().ToString();
-    DisplaySection($"{current} ekspert");
+    switch (current)
+    {
+      case var atom when atom == db.GetSection("EnergyAtomName"):
+        DisplaySection("AtomExpertShortInfo");
+        break;
+      case var water when water == db.GetSection("EnergyWaterName"):
+        DisplaySection("WaterExpertShortInfo");
+        break;
+      case var solar when solar == db.GetSection("EnergySolarName"): 
+        DisplaySection("SolarExpertShortInfo");
+        break;
+      case var wind when wind == db.GetSection("EnergyWindName"):  
+        DisplaySection("WindExpertShortInfo");
+        break;
+      default:  
+        break;
+    }
   }
 
   private void DisplaySection(string section) {
     Anim.CharSplit(db.GetSection(section) + "\n",10);
   }
 
-
-  public void ClickNext() {
-      Console.ForegroundColor = ConsoleColor.Green;
-      Console.WriteLine("\nTryk på en vilkårlig tast for at fortsætte");
-      Console.ReadKey(true);
-      Console.ForegroundColor = ConsoleColor.White;
-  }
-
   public void UserChoiseExpert() {
       Console.Clear();
       Space currentSpace = context.GetCurrent();
-
       DisplayInfo(context);
       if (currentSpace.selectedInfo == false) {
-        Console.WriteLine("Se info før du kan købe");
+        Console.WriteLine(db.GetSection("ExpertInfoLock"));
       }
-      Console.WriteLine("Vil du have info? Skriv info");
-      Console.WriteLine("Vil du fortage et køb? Skriv buy");
-      Console.WriteLine("Vil du talbage til spillet? Skriv back");
+      Console.WriteLine($"{db.GetSection("ExpertInfoOption1")} '{db.GetSection("ExpertInfoChoice")}'");
+      Console.WriteLine($"{db.GetSection("ExpertInfoOption2")} '{db.GetSection("ExpertBuyChoice")}'");
+      Console.WriteLine($"{db.GetSection("ExpertInfoOption3")} '{db.GetSection("ExpertBackChoice")}'");
 
       Console.Write("> ");
       string userInput = Console.ReadLine()!.ToLower();
-      if (userInput == "info") {
+      if (userInput == db.GetSection($"ExpertInfoChoice")) {
         Console.Clear();
-        Console.WriteLine("Info tekst her");
+        switch (current)
+        {
+          case var atom when atom == db.GetSection("EnergyAtomName"):
+            DisplaySection("AtomExpertMoreInfo");
+            break;
+          case var water when water == db.GetSection("EnergyWaterName"):
+            DisplaySection("WaterExpertMoreInfo");
+            break;
+          case var solar when solar == db.GetSection("EnergySolarName"): 
+            DisplaySection("SolarExpertMoreInfo");
+            break;
+          case var wind when wind == db.GetSection("EnergyWindName"):  
+            DisplaySection("WindExpertMoreInfo");
+            break;
+          default:  
+            break;
+        }
         currentSpace.selectedInfo = true;
-        ClickNext();
-        UserChoiseExpert();
-      } else if (userInput == "buy") {
+        context.ClickNext();
+        UserChoiseExpert(); 
+      } else if (userInput == db.GetSection("ExpertBuyChoice")) {
+        Console.Clear();
         if (currentSpace.selectedInfo == true) {
           Contract.CreateContract(context);
         } else {
           UserChoiseExpert();
         }
-      } else if (userInput == "back") {
+      } else if (userInput == db.GetSection("ExpertBackChoice")) {
+        Console.Clear();
         context.TransitionBackHere();
       } else {
-        Console.WriteLine("Det forstod jeg ikke");
+        Console.WriteLine(db.GetSection("InputError"));
       }
   }
 
@@ -137,22 +162,23 @@ public class Secretary : NPC {
     }
 
   public override void DisplayMandatoryIntro(Context context) {
-      DisplaySection("SekretærIntro");
+      DisplaySection("SecretaryIntro");
     }
 
   public void UserChoiceSecretary() {
-    Console.WriteLine("Hvad kan jeg hjælpe dig med?");
-    Console.WriteLine("Hvis du vil se dit elnets status, skriv: Status");
-    Console.WriteLine("Hvis du vil afslutte spillet og aflevere dit endelige elnet, skriv: Submit");
+    Console.WriteLine(db.GetSection("SecretaryOptionIntro"));
+    Console.WriteLine($"{db.GetSection("SecretaryInfoOption1")} '{db.GetSection("SecretaryInfoStatus")}'");
+    Console.WriteLine($"{db.GetSection("SecretaryInfoOption2")} '{db.GetSection("SecretarySubmitChoice")}'");
+    Console.WriteLine($"{db.GetSection("SecretaryInfoOption3")} '{db.GetSection("SecretaryBackChoice")}'");
 
     Console.Write("> ");
     string userInput = Console.ReadLine()!.ToLower();
-    if (userInput == "status") {
+    if (userInput == db.GetSection("SecretaryInfoStatus")) {
       Resource.DisplayAllStatuses(budget,energi,co2);
-    } else if (userInput == "submit") {
+    } else if (userInput == db.GetSection("SecretarySubmitChoice")) {
       Submit();
     } else {
-      Console.WriteLine("Det forstod jeg ikke");
+      Console.WriteLine(db.GetSection("InputError"));
       UserChoiceSecretary();
     }
   }
@@ -160,28 +186,26 @@ public class Secretary : NPC {
 
 
   public void Submit() {
-    Console.WriteLine("Dit endelige elnet:");
     budget.GetStatus();
     energi.GetStatus();
     co2.GetStatus();
 
     // Print antal af forskellige energiformer.
 
-    Console.WriteLine("Indsender data...");
     Evaluate();
 
-    Console.WriteLine("Vil du afslutte spiller? skriv: End");
-    Console.WriteLine("Vil du fortsætte spillet? skriv: Back");
+    Console.WriteLine($"{db.GetSection("EndGameOption1")} '{db.GetSection("EndGameSubmitChoice")}'");
+    Console.WriteLine($"{db.GetSection("EndGameOption2")} '{db.GetSection("EndGameBackChoice")}'");
 
     Console.Write("> ");
     string userInput = Console.ReadLine()!.ToLower();
-    if (userInput == "end") {
+    if (userInput == db.GetSection("EndGameSubmitChoice")) {
       context.MakeDone();
-    } else if (userInput == "back") {
+    } else if (userInput == db.GetSection("EndGameBackChoice")) {
       context.TransitionBackHere();
        
     } else {
-      Console.WriteLine("Det forstod jeg ikke");
+      Console.WriteLine(db.GetSection("InputError"));
     }
   }
 
@@ -223,22 +247,3 @@ public class Secretary : NPC {
 
 
 }
-
-/*
-
-
-    Console.WriteLine("Vil du foretage et køb? Svar ja = J nej = N");
-    string prompt = Console.ReadLine();
-    if (prompt == "J") {
-      Buy();
-    } else if (prompt == "N") {
-      Console.WriteLine("Vil du have mere information fra ekspert eller tilbage til rummet? Svar Info = I Tilbage = T");
-      prompt = Console.ReadLine();
-      if (prompt == "I") {
-        DisplayMoreInfo(context);
-      } else if (prompt == "T") {
-        CommandGoBack();
-      }
-    }
-  
-  */

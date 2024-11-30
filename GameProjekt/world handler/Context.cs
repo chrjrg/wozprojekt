@@ -31,7 +31,7 @@ public class Context {
 
     public string GetCurrentName() // This is used to get the name of the current location
     {
-      return current?.GetName() ?? "Unknown Location"; 
+      return current?.GetName() ?? db.GetSection("ContextErrorNoLocation"); 
     }
   
   public void Transition (string direction) {
@@ -50,13 +50,13 @@ public class Context {
       Space temp = current;
       current = previous;
       previous = temp;
-      Console.WriteLine("You have returned to " + current.GetName());
+      Console.WriteLine(db.GetSection("ContextReturned") + " " + current.GetName());
       current.WelcomeBack();
   }
 
     
    public void TransitionBackHere() {
-      Console.WriteLine("You have returned to " + current.GetName());
+      Console.WriteLine(db.GetSection("ContextReturned") + " " + current.GetName());
       current.WelcomeBack();
   }
 
@@ -75,7 +75,7 @@ public class Context {
 
   public void ClickNext() {
     Console.ForegroundColor = ConsoleColor.Green;
-    Console.WriteLine("\nTryk på en vilkårlig tast for at fortsætte");
+    Console.WriteLine("\n" + db.GetSection("PressAnyKey"));
     Console.ReadKey(true);
     Console.ForegroundColor = ConsoleColor.White;
   }

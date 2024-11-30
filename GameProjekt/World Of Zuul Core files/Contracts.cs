@@ -13,20 +13,20 @@ public class Contract
 
         switch (current)
         {
-            case "Vindanlæg":
-                HandleContract(context, "WindContract", "vindmøller", WindType, ref Resource.WindAmount);
+            case var wind when wind == db.GetSection("EnergyWindName"):
+                HandleContract(context, "WindContract", db.GetSection("ContractWindName"), WindType, ref Resource.WindAmount);
                 break;
-            case "Vandanlæg":
-                HandleContract(context, "WaterContract", "vandanlæg", WaterType, ref Resource.WaterAmount);
+            case var water when water == db.GetSection("EnergyWaterName"):
+                HandleContract(context, "WaterContract", db.GetSection("ContractWaterName"), WaterType, ref Resource.WaterAmount);
                 break;
-            case "Solanlæg":
-                HandleContract(context, "SunContract", "solceller", SolarType, ref Resource.SolarAmount);
+            case var solar when solar == db.GetSection("EnergySolarName"):
+                HandleContract(context, "SunContract", db.GetSection("ContractSolarName"), SolarType, ref Resource.SolarAmount);
                 break;
-            case "Atomkraftværk":
-                HandleContract(context, "AtomContract", "reaktorer", AtomType, ref Resource.AtomAmount);
+            case var atom when atom == db.GetSection("EnergyAtomName"):
+                HandleContract(context, "AtomContract", db.GetSection("ContractAtomName"), AtomType, ref Resource.AtomAmount);
                 break;
             default:
-                Console.WriteLine("Ukendt lokation.");
+                Console.WriteLine(db.GetSection("ContextErrorNoLocation"));
                 break;
         }
     }
@@ -34,10 +34,10 @@ public class Contract
     public static void HandleContract(Context context, string contractKey, string itemName, EnergyType energyType, ref int resourceAmount)
     {
         string contractTemplate = db.GetSection("Contract"); // Fetch contract template from database
-        Console.WriteLine($"Hvor mange {itemName} vil du købe?");
-        if (!int.TryParse(Console.ReadLine(), out int antal) || antal <= 0)
+        Console.WriteLine($"{db.GetSection("ContractAmount1")} {itemName} {db.GetSection("ContractAmount2")}");
+        if (!int.TryParse(Console.ReadLine(), out int amount) || amount <= 0)
         {
-            Console.WriteLine("Noget gik galt. Venligst prøv igen og sørg for at bruge hele tal over 0");
+            Console.WriteLine(db.GetSection("ContractInvalidAmount"));
             HandleContract(context, contractKey, itemName, energyType, ref resourceAmount); // Recursive retry
             return;
         }
@@ -46,19 +46,19 @@ public class Contract
 
         // Fill in contract details
         string updatedContract = contractTemplate
-            .Replace("ANTAL", antal.ToString())
-            .Replace("TYPE", itemName)
-            .Replace("NAVN", quiz.GetUserName().ToString())
-            .Replace("DATO", DateTime.Now.ToString("dd/MM/yyyy"));
+            .Replace(db.GetSection("ContractReplaceAmount"), amount.ToString())
+            .Replace(db.GetSection("ContractReplaceType"), itemName)
+            .Replace(db.GetSection("ContractReplaceName"), quiz.GetUserName().ToString())
+            .Replace("DATE", DateTime.Now.ToString("dd/MM/yyyy"));
 
         // Display contract and ask for signature
         Contract contract = new Contract(updatedContract);
         Console.WriteLine(updatedContract);
-        if (contract.SignContract() && EnergyStore.BuyEnergy(energyType, antal)) // If contract is signed and purchase is successful
+        if (contract.SignContract() && EnergyStore.BuyEnergy(energyType, amount)) // If contract is signed and purchase is successful
         {
-            resourceAmount += antal; // Update resource amount
+            resourceAmount += amount; // Update resource amount
             //EnergyStore.BuyEnergy(energyType, antal); // Finalize purchase
-            Console.WriteLine($"\nKøbet er gennemført! Du har nu købt {antal} {itemName}\n");
+            Console.WriteLine($"\n{db.GetSection("ContractSuccessful")} {amount} {itemName}\n");
             context.TransitionBackHere();
         }
     }
@@ -66,21 +66,20 @@ public class Contract
 //SignContract skal få brugeren til at skrive sit input så det kan tjekkes
     public bool SignContract()
     {
-        System.Console.WriteLine($"Hvis du gerne vil købe så skriv ja, ellers nej");
-        string input=Console.ReadLine()!;//tager spillerinput
-        if(input=="ja")//Sammenligner spillerindput med username for underskrivelse af kontrakten
+        Console.WriteLine(db.GetSection("ContractSign"));
+        string input=Console.ReadLine()!.ToLower();//tager spillerinput
+        if(input==db.GetSection("BooleanDecisionYes"))//Sammenligner spillerindput med username for underskrivelse af kontrakten
         {
             Console.Clear();
-            // System.Console.WriteLine($"Kontrakten er underskrevet" + "\n");
             return true;
         }
-        else if (input=="nej") {
+        else if (input==db.GetSection("BooleanDecisionNo")) {
             Console.Clear();
-            System.Console.WriteLine($"\nKontrakten blev ikke Underskrevet" + "\n");
+            System.Console.WriteLine("\n" + db.GetSection("ContractNotSigned") + "\n");
             context.TransitionBackHere();
             return false;
         } else {
-            Console.WriteLine("\nDet forstod jeg ikke.." + "\n");
+            Console.WriteLine("\n" + db.GetSection("InputError") + "\n");
             SignContract();
             return false;
         }   

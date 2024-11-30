@@ -9,46 +9,46 @@ public class World {
   
 
   public World () {
-    Space entry = new Space("Christiansborg");
-    Space atom  = new Space("Atomkraftværk");
-    Space wind  = new Space("Vindanlæg");
-    Space solar = new Space("Solanlæg");
-    Space water = new Space("Vandanlæg");
+    Space entry = new Space(db.GetSection("EntryName"));
+    Space atom  = new Space(db.GetSection("EnergyAtomName"));
+    Space wind  = new Space(db.GetSection("EnergyWindName"));
+    Space solar = new Space(db.GetSection("EnergySolarName"));
+    Space water = new Space(db.GetSection("EnergyWaterName"));
 
     this.entry = entry;
 
     // Add edges for entry (Christiansborg)
-    entry.AddEdge("Atomkraftværk", atom);
-    entry.AddEdge("Vandanlæg", water);
-    entry.AddEdge("Solanlæg", solar);
-    entry.AddEdge("Vindanlæg", wind);
+    entry.AddEdge(db.GetSection("EnergyAtomName"), atom);
+    entry.AddEdge(db.GetSection("EnergyWaterName"), water);
+    entry.AddEdge(db.GetSection("EnergySolarName"), solar);
+    entry.AddEdge(db.GetSection("EnergyWindName"), wind);
 
     // Add edges for atom (north room)
-    atom.AddEdge("Vandanlæg", water);
-    atom.AddEdge("Vindanlæg", wind);
-    atom.AddEdge("Christiansborg", entry);
+    atom.AddEdge(db.GetSection("EnergyWaterName"), water);
+    atom.AddEdge(db.GetSection("EnergyWindName"), wind);
+    atom.AddEdge(db.GetSection("EntryName"), entry);
 
     // Add edges for water (East room)
-    water.AddEdge("Atomkraftværk", atom);
-    water.AddEdge("Solanlæg", solar);
-    water.AddEdge("Christiansborg", entry);
+    water.AddEdge(db.GetSection("EnergyAtomName"), atom);
+    water.AddEdge(db.GetSection("EnergySolarName"), solar);
+    water.AddEdge(db.GetSection("EntryName"), entry);
 
     // Add edges for solar (south room)
-    solar.AddEdge("Vindanlæg", wind);
-    solar.AddEdge("Vandanlæg", water);
-    solar.AddEdge("Christiansborg", entry);
+    solar.AddEdge(db.GetSection("EnergyWindName"), wind);
+    solar.AddEdge(db.GetSection("EnergyWaterName"), water);
+    solar.AddEdge(db.GetSection("EntryName"), entry);
 
     // Add edges for wind (west room)
-    wind.AddEdge("Atomkraftværk", atom);
-    wind.AddEdge("Solanlæg", solar);
-    wind.AddEdge("Christiansborg", entry);
+    wind.AddEdge(db.GetSection("EnergyAtomName"), atom);
+    wind.AddEdge(db.GetSection("EnergySolarName"), solar);
+    wind.AddEdge(db.GetSection("EntryName"), entry);
 
     // Add NPC's to rooms
-    entry.AddNPC("sekretær", new Secretary("sekretær"));
-    atom.AddNPC("ekspert", new Expert("ekspert"));
-    water.AddNPC("ekspert", new Expert("ekspert"));
-    solar.AddNPC("ekspert", new Expert("ekspert"));
-    wind.AddNPC("ekspert", new Expert("ekspert"));
+    entry.AddNPC(db.GetSection("NPCSecretaryName"), new Secretary(db.GetSection("NPCSecretaryName")));
+    atom.AddNPC(db.GetSection("NPCExpertName"), new Expert(db.GetSection("NPCExpertName")));
+    water.AddNPC(db.GetSection("NPCExpertName"), new Expert(db.GetSection("NPCExpertName")));
+    solar.AddNPC(db.GetSection("NPCExpertName"), new Expert(db.GetSection("NPCExpertName")));
+    wind.AddNPC(db.GetSection("NPCExpertName"), new Expert(db.GetSection("NPCExpertName")));
 
     
     // atom.test =() => {DriveAnim(Car, Atom, 90, 25); Atom.Show(1);}; 
