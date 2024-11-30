@@ -1,4 +1,5 @@
 using System.Text;
+using static GameAssets;
 /*
 Syntax for use of database:
 // Use "using static GameAssets" to access the singleton instance:
@@ -7,7 +8,7 @@ Syntax for use of database:
 Use example:
     Console.WriteLine(db.GetSection("test"));
 
-This would print the content of the section [Text1] from the loaded file, if it exists.
+This would print the content of the section [test] from the loaded file, if it exists.
 */
 public class TextDatabase
 {
@@ -86,6 +87,20 @@ public class TextDatabase
         {
             Console.WriteLine($"Section '{sectionName}' not found.");
             return Array.Empty<string>();
+        }
+    }
+
+    public void LanguageChange()
+    {   
+        Console.WriteLine("Engelsk? (Ja/Nej)");
+        string userInput = Console.ReadLine()!.ToLower();
+        if (userInput == db.GetSection("BooleanDecisionYes"))
+        {
+            db.LoadFile(Path.Combine(Directory.GetCurrentDirectory(), "World Of Zuul Core files/ENGdata.txt").ToString());
+        }
+        else if (userInput == db.GetSection("BooleanDecisionNo"))
+        {
+            db.LoadFile(Path.Combine(Directory.GetCurrentDirectory(), "World Of Zuul Core files/data.txt").ToString());
         }
     }
 }

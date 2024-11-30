@@ -156,6 +156,9 @@ public class Secretary : NPC {
       {
         DisplayMandatoryIntro(context);
         currentSpace.alreadyBeenHere = true;
+        context.ClickNext();
+        Console.Clear();
+        UserChoiceSecretary();
       } else {
         UserChoiceSecretary();
       }
@@ -166,7 +169,7 @@ public class Secretary : NPC {
     }
 
   public void UserChoiceSecretary() {
-    Console.WriteLine(db.GetSection("SecretaryOptionIntro"));
+    Console.WriteLine(db.GetSection("SecretaryOptionIntro") + "\n");
     Console.WriteLine($"{db.GetSection("SecretaryInfoOption1")} '{db.GetSection("SecretaryInfoStatus")}'");
     Console.WriteLine($"{db.GetSection("SecretaryInfoOption2")} '{db.GetSection("SecretarySubmitChoice")}'");
     Console.WriteLine($"{db.GetSection("SecretaryInfoOption3")} '{db.GetSection("SecretaryBackChoice")}'");
@@ -177,8 +180,12 @@ public class Secretary : NPC {
       Resource.DisplayAllStatuses(budget,energi,co2);
     } else if (userInput == db.GetSection("SecretarySubmitChoice")) {
       Submit();
+    } else if (userInput == db.GetSection("SecretaryBackChoice")) {
+      Console.Clear();
+      context.TransitionBackHere();
     } else {
-      Console.WriteLine(db.GetSection("InputError"));
+      Console.Clear();
+      Console.WriteLine(db.GetSection("InputError") + "\n");
       UserChoiceSecretary();
     }
   }
@@ -194,7 +201,7 @@ public class Secretary : NPC {
 
     Evaluate();
 
-    Console.WriteLine($"{db.GetSection("EndGameOption1")} '{db.GetSection("EndGameSubmitChoice")}'");
+    Console.WriteLine($"\n{db.GetSection("EndGameOption1")} '{db.GetSection("EndGameSubmitChoice")}'");
     Console.WriteLine($"{db.GetSection("EndGameOption2")} '{db.GetSection("EndGameBackChoice")}'");
 
     Console.Write("> ");
@@ -203,7 +210,6 @@ public class Secretary : NPC {
       context.MakeDone();
     } else if (userInput == db.GetSection("EndGameBackChoice")) {
       context.TransitionBackHere();
-       
     } else {
       Console.WriteLine(db.GetSection("InputError"));
     }
@@ -214,7 +220,7 @@ public class Secretary : NPC {
     }
 
   private void Evaluate() {
-    Console.WriteLine("Spillet afsluttes...");
+    // Console.WriteLine("Spillet afsluttes...");
     // Implement if needed
   }
 
@@ -230,7 +236,7 @@ public class Secretary : NPC {
       }
       // Bed brugeren om at trykke på en tast for at starte quizzen
       Console.ForegroundColor = ConsoleColor.Green;
-      Console.WriteLine("\nTryk på en vilkårlig tast for at starte quizzen...");
+      Console.WriteLine("\n" + db.GetSection("QuizPressKey"));
       Console.ReadKey(true);
       Console.ForegroundColor = ConsoleColor.White;
 
@@ -241,7 +247,7 @@ public class Secretary : NPC {
       }
       else
       {
-          Console.WriteLine("Quiz-objektet er ikke initialiseret!");
+          Console.WriteLine("Quiz-object not initialized!");
       }  
   }
 

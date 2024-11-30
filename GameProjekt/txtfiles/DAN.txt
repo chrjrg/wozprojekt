@@ -1,3 +1,19 @@
+[Intro]
+Velkommen til Power Simulator
+Der er super travlt inde på Christiansborg op til det kommende valg i 2025, og der er derfor brug for din hjælp!
+Miljøministeren ønsker at komme med udkast til hvordan Danmarks energinet skal se ud inden 2030, som led i Parisaftalen.
+Han har dog svært ved at vide hvilken retning han skal gå, når det kommer til at vælge energiform.
+Du har nu til opgave at at udforske og vælge hvilken energiforsyning vi skal bruge i Danmark!
+
+LOKATION:
+Christiansborg
+DATO: 
+27. Januar 2025
+TID: 
+13:32
+
+
+
 [CommandKeyExit]
 slut
 
@@ -225,7 +241,7 @@ Underskrift: _______________________
 
 
 [AtomExpertIntro]
-asdasdddsaasdffdsgadsdsfsdfasdff
+Dette er introen til atom eksperten
 
 [AtomExpertShortInfo]
 Info om atomer
@@ -235,7 +251,7 @@ MERE Info om atomer
 
 
 [WaterExpertIntro]
-sdfwerawertwaertaretet
+Dette er introen til vand eksperten
 
 [WaterExpertShortInfo]
 Info om vand
@@ -245,7 +261,7 @@ MERE Info om vand
 
 
 [SolarExpertIntro]
-erataertaertdvcgdesrtfgeratarwgaerg
+Dette er introen til sol eksperten
 
 [SolarExpertShortInfo]
 Info om sol
@@ -255,7 +271,7 @@ MERE Info om sol
 
 
 [WindExpertIntro]
-waserrtwertedfagaedrtwertwerTWETWER
+Dette er introen til vind eksperten
 
 [WindExpertShortInfo]
 Info om vind
@@ -323,84 +339,27 @@ indsend
 [EndGameBackChoice]
 tilbage
 
+[QuizPressKey]
+Tryk på en vilkårlig tast for at starte quizzen...
 
+[MoneyUnit]
+kr
 
-[AtomEkspertIntro]
-Hej mit navn er Claus,
-Velkommen til atomkraftværket. 
+[BillionUnit]
+mia.
 
-Vi befinder os i et energi-produktionsanlæg, der genererer energi ved hjælp af kernekraft.  Atomkraftværket tager små mængder uran eller andre radioaktive materialer og spalter det i en fusionsproces, hvilket frigiver store mængder energi. 
+[MillionUnit]
+mio.
 
-Det enkelte kraftværk producerer 1750 GWt om året, hvilket forsyner hundredetusinder af husstande med strøm.
-Atomkraftværket er en af de mest energieffektive og stabile energikilder, der findes.
+[ThousandUnit]
+tusind
 
-Du får nu mulighed for at købe atomkraftværker til elnettet og tilegne dig viden om fordele og ulemper for atomkraftværker.
+[StatusParameters]
+Dine parametre: 
 
+[StatusCurrent]
+Din nuværende status
 
-
-[VandEkspertIntro]
-Hej mit navn er Thorbjørn!
-Velkommen til vandkraftværket. 
-
-Jeg vil gerne gøre dig klogere på denne energiform ved at informere dig om både fordele og ulemper:
-
-Vandenergi er stort set ikke afhængig af vejrforhold, hvilket gør det til en stabil energikilde. Energien kan nemt produceres kontinuerligt kun afhængig af den vandstrøm man skaber. Derfor kan der reguleres i strømproduktionen efter efterspørgsel, hvilket gør vandkraft velegnet til at balancere et elnet, der justerer i forhold til energibehovet.
-
-Vandkraftværker har en levetid på ca. 200 år, hvilket er den bedste blandt energiformerne. 
-
-Under drift producerer vandkraft ingen drivhusgasser eller luftforurening, dermed kun forurening i forbindelse med opførsel og nedrivning. 
-
-
-Vandkraft kræver særlige geografiske forhold, som fx floder med stærk strøm eller større vandfald. Ligeledes er der behov for store højdeforskelle i form af bjerge.
-
-Henvend dig endelig igen hvis du ønsker mere information. 
-
-
-
-[SolEkspertIntro]
-Hej min navn er Abu Bakr al-Baghdadi!
-
-Velkommen til solcelleanlægget. 
-
-Jeg vil gerne gøre dig klogere på denne energiform ved at informere dig om både fordele og ulemper:
-
-Solen er en vedvarende energikilde, som vi formentlig aldrig løber tør for. Grundet  Danmarks nordiske lokalitet kan et solcelleanlæg i forhold til stråler og dagslys under optimale forhold maksimalt producere strøm i omkring 1.574 fulde soltimer pr. år uden hensyn til tab ved vejrforhold. 
-
-Man forventer med en dansk lokalitet at et solcelleanlæg kan producere ca. 150-170 kWh per kvadratmeter per år. 
-
-Solenergi kan produceres i form af solpaneler, dog vil der altid være en udledning i forbindelse med produktion, transport, installation og bortskaffelse af disse solpaneler. Solanlæg har kun en levetid på 30 dage i forhold til atomkraftværker, som holder omkring 60 år. Solanlæg er omkostningsfuldt at etablere med en pris på 2 mio DKK for 1 MW, som skal tage levetiden i betragtning. 
-
-Solanlæg kræver et stor overflade areal, hvilket vil optage en del landjord, som æstetisk kan genere naboer og være omkostningsfuldt for staten at opkøbe jord.
-
-
-
-[VindEkspertIntro]
-Hej, mit navn er Hanne,
-Velkommen til vindmølleparken.
-
-Danmark er global frontløber inden for vindenergi og det har været en stor del af energiproduktionen siden 1980’erne. Både land- og havvindmølleparker bidrager til energiproduktionen og dækker en betydelig del af det danske energiforbrug. Vindenergi er en CO2-neutral energiform og bidrager dermed til den grønne omstilling.
-
-Du får nu muligheden for at tilegne dig ny viden om fordele og ulemper ved vindenergi, samt muligheden for at købe vindmølleparker til elnettet. 
-
-
-
-[SekretærIntro]
-Dette er introen til sekretæren.
-
-
-[Intro]
-Velkommen til Power Simulator
-Der er super travlt inde på Christiansborg op til det kommende valg i 2025, og der er derfor brug for din hjælp!
-Miljøministeren ønsker at komme med udkast til hvordan Danmarks energinet skal se ud inden 2030, som led i Parisaftalen.
-Han har dog svært ved at vide hvilken retning han skal gå, når det kommer til at vælge energiform.
-Du har nu til opgave at at udforske og vælge hvilken energiforsyning vi skal bruge i Danmark!
-
-LOKATION:
-Christiansborg
-DATO: 
-27. Januar 2025
-TID: 
-13:32
 
 [QuizSections]
 Question1
@@ -503,10 +462,6 @@ Hvorfor er vandkraft ikke en stor energikilde i Danmark?
 4. CO₂-udledning er for høj
 
 
-
-
-
-
 [SecIntro]
 SUSSANNE:
 Hej, jeg hedder Sussane. Jeg vil være din ’spindoktor’ gennem din rejse med at skabe Danmarks fremtidige energiforsyning. 
@@ -526,26 +481,3 @@ Det her du kan aflevere dit forslag og få en opdatering på hvilke valg du har 
 Og hov! Sidste ting... Jeg skal lige have dig til at svare på nogle spørgsmål inden du kan få lov til at give den gas! 
 Da det hele er nyt, skal du bare forsøge dit bedste (Gæt), senere finder vi ud af om du har lært noget af din rejse.
 
-
-
-
-
-
-
-[Vandanlæg ekspert]
-Vand osv..
-
-[Vindanlæg ekspert]
-Vind osv..
-
-[Atomkraftværk ekspert]
-Vi befinder os i et energi-produktionsanlæg, der genererer energi ved hjælp af kernekraft.  Atomkraftværket tager små mængder uran eller andre radioaktive materialer og spalter det i en fusionsproces, hvilket frigiver store mængder energi. 
-
-Det enkelte kraftværk producerer 1750 GWt om året, hvilket forsyner hundredetusinder af husstande med strøm.
-Atomkraftværket er en af de mest energieffektive og stabile energikilder, der findes.
-
-Du får nu mulighed for at købe atomkraftværker til elnettet og tilegne dig viden om fordele og ulemper for atomkraftværker.
-
-
-[Solanlæg ekspert]
-Sol osv..

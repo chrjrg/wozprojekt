@@ -31,10 +31,10 @@ public class Resource{
     {
         switch (unit)
         {
-            case "kr":
-                if (value >= 1_000_000_000) return $"{value / 1_000_000_000:0.##} mia. {unit}";
-                else if (value >= 1_000_000) return $"{value / 1_000_000:0.##} mio. {unit}";
-                else if (value >= 1_000) return $"{value / 1_000:0.##} lapper {unit}";
+            case var curreny when curreny == db.GetSection("MoneyUnit"):
+                if (value >= 1_000_000_000) return $"{value / 1_000_000_000:0.##} {db.GetSection("BillionUnit")} {unit}";
+                else if (value >= 1_000_000) return $"{value / 1_000_000:0.##} {db.GetSection("MillionUnit")} {unit}";
+                else if (value >= 1_000) return $"{value / 1_000:0.##} {db.GetSection("ThousandUnit")} {unit}";
                 else return $"{value:0.##} {unit}";
             default:
                 return $"{value:0.##} {unit}";
@@ -55,18 +55,18 @@ public class Resource{
 
         switch (unit)
         {
-            case "kr":
+            case var curreny when curreny == db.GetSection("MoneyUnit"):
                 if (value >= 1_000_000_000) // Milliarder
                 {
-                    Console.WriteLine($": {value / 1_000_000_000:0.##} mia. {unit}");
+                    Console.WriteLine($": {value / 1_000_000_000:0.##} {db.GetSection("BillionUnit")} {unit}");
                 }
                 else if (value >= 1_000_000) // Millioner
                 {
-                    Console.WriteLine($": {value / 1_000_000:0.##} Mio. {unit}");
+                    Console.WriteLine($": {value / 1_000_000:0.##} {db.GetSection("MillionUnit")} {unit}");
                 }
                 else if (value >= 1_000) // Tusinder
                 {
-                    Console.WriteLine($": {value / 1_000:0.##} lapper {unit}");
+                    Console.WriteLine($": {value / 1_000:0.##} {db.GetSection("ThousandUnit")} {unit}");
                 }
                 else
                 {
@@ -89,9 +89,9 @@ public class Resource{
         Console.ForegroundColor = ConsoleColor.White; 
         Console.WriteLine("______________________________________________");Console.WriteLine("");
         Console.ForegroundColor = ConsoleColor.Green;
-        Console.Write("Dine parametre: ");
+        Console.Write(db.GetSection("StatusParameters") + " ");
         Console.ForegroundColor = ConsoleColor.White; 
-        Console.Write("Din nuværende status");
+        Console.Write(db.GetSection("StatusCurrent"));
         Console.WriteLine("");Console.WriteLine("______________________________________________");
         foreach (var resource in resources)
         {

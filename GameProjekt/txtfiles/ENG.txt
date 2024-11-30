@@ -1,0 +1,441 @@
+[Intro]
+Welcome to Power Simulator!
+There’s a lot of activity at Christiansborg leading up to the upcoming 2025 election, and your help is needed!
+The Minister for the Environment wants to propose a draft for Denmark’s energy grid by 2030 as part of the Paris Agreement.
+However, he’s struggling to decide which direction to take when it comes to choosing energy sources.
+Your task is to explore and determine which energy supply Denmark should use!
+
+LOCATION:
+Christiansborg
+DATE:
+January 27, 2025
+TIME:
+13:32
+
+[CommandKeyExit]
+end
+
+[CommandKeyGo]
+go
+
+[CommandKeyHelp]
+help
+
+[CommandKeyGoBack]
+go back
+
+[CommandKeyKeybind]
+kb
+
+[CommandKeyClear]
+clear
+
+[CommandKeyInteract]
+talk
+
+[CommandKeyBack]
+back
+
+[BaseCommandDescription]
+Undocumented
+
+[CommandClearDescription]
+Clears the entire console for better overview
+
+[CommandExitDescription]
+Ends the game
+
+[CommandGoDescription]
+Navigates the player to a new location
+
+[CommandGoBackDescription]
+Goes back to the previous location
+
+[CommandGoBackHereDescription]
+Returns to the same location
+
+[CommandGoLocationError]
+I don’t seem to know where that is 🤔
+
+[CommandHelpDescription]
+Displays a list of available commands and their functions
+
+[CommandHelpHeader]
+Commands:
+
+[CommandInteractDescription]
+Interacts with people in the room
+
+[CommandInteractHeader]
+Type the name of the person to interact with
+
+[CommandInteractHeader2]
+Type back to return
+
+[CommandInteractNPCs]
+People in the room:
+
+[CommandInteractNoNPCs]
+There are no people in the room...
+
+[CommandInteractNPCError]
+There’s no one here by that name...
+
+[CommandKeybindDescription]
+Keybind mode. Navigate with the arrow keys (ESC: Exit | C: Clear console)
+
+[CommandUnknownHeader]
+I didn’t understand that
+
+[BuyInsufficientFunds]
+You don’t have enough money to make this purchase.
+
+[EnergyInventoryHeader]
+Energy inventory:
+
+[EnergyInventoryHeader2]
+Overview of energy sources
+
+[EnergyInventoryUnit]
+pcs.
+
+[SecretaryName]
+Sussane
+
+[SecretaryNotFound]
+The Secretary object has not been initialized
+
+[UnknownLocation]
+
+[EnergyAtomName]
+Nuclearpowerplant
+
+[EnergyWindName]
+Windfarm
+
+[EnergyWaterName]
+Hydroelectricplant
+
+[EnergySolarName]
+Solarpark
+
+[ContractAtomName]
+reactors
+
+[ContractWindName]
+wind turbines
+
+[ContractWaterName]
+hydroelectric plants
+
+[ContractSolarName]
+solar panels
+
+[EntryName]
+Christiansborg
+
+[NPCExpertName]
+expert
+
+[NPCSecretaryName]
+secretary
+
+[BudgetName]
+Budget
+
+[BudgetUnit]
+kr
+
+[EnergyName]
+Energy
+
+[EnergyUnit]
+GWt
+
+[CO2Unit]
+tons
+
+[PressAnyKey]
+Press any key to continue
+
+[KeybindExiting]
+Exiting keyboard input...
+
+[KeybindInvalid]
+Invalid keypress. Use arrow keys or space to navigate.
+
+[ContextErrorNoLocation]
+Unknown location.
+
+[ContextReturned]
+You’ve returned to
+
+[ContextNoEdgesFound]
+No edges for the location
+
+[WelcomeHeader]
+You are now at
+
+[CurrentExits]
+Current exits are:
+
+[ContractAmount1]
+How many
+
+[ContractAmount2]
+do you want to purchase?
+
+[ContractInvalidAmount]
+"Something went wrong. Please try again and ensure to use whole numbers above 0."
+
+[ContractSuccessful]
+The purchase was successful! You have now bought
+
+[ContractReplaceAmount]
+AMOUNT
+
+[ContractReplaceType]
+TYPE
+
+[ContractReplaceName]
+NAME
+
+[ContractSign]
+If you wish to sign, type yes, otherwise type no
+
+[BooleanDecisionYes]
+yes
+
+[BooleanDecisionNo]
+no
+
+[ContractNotSigned]
+The contract was not signed.
+
+[ContractSigned]
+
+[InputError]
+I didn’t understand that...
+
+[Contract]
+I, NAME, hereby confirm the purchase of AMOUNT TYPE.
+By signing, I confirm having received information about the energy source and acknowledge that no changes can be made afterwards.
+DATE
+Signature: _______________________
+
+[AtomExpertIntro]
+This is the introduction for the nuclear expert
+
+[AtomExpertShortInfo]
+Information about nuclear energy
+
+[AtomExpertMoreInfo]
+MORE information about nuclear energy
+
+[WaterExpertIntro]
+This is the introduction for the hydro expert
+
+[WaterExpertShortInfo]
+Information about hydroelectric power
+
+[WaterExpertMoreInfo]
+MORE information about hydroelectric power
+
+[SolarExpertIntro]
+This is the introduction for the solar expert
+
+[SolarExpertShortInfo]
+Information about solar power
+
+[SolarExpertMoreInfo]
+MORE information about solar power
+
+[WindExpertIntro]
+This is the introduction for the wind expert
+
+[WindExpertShortInfo]
+Information about wind energy
+
+[WindExpertMoreInfo]
+MORE information about wind energy
+
+[ExpertInfoLock]
+View more information before you can make a purchase
+
+[ExpertInfoOption1]
+Want more information? Type
+
+[ExpertInfoOption2]
+Want to make a purchase? Type
+
+[ExpertInfoOption3]
+Want to return to the game? Type
+
+[ExpertInfoChoice]
+info
+
+[ExpertBuyChoice]
+buy
+
+[ExpertBackChoice]
+back
+
+[SecretaryIntro]
+This is the secretary’s introduction.
+
+[SecretaryOptionIntro]
+What can I assist you with?
+
+[SecretaryInfoOption1]
+Want to view the status of your power grid? Type
+
+[SecretaryInfoOption2]
+Want to end the game and submit your final grid? Type
+
+[SecretaryInfoOption3]
+Want to return to the game? Type
+
+[SecretaryInfoStatus]
+status
+
+[SecretarySubmitChoice]
+submit
+
+[SecretaryBackChoice]
+back
+
+[EndGameOption1]
+Want to end the game? Type
+
+[EndGameOption2]
+Want to continue the game? Type
+
+[EndGameSubmitChoice]
+submit
+
+[EndGameBackChoice]
+back
+
+[QuizPressKey]
+Press any key to start the quiz...
+
+[MoneyUnit]
+kr
+
+[BillionUnit]
+bn.
+
+[MillionUnit]
+mn.
+
+[ThousandUnit]
+thousand
+
+[StatusParameters]
+Your parameters:
+
+[StatusCurrent]
+Your current status
+
+[QuizSections]
+Question1
+Question2
+Question3
+Question4
+Question5
+Question6
+Question7
+Question8
+Question9
+Question10
+Question11
+Question12
+
+[Question1]
+What’s your name?
+
+[Question2]
+What’s your birth year?
+
+[Question3]
+Capacity factors
+What is the typical capacity factor of a nuclear power plant?
+1. 30%
+2. 50%
+3. 90%
+4. 100%
+
+[Question4]
+Solar energy limitations
+How many full hours per year can a solar power plant produce electricity in Denmark (regardless of efficiency)?
+1. 8760 hours (entire year)
+2. 4380 hours (half-year)
+3. 1500 hours
+4. 2000 hours
+
+[Question5]
+Costs
+Approximately how much does it cost to build 1 MW of solar power in Denmark?
+1. 1 million DKK
+2. 2 million DKK
+3. 5 million DKK
+4. 10 million DKK
+
+[Question6]
+CO₂ during construction
+How much CO₂ does a nuclear power plant emit on average during construction?
+1. 50,000 tons
+2. 100,000 tons
+3. 500,000 tons
+4. 1 million tons
+
+[Question7]
+Denmark’s energy consumption
+What is Denmark’s average annual electricity consumption?
+1. 25,000 GWh
+2. 35,000 GWh
+3. 45,000 GWh
+4. 50,000 GWh
+
+[Question8]
+Wind energy
+What is the capacity factor for a typical wind turbine in Denmark?
+1. 10%
+2. 20%
+3. 30%
+4. 50%
+
+[Question9]
+Energy mix
+Which energy source currently covers the largest share of Denmark’s energy consumption?
+1. Nuclear energy
+2. Wind energy
+3. Solar energy
+4. Hydropower
+
+[Question10]
+Cost efficiency
+Which energy source has the lowest total cost per GWh produced over its lifecycle?
+1. Nuclear energy
+2. Hydropower
+3. Solar power
+4. Wind power
+
+[Question11]
+Solar power efficiency
+How much energy can a solar power plant produce per square meter under optimal conditions?
+1. 50 watts
+2. 150 watts
+3. 200 watts
+4. 300 watts
+
+[Question12]
+Hydropower in Denmark
+Why is hydropower not a major energy source in Denmark?
+1. Too expensive
+2. Too little rain and rivers
+3. Technology is immature
+4. CO₂ emissions are too high
+
+[SecIntro]
+SUSSANE:

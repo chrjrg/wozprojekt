@@ -1,0 +1,443 @@
+[Intro]
+Willkommen bei Power Simulator!
+Im Vorfeld der kommenden Wahl 2025 herrscht reger Betrieb im Christiansborg, und deshalb wird deine Hilfe benötigt!
+Der Umweltminister möchte einen Entwurf vorlegen, wie Dänemarks Energienetz bis 2030 im Rahmen des Pariser Abkommens aussehen soll.
+Er hat jedoch Schwierigkeiten, die richtige Richtung bei der Wahl der Energieform zu bestimmen.
+Deine Aufgabe ist es nun, die verschiedenen Energieformen zu erkunden und zu entscheiden, welche Energieversorgung Dänemark nutzen soll!
+
+LOKATION:
+Christiansborg
+DATUM:
+27. Januar 2025
+ZEIT:
+13:32
+
+[CommandKeyExit]
+ende
+
+[CommandKeyGo]
+gehen
+
+[CommandKeyHelp]
+hilfe
+
+[CommandKeyGoBack]
+zurückgehen
+
+[CommandKeyKeybind]
+kb
+
+[CommandKeyClear]
+löschen
+
+[CommandKeyInteract]
+sprechen
+
+[CommandKeyBack]
+zurück
+
+[BaseCommandDescription]
+Undokumentiert
+
+[CommandClearDescription]
+Löscht die gesamte Konsole für eine bessere Übersicht
+
+[CommandExitDescription]
+Beendet das Spiel
+
+[CommandGoDescription]
+Navigiert den Spieler zu einem neuen Ort
+
+[CommandGoBackDescription]
+Kehrt zum vorherigen Ort zurück
+
+[CommandGoBackHereDescription]
+Kehrt an denselben Ort zurück
+
+[CommandGoLocationError]
+Ich weiß nicht, wo das sein soll 🤔
+
+[CommandHelpDescription]
+Zeigt eine Liste der verfügbaren Befehle und deren Funktionen
+
+[CommandHelpHeader]
+Befehle:
+
+[CommandInteractDescription]
+Interagiert mit Personen im Raum
+
+[CommandInteractHeader]
+Gib den Namen der Person ein, um zu interagieren
+
+[CommandInteractHeader2]
+Gib "zurück" ein, um zurückzugehen
+
+[CommandInteractNPCs]
+Personen im Raum:
+
+[CommandInteractNoNPCs]
+Es sind keine Personen im Raum...
+
+[CommandInteractNPCError]
+Hier gibt es niemanden mit diesem Namen...
+
+[CommandKeybindDescription]
+Keybind-Modus. Navigiere mit den Pfeiltasten (ESC: Beenden | C: Konsole löschen)
+
+[CommandUnknownHeader]
+Das habe ich nicht verstanden
+
+[BuyInsufficientFunds]
+Du hast nicht genug Geld für diesen Kauf.
+
+[EnergyInventoryHeader]
+Energielager:
+
+[EnergyInventoryHeader2]
+Übersicht über Energiequellen
+
+[EnergyInventoryUnit]
+Stk.
+
+[SecretaryName]
+Sussane
+
+[SecretaryNotFound]
+Das Secretary-Objekt ist nicht initialisiert
+
+[UnknownLocation]
+
+[EnergyAtomName]
+Atomkraftwerk
+
+[EnergyWindName]
+Windpark
+
+[EnergyWaterName]
+Wasserkraftwerk
+
+[EnergySolarName]
+Solarpark
+
+[ContractAtomName]
+Reaktoren
+
+[ContractWindName]
+Windkraftanlagen
+
+[ContractWaterName]
+Wasserkraftwerke
+
+[ContractSolarName]
+Solarmodule
+
+[EntryName]
+Christiansborg
+
+[NPCExpertName]
+Experte
+
+[NPCSecretaryName]
+Sekretär
+
+[BudgetName]
+Budget
+
+[BudgetUnit]
+kr
+
+[EnergyName]
+Energie
+
+[EnergyUnit]
+GWt
+
+[CO2Unit]
+Tonnen
+
+[PressAnyKey]
+Drücke eine beliebige Taste, um fortzufahren
+
+[KeybindExiting]
+Beenden des Tasteneingabemodus...
+
+[KeybindInvalid]
+Ungültige Eingabe. Verwende die Pfeiltasten oder die Leertaste zur Navigation.
+
+[ContextErrorNoLocation]
+Unbekannter Ort.
+
+[ContextReturned]
+Du bist zurückgekehrt zu
+
+[ContextNoEdgesFound]
+Keine Ausgänge an diesem Ort gefunden
+
+[WelcomeHeader]
+Du bist jetzt bei
+
+[CurrentExits]
+Aktuelle Ausgänge sind:
+
+[ContractAmount1]
+Wie viele
+
+[ContractAmount2]
+möchtest du kaufen?
+
+[ContractInvalidAmount]
+"Etwas ist schiefgelaufen. Bitte versuche es erneut und gib sicherheitshalber eine ganze Zahl größer als 0 ein."
+
+[ContractSuccessful]
+Der Kauf war erfolgreich! Du hast jetzt gekauft:
+
+[ContractReplaceAmount]
+ANZAHL
+
+[ContractReplaceType]
+TYP
+
+[ContractReplaceName]
+NAME
+
+[ContractSign]
+Wenn du den Vertrag unterschreiben möchtest, schreibe ja, sonst nein
+
+[BooleanDecisionYes]
+ja
+
+[BooleanDecisionNo]
+nein
+
+[ContractNotSigned]
+Der Vertrag wurde nicht unterzeichnet.
+
+[ContractSigned]
+
+[InputError]
+Das habe ich nicht verstanden...
+
+[Contract]
+Ich, NAME, bestätige hiermit den Kauf von ANZAHL TYP.
+Mit meiner Unterschrift bestätige ich, Informationen über die Energiequelle erhalten zu haben und akzeptiere, dass ich nachträglich keine Änderungen vornehmen kann.
+DATUM
+Unterschrift: _______________________
+
+[AtomExpertIntro]
+Dies ist die Einführung des Atomexperten.
+
+[AtomExpertShortInfo]
+Informationen über Atomkraft.
+
+[AtomExpertMoreInfo]
+MEHR Informationen über Atomkraft.
+
+[WaterExpertIntro]
+Dies ist die Einführung des Wasserexperten.
+
+[WaterExpertShortInfo]
+Informationen über Wasserkraft.
+
+[WaterExpertMoreInfo]
+MEHR Informationen über Wasserkraft.
+
+[SolarExpertIntro]
+Dies ist die Einführung des Solarenergie-Experten.
+
+[SolarExpertShortInfo]
+Informationen über Solarenergie.
+
+[SolarExpertMoreInfo]
+MEHR Informationen über Solarenergie.
+
+[WindExpertIntro]
+Dies ist die Einführung des Windenergie-Experten.
+
+[WindExpertShortInfo]
+Informationen über Windenergie.
+
+[WindExpertMoreInfo]
+MEHR Informationen über Windenergie.
+
+[ExpertInfoLock]
+Sieh dir mehr Informationen an, bevor du kaufen kannst.
+
+[ExpertInfoOption1]
+Möchtest du mehr Informationen? Schreibe
+
+[ExpertInfoOption2]
+Möchtest du einen Kauf tätigen? Schreibe
+
+[ExpertInfoOption3]
+Möchtest du zum Spiel zurückkehren? Schreibe
+
+[ExpertInfoChoice]
+info
+
+[ExpertBuyChoice]
+kauf
+
+[ExpertBackChoice]
+zurück
+
+[SecretaryIntro]
+Dies ist die Einführung der Sekretärin.
+
+[SecretaryOptionIntro]
+Womit kann ich dir helfen?
+
+[SecretaryInfoOption1]
+Möchtest du den Status deines Stromnetzes sehen? Schreibe
+
+[SecretaryInfoOption2]
+Möchtest du das Spiel beenden und dein finales Stromnetz einreichen? Schreibe
+
+[SecretaryInfoOption3]
+Möchtest du zum Spiel zurückkehren? Schreibe
+
+[SecretaryInfoStatus]
+status
+
+[SecretarySubmitChoice]
+einreichen
+
+[SecretaryBackChoice]
+zurück
+
+[EndGameOption1]
+Möchtest du das Spiel beenden? Schreibe
+
+[EndGameOption2]
+Möchtest du weiterspielen? Schreibe
+
+[EndGameSubmitChoice]
+einreichen
+
+[EndGameBackChoice]
+zurück
+
+[QuizPressKey]
+Drücke eine beliebige Taste, um das Quiz zu starten...
+
+[MoneyUnit]
+kr
+
+[BillionUnit]
+Mrd.
+
+[MillionUnit]
+Mio.
+
+[ThousandUnit]
+Tausend
+
+[StatusParameters]
+Deine Parameter:
+
+[StatusCurrent]
+Dein aktueller Status:
+
+[QuizSections]
+Question1
+Question2
+Question3
+Question4
+Question5
+Question6
+Question7
+Question8
+Question9
+Question10
+Question11
+Question12
+
+[Question1]
+Wie lautet dein Name?
+
+[Question2]
+Was ist dein Geburtsjahr?
+
+[Question3]
+Kapazitätsfaktoren
+Welchen Kapazitätsfaktor hat ein typisches Atomkraftwerk?
+1. 30%
+2. 50%
+3. 90%
+4. 100%
+
+[Question4]
+Einschränkungen von Solarenergie
+Wie viele volle Stunden pro Jahr kann eine Solaranlage in Dänemark maximal Strom produzieren (ohne Berücksichtigung der Effizienz)?
+1. 8760 Stunden (das ganze Jahr)
+2. 4380 Stunden (ein halbes Jahr)
+3. 1500 Stunden
+4. 2000 Stunden
+
+[Question5]
+Kosten
+Wie viel kostet es ungefähr, 1 MW Solaranlage in Dänemark zu errichten?
+1. 1 Mio. DKK
+2. 2 Mio. DKK
+3. 5 Mio. DKK
+4. 10 Mio. DKK
+
+[Question6]
+CO₂ bei der Errichtung
+Wie viel CO₂ emittiert ein Atomkraftwerk im Durchschnitt bei der Errichtung?
+1. 50.000 Tonnen
+2. 100.000 Tonnen
+3. 500.000 Tonnen
+4. 1 Mio. Tonnen
+
+[Question7]
+Dänemarks Energieverbrauch
+Wie hoch ist der durchschnittliche jährliche Stromverbrauch Dänemarks?
+1. 25.000 GWh
+2. 35.000 GWh
+3. 45.000 GWh
+4. 50.000 GWh
+
+[Question8]
+Windenergie
+Wie hoch ist der Kapazitätsfaktor einer typischen Windkraftanlage in Dänemark?
+1. 10%
+2. 20%
+3. 30%
+4. 50%
+
+[Question9]
+Energiemix
+Welche Energiequelle deckt heute den größten Anteil des Energieverbrauchs in Dänemark?
+1. Atomkraft
+2. Windenergie
+3. Solarenergie
+4. Wasserkraft
+
+[Question10]
+Kosten-Nutzen-Effizienz
+Welche Energiequelle hat die niedrigsten Gesamtkosten pro GWh, die über ihren Lebenszyklus produziert wird?
+1. Atomkraft
+2. Wasserkraft
+3. Solaranlagen
+4. Windkraftanlagen
+
+[Question11]
+Stärken der Solarenergie
+Wie viel Energie kann eine Solaranlage pro Quadratmeter unter optimalen Bedingungen erzeugen?
+1. 50 Watt
+2. 150 Watt
+3. 200 Watt
+4. 300 Watt
+
+[Question12]
+Wasserkraft in Dänemark
+Warum ist Wasserkraft keine bedeutende Energiequelle in Dänemark?
+1. Zu teuer
+2. Zu wenig Regen und Flüsse
+3. Technologie ist unreif
+4. CO₂-Emissionen sind zu hoch
+
+[SecIntro]
+SUSSANNE:
+Übersetzung abgeschlossen!
+
