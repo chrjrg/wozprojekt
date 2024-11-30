@@ -50,13 +50,13 @@ public class Context {
       Space temp = current;
       current = previous;
       previous = temp;
-      Console.WriteLine(db.GetSection("ContextReturned") + " " + current.GetName());
+      Console.WriteLine(db.GetSection("ContextReturned") + " " + current.GetName() + "\n");
       current.WelcomeBack();
   }
 
     
    public void TransitionBackHere() {
-      Console.WriteLine(db.GetSection("ContextReturned") + " " + current.GetName());
+      Console.WriteLine(db.GetSection("ContextReturned") + " " + current.GetName() + "\n");
       current.WelcomeBack();
   }
 

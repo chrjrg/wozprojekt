@@ -9,13 +9,15 @@ public class EnergyType // This class is used to create new energy types, with t
     public double Price { get; }
     public double EnergyOutput { get; }
     public double CO2Emission { get; }
+    public double Stability { get; }
 
-    public EnergyType(string name, double price, double energyOutput, double co2Emission)
+    public EnergyType(string name, double price, double energyOutput, double co2Emission, double stability)
     {
         Name = name;
         Price = price;
         EnergyOutput = energyOutput;
         CO2Emission = co2Emission;
+        Stability = stability;
     }
 }
 
@@ -37,7 +39,8 @@ public static class EnergyStore // This class is used to manage the inventory of
         }
         else
         {
-            Console.WriteLine(db.GetSection("EnergyInsufficientFunds")); //Hvis ikke penge nok printer den, dene besked.
+            Console.WriteLine(db.GetSection("BuyInsufficientFunds") + "\n"); //Hvis ikke penge nok printer den, dene besked.
+            context.TransitionBackHere(); //Går tilbage til den tidligere lokation.
             return false;
         }
     }
@@ -63,14 +66,14 @@ public class EnergyInventory // This class is used to manage the inventory of en
             energyCounts[energyType.Name] = quantity; // Opret ny energitype med antal
         }
     }
-
-    // Hent antallet for en specifik energitype
+    
+    // Returns quantity of energy type
     public int GetQuantity(EnergyType energyType)
     {
         return energyCounts.ContainsKey(energyType.Name) ? energyCounts[energyType.Name] : 0;
     }
 
-    // Udskriv lagerstatus
+    // Prints the inventory
     public void PrintInventory()
     {
         if (!energyCounts.Any()){
@@ -88,10 +91,36 @@ public class EnergyInventory // This class is used to manage the inventory of en
                 Console.Write($"{energy.Value}");Console.Write(" " + db.GetSection("EnergyInventoryUnit") + "\n");
             }
             Console.WriteLine("______________________________________________" + "\n");
+            Console.WriteLine($"{db.GetSection("StabilityPrefix")} {Math.Round(CalculateOverallStability(AtomType, SolarType, WindType, WaterType), 1)}%");
+            Console.WriteLine("______________________________________________" + "\n");
             Console.ResetColor();
             context.ClickNext();
             Console.Clear();
             secretary.UserChoiceSecretary();
         }
+    }
+
+    // Calculate overall stability
+    public double CalculateOverallStability(EnergyType atom, EnergyType solar, EnergyType wind, EnergyType water)
+    {
+        double atomAmount = GetQuantity(atom); // Get the quantity of 'atom' energy type from the inventory
+        double solarAmount = GetQuantity(solar); // ... 'solar' energy type ...
+        double windAmount = GetQuantity(wind); // ... 'wind' energy type ...
+        double waterAmount = GetQuantity(water); // ... 'water' energy type ...
+    
+        double totalOutput = (atom.EnergyOutput * atomAmount) + 
+                             (solar.EnergyOutput * solarAmount) + 
+                             (wind.EnergyOutput * windAmount) + 
+                             (water.EnergyOutput * waterAmount);
+
+        if (totalOutput == 0)
+        {
+            return 0; // division by zero issue solved
+        }
+        double overallStability = ((atom.EnergyOutput * atom.Stability * atomAmount) + 
+                                   (solar.EnergyOutput * solar.Stability * solarAmount) + 
+                                   (wind.EnergyOutput * wind.Stability * windAmount) + 
+                                   (water.EnergyOutput * water.Stability * waterAmount)) / totalOutput;
+        return overallStability;
     }
 }

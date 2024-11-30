@@ -140,6 +140,9 @@ Experte
 [NPCSecretaryName]
 Sekretär
 
+[StabilityPrefix]
+Gesamtstabilität:
+
 [BudgetName]
 Budget
 

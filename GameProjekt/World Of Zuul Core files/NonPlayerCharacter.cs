@@ -179,6 +179,7 @@ public class Secretary : NPC {
     if (userInput == db.GetSection("SecretaryInfoStatus")) {
       Resource.DisplayAllStatuses(budget,energi,co2);
     } else if (userInput == db.GetSection("SecretarySubmitChoice")) {
+      Console.Clear();
       Submit();
     } else if (userInput == db.GetSection("SecretaryBackChoice")) {
       Console.Clear();
@@ -209,6 +210,7 @@ public class Secretary : NPC {
     if (userInput == db.GetSection("EndGameSubmitChoice")) {
       context.MakeDone();
     } else if (userInput == db.GetSection("EndGameBackChoice")) {
+      Console.Clear();
       context.TransitionBackHere();
     } else {
       Console.WriteLine(db.GetSection("InputError"));

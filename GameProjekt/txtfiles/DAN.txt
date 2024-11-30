@@ -92,9 +92,8 @@ Keybind mode. Naviger med piletasterne (ESC: Afslut | C: Renser konsol)
 Jeg forstod ikke
 
 
-
 [BuyInsufficientFunds]
-Du har ikke nok penge til dette køb.
+Du har ikke penge nok til dette køb.
 
 [EnergyInventoryHeader]
 Energilager: 
@@ -146,6 +145,9 @@ ekspert
 
 [NPCSecretaryName]
 sekretær
+
+[StabilityPrefix]
+Samlet stabilitet:
 
 [BudgetName]
 Budget
@@ -324,8 +326,6 @@ aflever
 
 [SecretaryBackChoice]
 tilbage
-
-
 
 [EndGameOption1]
 Vil du afslutte spiller? Skriv

@@ -1,6 +1,7 @@
 /* 
 Space class for modeling spaces (rooms)
 */
+using System.Xml;
 using static GameAssets;
 
 public class Space : Node {
@@ -16,7 +17,7 @@ public class Space : Node {
 
   public void Welcome () {
     test?.Invoke();
-    Console.WriteLine($"{db.GetSection("WelcomeHeader")} '{name}'");
+    Console.WriteLine($"{db.GetSection("WelcomeHeader")} '{name}'" + "\n");
     HashSet<string> exits = edges.Keys.ToHashSet();
     Console.WriteLine(db.GetSection("CurrentExits"));
     foreach (String exit in exits) {

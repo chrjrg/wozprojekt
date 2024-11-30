@@ -108,19 +108,19 @@ The Secretary object has not been initialized
 [UnknownLocation]
 
 [EnergyAtomName]
-Nuclearpowerplant
+Nuclear
 
 [EnergyWindName]
 Windfarm
 
 [EnergyWaterName]
-Hydroelectricplant
+Hydroplant
 
 [EnergySolarName]
 Solarpark
 
 [ContractAtomName]
-reactors
+nuclear reactors
 
 [ContractWindName]
 wind turbines
@@ -139,6 +139,9 @@ expert
 
 [NPCSecretaryName]
 secretary
+
+[StabilityPrefix]
+Overall stability:
 
 [BudgetName]
 Budget

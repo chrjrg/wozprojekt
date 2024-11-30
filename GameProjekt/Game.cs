@@ -11,17 +11,25 @@ class Game {
   static void Main (string[] byargs) {
     Console.Clear();
     TextDatabase db = TextDatabase.Instance;
-    Console.WriteLine("Sprog? (DAN/ENG/DE)");
+
+    bool validInput = false;
+    while (!validInput) {
+    Console.WriteLine("Sprog? Skriv: (DAN/ENG/DE)");
     string userInput = Console.ReadLine()!.ToLower();
     if (userInput == "dan") {
         db.LoadFile(Path.Combine(Directory.GetCurrentDirectory(), "txtfiles/DAN.txt").ToString());
+        validInput = true;
     } else if (userInput == "eng") {
         db.LoadFile(Path.Combine(Directory.GetCurrentDirectory(), "txtfiles/ENG.txt").ToString());
+        validInput = true;
     } else if (userInput == "de") {
         db.LoadFile(Path.Combine(Directory.GetCurrentDirectory(), "txtfiles/DE.txt").ToString());
+        validInput = true;
     } else {
-        Console.WriteLine("Forkert input. Prøv igen.");
+        Console.Clear();
+        Console.WriteLine("Forkert input. Prøv igen." + "\n");
     }
+}
     Console.Clear();
 
     // db.LanguageChange();   ... SKAL VIRKE I STEDET FOR MAIN METODEN
@@ -30,10 +38,10 @@ class Game {
 
     //Intro.ShowIntro();
 
-    EnergyStore.BuyEnergy(AtomType,1);
-    EnergyStore.BuyEnergy(WindType,1);
-    EnergyStore.BuyEnergy(SolarType,1);
-    EnergyStore.BuyEnergy(WaterType,1);
+    EnergyStore.BuyEnergy(AtomType,10);
+    EnergyStore.BuyEnergy(WindType,0);
+    EnergyStore.BuyEnergy(SolarType,20);
+    EnergyStore.BuyEnergy(WaterType,0);
 
     
     context.GetCurrent().Welcome();
