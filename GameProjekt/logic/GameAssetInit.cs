@@ -1,7 +1,6 @@
 using GameLogic;
 
-
-public static class GameAssets
+public static class GameAssets 
 {
     public static TextDatabase db = TextDatabase.Instance;
     public static World world = new World();

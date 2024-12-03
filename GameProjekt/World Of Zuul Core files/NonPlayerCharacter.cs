@@ -29,7 +29,7 @@ public abstract class NPC {
 }
 
 
-public class Expert : NPC {
+public class Expert : NPC { // Expert class inherits from NPC
   private string current;
 
   public Expert(string name) : base(name) {
@@ -40,7 +40,7 @@ public class Expert : NPC {
     current = context.GetCurrentName().ToString();
     switch (current)
     {
-      case var atom when atom == db.GetSection("EnergyAtomName"): 
+      case var atom when atom == db.GetSection("EnergyAtomName"):  // Check if the current location is the Atom room
         DisplaySection("AtomExpertIntro");
         break;
       case var water when water == db.GetSection("EnergyWaterName"):
@@ -169,6 +169,7 @@ public class Secretary : NPC {
     }
 
   public void UserChoiceSecretary() {
+    Console.Clear();
     Console.WriteLine(db.GetSection("SecretaryOptionIntro") + "\n");
     Console.WriteLine($"{db.GetSection("SecretaryInfoOption1")} '{db.GetSection("SecretaryInfoStatus")}'");
     Console.WriteLine($"{db.GetSection("SecretaryInfoOption2")} '{db.GetSection("SecretarySubmitChoice")}'");
@@ -190,8 +191,6 @@ public class Secretary : NPC {
       UserChoiceSecretary();
     }
   }
-
-
 
   public void Submit() {
     budget.GetStatus();
@@ -250,8 +249,13 @@ public class Secretary : NPC {
       else
       {
           Console.WriteLine("Quiz-object not initialized!");
-      }  
-  }
+      } 
+
+      }
+        public void SecretaryOutro() {
+        Console.WriteLine("Tak fordi du spillede spillet!");
+        quiz.StartQuiz();
+      }
 
 
 }

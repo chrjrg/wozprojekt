@@ -38,10 +38,10 @@ class Game {
 
     //Intro.ShowIntro();
 
-    EnergyStore.BuyEnergy(AtomType,10);
-    EnergyStore.BuyEnergy(WindType,0);
-    EnergyStore.BuyEnergy(SolarType,20);
-    EnergyStore.BuyEnergy(WaterType,0);
+    //EnergyStore.BuyEnergy(AtomType,1);
+    //EnergyStore.BuyEnergy(WindType,1);
+    //EnergyStore.BuyEnergy(SolarType,20);
+    //EnergyStore.BuyEnergy(WaterType,1);
 
     
     context.GetCurrent().Welcome();

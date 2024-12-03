@@ -11,7 +11,8 @@ namespace GameLogic{
 
         public int textTimer;
 
-        private void BaseTyping(int tid)
+        
+        private void BaseTyping(int tid) 
         {
             Console.ForegroundColor = ConsoleColor.White;
             textTimer = tid;
@@ -84,7 +85,6 @@ namespace GameLogic{
             }
             // Bed brugeren om at trykke på en tast for at fortsætte til næste sektion
             context.ClickNext();
-
 
             // Gå videre til Secretary-intro
             if (secretary != null)

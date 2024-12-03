@@ -7,7 +7,7 @@ public static class Anim
 {
     public static bool isAnimating = false;
 
-    public static void DriveAnim(Shape l, Shape r, int initialSpacing, int fart)
+    public static void DriveAnim(Shape l, Shape r, int initialSpacing, int speed) // Method for driving animation
     {
         isAnimating = true; // Set animation status to true
 
@@ -45,7 +45,7 @@ public static class Anim
             }
 
             // Pause for the duration specified by the speed of the animation
-            Thread.Sleep(fart);
+            Thread.Sleep(speed);
         }
         isAnimating = false; // Set animation status to false when finished
     }

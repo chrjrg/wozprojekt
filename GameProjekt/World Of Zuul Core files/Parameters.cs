@@ -107,9 +107,7 @@ public class Resource{
         Console.WriteLine("______________________________________________");
         System.Console.WriteLine("");
         EnergyStore.ShowInventory();
+        context.ClickNext();
+        secretary.UserChoiceSecretary();
     }
 }
-
-
-
-

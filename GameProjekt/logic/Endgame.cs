@@ -43,7 +43,5 @@ public class Endgame {
     else if (totalScore <= 7) return 3; // Average
     else if (totalScore <= 9) return 4; // Good
     else return 5;                      // Excellent
-}
-
-
+    }
 }

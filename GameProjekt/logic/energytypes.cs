@@ -3,7 +3,7 @@ Class for energy types and inventory management
 */
 using static GameAssets;
 
-public class EnergyType // This class is used to create new energy types, with the parameters: Name, Price, EnergyOutput and CO2Emission.
+public class EnergyType // This class is used to create new energy types, with the parameters: Name, Price, EnergyOutput, CO2Emission and stability.
 {
     public string Name { get; }
     public double Price { get; }
@@ -11,6 +11,7 @@ public class EnergyType // This class is used to create new energy types, with t
     public double CO2Emission { get; }
     public double Stability { get; }
 
+    // Constructor for EnergyType
     public EnergyType(string name, double price, double energyOutput, double co2Emission, double stability)
     {
         Name = name;
