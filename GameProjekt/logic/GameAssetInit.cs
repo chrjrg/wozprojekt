@@ -40,9 +40,7 @@ public static class GameAssets
     //Atom Power-to-Price Ratio: 351.310000 W per unit currency
     //Wind Power-to-Price Ratio: 705.230000 W per unit currency
     //Water Power-to-Price Ratio: 563.010000 W per unit currency
-    //Solar Power-to-Price Ratio: 9394.970000 W per unit currency - Wtf? - 37_275_000
-    //Reviderede priser:
-    //Solar Power-to-Price Ratio: 939.4970000 W per unit currency - 372_750_000
+    //Solar Power-to-Price Ratio: 939.4970000 W per unit currency - fixed
 
     //Atom CO2 to Power Ratio: 285.73 CO2 per MW
     //Wind CO2 to Power Ratio: 28.58 CO2 per MW
