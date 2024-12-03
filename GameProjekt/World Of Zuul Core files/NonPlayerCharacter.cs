@@ -256,6 +256,4 @@ public class Secretary : NPC {
         Console.WriteLine("Tak fordi du spillede spillet!");
         quiz.StartQuiz();
       }
-
-
 }

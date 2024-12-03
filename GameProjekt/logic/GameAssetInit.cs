@@ -63,5 +63,3 @@ public static class GameAssets
         registry.Register(db.GetSection("CommandKeyBack"), new CommandGoBackHere());
     }
 }
-
-
