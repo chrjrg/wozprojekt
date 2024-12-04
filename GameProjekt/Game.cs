@@ -12,7 +12,7 @@ class Game {
 
     InitRegistry();
 
-    //Intro.ShowIntro();
+    Intro.ShowIntro();
 
     //EnergyStore.BuyEnergy(AtomType,10); //for testing
     //EnergyStore.BuyEnergy(WindType,1); //for testing

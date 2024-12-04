@@ -28,7 +28,7 @@ namespace GameLogic{
             var lines = text.Split('\n');
             foreach (var line in lines)
             {
-                CharSplit(line, 25); // Print each character with a delay
+                CharSplit(line, 15); // Print each character with a delay
                 Console.WriteLine(); // Add a newline after each line
             }
         }
@@ -45,7 +45,7 @@ namespace GameLogic{
             var lines = text.Split('\n');
             foreach (var line in lines)
             {
-                CharSplit(line, 25);
+                CharSplit(line, 15); 
                 Console.WriteLine();
             }
         }
@@ -56,7 +56,7 @@ namespace GameLogic{
         public void ShowIntro(){
             for (int i = 0; i < prompt.Length; i++)
             {
-                Console.WriteLine($"{prompt[i]}"); // Debug: Print each prompt line
+                //Console.WriteLine($"{prompt[i]}"); // Debug: Print each prompt line
 
                 // Control text style and timing based on the current line
                 text = prompt[i];

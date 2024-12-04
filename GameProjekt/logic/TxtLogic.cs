@@ -1,5 +1,4 @@
 using System.Text;
-using static GameAssets;
 /* 
 Syntax for use of database:
 To access the singleton instance of the TextDatabase class:

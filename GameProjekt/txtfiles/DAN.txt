@@ -4,7 +4,6 @@ Der er super travlt inde på Christiansborg op til det kommende valg i 2025, og 
 Miljøministeren ønsker at komme med udkast til hvordan Danmarks energinet skal se ud inden 2030, som led i Parisaftalen.
 Han har dog svært ved at vide hvilken retning han skal gå, når det kommer til at vælge energiform.
 Du har nu til opgave at at udforske og vælge hvilken energiforsyning vi skal bruge i Danmark!
-
 LOKATION:
 Christiansborg
 DATO: 
@@ -570,21 +569,19 @@ Hvorfor er vandkraft ikke en stor energikilde i Danmark?
 [SecIntro]
 SUSSANNE:
 Hej, jeg hedder Sussane. Jeg vil være din ’spindoktor’ gennem din rejse med at skabe Danmarks fremtidige energiforsyning. 
+
 Før vi kaster os ud i at bruge skatteydernes penge, er det vigtigt, at du er klædt godt på til at tage de rigtige beslutninger.
 Når vi taler om energiforsyning, er der utallige faktorer i spil, som påvirker, hvilke løsninger vi kan vælge.
 Det er komplekst, og det kræver en del overvejelser. Men bare rolig! Jeg er her for at gøre det lettere for dig.
 For at undgå, at du bliver helt gråhåret før vi når i mål, har jeg fjernet alt det politiske, moralske og juridiske bøvl. 
-Vi fokuserer kun på fire hovedfaktorer: Pris (P), Energiproduktion (E), CO₂-udledning (C) og Kapacitetsfaktor (K). Din succes vil blive målt ud fra, hvor godt du balancerer de tre første – Pris, Produktion og CO₂.
-Men du skal stadig have styr på, hvad de betyder! Det er især vigtigt at forstå kapacitetsfaktoren, for det er her, mange tidligere miljøministre har fejlet.
+Vi fokuserer kun på fem hovedfaktorer: Pris (P), Energiproduktion (E), CO₂-udledning (C), Stabilitet (S) og Kapacitetsfaktor (K). Din succes vil blive målt ud fra, hvor godt du balancerer de tre første – Pris, Produktion og CO₂.
   
 Kort fortalt er kapacitetsfaktoren et mål for, hvor effektivt en energitype udnytter sin kapacitet. For eksempel: Hvis du har en energikilde, der kan producere 10 MW, og kapacitetsfaktoren er 90%, 
 så får du faktisk kun 9 MW brugbar energi. Det er altså en vigtig nøgle til at forstå, hvad du får for pengene.
 Nå men du har ventet nok nu. Jeg vil lade dig gøre dine ting. Du kan finde mig igen tilbage på Christiansborg på mit kontor. 
-Det her du kan aflevere dit forslag og få en opdatering på hvilke valg du har taget. 
-  
   
 Og hov! Sidste ting... Jeg skal lige have dig til at svare på nogle spørgsmål inden du kan få lov til at give den gas! 
-Da det hele er nyt, skal du bare forsøge dit bedste (Gæt), senere finder vi ud af om du har lært noget af din rejse.
+
 
 
 

@@ -552,21 +552,18 @@ Why is hydropower not a major energy source in Denmark?
 
 [SecIntro]
 SUSSANE:
-Hi, my name is Susanne. I will be your “spin doctor” on your journey to shaping Denmark's future energy supply.
-Before we dive into spending taxpayer money, it’s important that you are well-prepared to make the right decisions.
-When it comes to energy supply, there are countless factors at play that influence which solutions we can choose.
-It’s complex and requires a lot of consideration. But don’t worry! I’m here to make it easier for you.
-To keep you from going completely gray before we reach the goal, I’ve removed all the political, moral, and legal hassle.
-We’ll focus only on four main factors: Price (P), Energy Production (E), CO₂ Emissions (C), and Capacity Factor (K). Your success will be measured based on how well you balance the first three – Price, Production, and CO₂.
-But you still need to understand what they mean! It’s especially important to grasp the capacity factor, as this is where many previous environment ministers have failed.
+Hi, my name is Susanne. I will be your ‘spin doctor’ on your journey to create Denmark's future energy supply.
 
-In short, the capacity factor measures how effectively a type of energy utilizes its capacity. For example: if you have an energy source that can produce 10 MW and the capacity factor is 90%,
-you actually only get 9 MW of usable energy. So, it’s a crucial key to understanding what you’re getting for your money.
-Anyway, you’ve waited long enough now. I’ll let you do your thing. You can find me back at Christiansborg in my office.
-That’s where you can submit your proposal and get an update on the choices you’ve made.
+Before we dive into using taxpayer money, it’s important that you are well-prepared to make the right decisions.
+When we talk about energy supply, there are countless factors at play that affect which solutions we can choose.
+It’s complex, and it requires a lot of consideration. But don’t worry! I’m here to make it easier for you.
+To prevent you from getting completely grey-haired before we reach our goal, I’ve removed all the political, moral, and legal red tape.
+We will focus only on five main factors: Price (P), Energy Production (E), CO₂ Emissions (C), Stability (S), and Capacity Factor (K). Your success will be measured based on how well you balance the first three – Price, Production, and CO₂.
 
-Oh, and one last thing... I need you to answer a few questions before you can get started!
-Since this is all new, just do your best (guess). Later, we’ll find out if you’ve learned something from your journey.
+In short, the capacity factor is a measure of how efficiently an energy type utilizes its capacity. For example: If you have an energy source that can produce 10 MW, and the capacity factor is 90%, you will actually only get 9 MW of usable energy. So, it’s an important key to understanding what you get for your money.
+Well, you’ve waited long enough now. I’ll let you do your thing. You can find me back at my office at Christiansborg.
+
+Oh, and one last thing... I need you to answer a few questions before you get started!
 
 [EndGameEnergyScorePoor]
 Your energy production is catastrophic. You urgently need to make improvements.  

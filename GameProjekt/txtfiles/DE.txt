@@ -550,22 +550,18 @@ Warum ist Wasserkraft keine bedeutende Energiequelle in Dänemark?
 
 [SecIntro]
 SUSSANNE:
-Übersetzung abgeschlossen!
-Hallo, mein Name ist Susanne. Ich werde deine „Spin-Doktorin“ auf deiner Reise zur Gestaltung der zukünftigen Energieversorgung Dänemarks sein.
-Bevor wir damit anfangen, Steuergelder auszugeben, ist es wichtig, dass du gut vorbereitet bist, um die richtigen Entscheidungen zu treffen.
-Wenn es um Energieversorgung geht, gibt es unzählige Faktoren, die beeinflussen, welche Lösungen wir wählen können.
-Es ist komplex und erfordert viel Überlegung. Aber keine Sorge! Ich bin hier, um es dir leichter zu machen.
-Damit du nicht komplett grau wirst, bevor wir das Ziel erreichen, habe ich den gesamten politischen, moralischen und rechtlichen Aufwand entfernt.
-Wir konzentrieren uns nur auf vier Hauptfaktoren: Preis (P), Energieproduktion (E), CO₂-Emissionen (C) und Kapazitätsfaktor (K). Dein Erfolg wird daran gemessen, wie gut du die ersten drei – Preis, Produktion und CO₂ – ausbalancierst.
-Aber du musst trotzdem verstehen, was sie bedeuten! Es ist besonders wichtig, den Kapazitätsfaktor zu begreifen, denn hier haben viele frühere Umweltminister versagt.
+Hallo, mein Name ist Susanne. Ich werde Ihre 'Spindoktorin' auf Ihrer Reise zur Schaffung der zukünftigen Energieversorgung Dänemarks sein.
 
-Kurz gesagt: Der Kapazitätsfaktor misst, wie effektiv eine Energieart ihre Kapazität nutzt. Zum Beispiel: Wenn du eine Energiequelle hast, die 10 MW produzieren kann, und der Kapazitätsfaktor beträgt 90%,
-dann bekommst du tatsächlich nur 9 MW nutzbare Energie. Es ist also ein entscheidender Schlüssel, um zu verstehen, was du für dein Geld bekommst.
-Aber jetzt hast du lange genug gewartet. Ich lasse dich jetzt loslegen. Du findest mich wieder im Christiansborg in meinem Büro.
-Dort kannst du deinen Vorschlag einreichen und ein Update zu den von dir getroffenen Entscheidungen erhalten.
+Bevor wir uns daran machen, Steuergelder zu verwenden, ist es wichtig, dass Sie gut vorbereitet sind, um die richtigen Entscheidungen zu treffen.
+Wenn wir über die Energieversorgung sprechen, gibt es zahllose Faktoren, die beeinflussen, welche Lösungen wir wählen können.
+Es ist komplex und erfordert viel Überlegung. Aber keine Sorge! Ich bin hier, um es Ihnen leichter zu machen.
+Um zu verhindern, dass Sie völlig graue Haare bekommen, bevor wir unser Ziel erreichen, habe ich den ganzen politischen, moralischen und rechtlichen Bürokratiekram entfernt.
+Wir konzentrieren uns nur auf fünf Hauptfaktoren: Preis (P), Energieproduktion (E), CO₂-Emissionen (C), Stabilität (S) und Kapazitätsfaktor (K). Ihr Erfolg wird daran gemessen, wie gut Sie die ersten drei – Preis, Produktion und CO₂ – ausbalancieren.
 
-Oh, und noch eine letzte Sache... Ich brauche von dir ein paar Antworten auf Fragen, bevor du richtig loslegen kannst!
-Da das alles neu ist, gib einfach dein Bestes (rate). Später werden wir herausfinden, ob du etwas aus deiner Reise gelernt hast.
+Kurz gesagt, der Kapazitätsfaktor ist ein Maß dafür, wie effizient eine Energiequelle ihre Kapazität nutzt. Zum Beispiel: Wenn Sie eine Energiequelle haben, die 10 MW erzeugen kann, und der Kapazitätsfaktor bei 90 % liegt, erhalten Sie tatsächlich nur 9 MW nutzbare Energie. Es ist also ein wichtiger Schlüssel, um zu verstehen, was Sie für Ihr Geld bekommen.
+Nun, Sie haben genug gewartet. Ich lasse Sie nun Ihr Ding machen. Sie können mich später wieder in meinem Büro im Christiansborg finden.
+
+Oh, und noch eine letzte Sache... Ich muss Sie ein paar Fragen beantworten lassen, bevor Sie loslegen dürfen!
 
 [EndGameEnergyScorePoor]
 Deine Energieproduktion ist katastrophal. Du musst dringend Verbesserungen vornehmen.  
