@@ -1,6 +1,6 @@
 /* 
 Command for entering keybind mode.
-This command allows the player to use the arrow keys to navigate the game world.
+Allows the player to use the arrow keys to navigate the game world.
 */
 using static GameAssets;
 
@@ -9,7 +9,8 @@ class CommandKeybind : BaseCommand, ICommand {
     description = db.GetSection("CommandKeybindDescription");
   }
   
+  // Enters keybind mode and listens for key presses.
   public void Execute (Context context, string command, string[] parameters) {
-    inputHandler.ListenForKeyPress(); 
+    inputHandler.ListenForKeyPress(); // Starts listening for key presses
   }
 }

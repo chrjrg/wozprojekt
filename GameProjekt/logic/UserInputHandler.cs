@@ -1,6 +1,7 @@
-using System;
+/* 
+Class for handling user input and responding to key presses.
+*/
 using static GameAssets;
-using GameLogic; // Sørg for, at du importerer de nødvendige namespaces
 
 public class UserInputHandler
 {
@@ -11,18 +12,20 @@ public class UserInputHandler
         _context = context;
     }
 
+    // Listens for key press input and responds accordingly
     public void ListenForKeyPress() 
     {
         while (true)
         {
             if (Anim.isAnimating)
             {
-                // Hvis der kører en animation, springer vi input over
+                // Skip input if an animation is running
                 continue;
             }
 
             var key = Console.ReadKey(intercept: true).Key;
 
+            // Handle different key presses
             switch (key)
             {
                 case ConsoleKey.UpArrow:
@@ -45,13 +48,13 @@ public class UserInputHandler
                     Console.Clear();
                     GoToRoom(db.GetSection("EntryName").ToLower());
                     break;
-                case ConsoleKey.M: // Map?
+                case ConsoleKey.M: // Map (currently no functionality)
                     Console.Clear();
                     break;
-                case ConsoleKey.C:
+                case ConsoleKey.C: // Clear screen
                     Console.Clear();
                     break;
-                case ConsoleKey.Escape:
+                case ConsoleKey.Escape: // Exit the program
                     Console.Clear();
                     Console.WriteLine(db.GetSection("KeybindExiting"));
                     return;
@@ -63,11 +66,10 @@ public class UserInputHandler
         }
     }
 
-
+    // Handles the transition to a new room based on direction
     private void GoToRoom(string direction)
     {
-        // Forsøg at skifte til rummet
+        // Attempt to transition to the specified room
         _context.Transition(direction);
-
     }
 }

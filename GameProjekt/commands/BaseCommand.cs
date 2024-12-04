@@ -1,17 +1,18 @@
 /* 
-Baseclass for commands
+Base class for commands
 */
 using static GameAssets;
 
 class BaseCommand {
+  // Command description fetched from the database.
   protected string description = db.GetSection("BaseCommandDescription");
   
-  // Checks if the number of parameters does not match the expected value.
+  // Validates if the parameter count matches the expected value.
   protected bool GuardEq (string[] parameters, int bound) {
-    return parameters.Length!=bound;
+    return parameters.Length != bound;
   }
   
-   // Returns the description of the command.
+  // Retrieves the command description.
   public String GetDescription () {
     return description;
   }

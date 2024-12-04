@@ -1,56 +1,58 @@
 using System.Text;
 using static GameAssets;
-/*
+/* 
 Syntax for use of database:
-// Use "using static GameAssets" to access the singleton instance:
+To access the singleton instance of the TextDatabase class:
     using static GameAssets;
-
-Use example:
+Example:
     Console.WriteLine(db.GetSection("test"));
-
 This would print the content of the section [test] from the loaded file, if it exists.
 */
+
 public class TextDatabase
 {
-    private static readonly Lazy<TextDatabase> instance = new(() => new TextDatabase()); // Singleton instance. Lazy means it's only created when accessed, and only once.
-    private Dictionary<string, string> dataSections; // Dictionary to store the sections
-    
+    private static readonly Lazy<TextDatabase> instance = new(() => new TextDatabase()); // Singleton instance, created lazily when accessed
+    private Dictionary<string, string> dataSections; // Stores sections from the file as key-value pairs
 
-    // Private constructor to prevent external instantiation (Singleton pattern)
+    // Private constructor to enforce the Singleton pattern
     private TextDatabase()
     {
         dataSections = new Dictionary<string, string>();
     }
 
-    // Public property to access the singleton instance
+    // Public property to get the singleton instance
     public static TextDatabase Instance => instance.Value;
 
-    // Load the file and parse it into sections
+    /* 
+    Loads the file at the given path and parses it into sections.
+    Each section is stored in the dataSections dictionary.
+    */
     public void LoadFile(string filePath)
     {
         try 
         {
             string[] lines = File.ReadAllLines(filePath); // Read all lines from the file
-            StringBuilder sectionContent = new StringBuilder(); // StringBuilder to store the content of the current section
-            string? currentSection = null; // "?" means it can be null
+            StringBuilder sectionContent = new StringBuilder(); // To accumulate lines for the current section
+            string? currentSection = null; // Holds the name of the current section
 
             foreach (var line in lines)
             {
-                if (line.StartsWith("[") && line.EndsWith("]"))
+                if (line.StartsWith("[") && line.EndsWith("]")) // Detects section headers
                 {
                     if (currentSection != null)
                     {
-                        dataSections[currentSection] = sectionContent.ToString().Trim(); // Save the previous section if we have one
-                        sectionContent.Clear();
+                        dataSections[currentSection] = sectionContent.ToString().Trim(); // Save previous section
+                        sectionContent.Clear(); // Clear for next section
                     }
-                    currentSection = line.Trim('[', ']');
+                    currentSection = line.Trim('[', ']'); // Set the new section name
                 }
                 else if (currentSection != null)
                 {
-                    sectionContent.AppendLine(line);
+                    sectionContent.AppendLine(line); // Add line to the current section's content
                 }
             }
 
+            // Save the last section
             if (currentSection != null) 
             {
                 dataSections[currentSection] = sectionContent.ToString().Trim();
@@ -62,45 +64,77 @@ public class TextDatabase
         }
     }
 
-    // Method to retrieve a specific section by name
+    /* 
+    Retrieves the content of a section by its name.
+    @param sectionName The name of the section to retrieve.
+    @return The content of the section or an empty string if not found.
+    */
     public string GetSection(string sectionName)
     {
-        if (dataSections.TryGetValue(sectionName, out string? sectionContent)) // Try to get the section content
+        if (dataSections.TryGetValue(sectionName, out string? sectionContent))
         {
-            return sectionContent;
+            return sectionContent; // Return the content of the found section
         }
         else
         {
             Console.WriteLine($"Section '{sectionName}' not found.");
-            return string.Empty;
+            return string.Empty; // Return an empty string if section is not found
         }
     }
-    
+
+    /* 
+    Retrieves the content of a section as an array of strings (split by lines).
+    @param sectionName The name of the section to retrieve.
+    @return An array of strings representing each line in the section.
+    */
     public string[] GetSectionArray(string sectionName)
     {
         if (dataSections.TryGetValue(sectionName, out string? sectionContent))
         {
-            // Fjern utilsigtet filtrering af sektioner
-            return sectionContent.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+            return sectionContent.Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries); // Split by lines
         }
         else
         {
             Console.WriteLine($"Section '{sectionName}' not found.");
-            return Array.Empty<string>();
+            return Array.Empty<string>(); // Return an empty array if section is not found
         }
     }
 
-    public void LanguageChange()
-    {   
-        Console.WriteLine("Engelsk? (Ja/Nej)");
-        string userInput = Console.ReadLine()!.ToLower();
-        if (userInput == db.GetSection("BooleanDecisionYes"))
+    /* 
+    Language selector for loading the appropriate text file based on user input.
+    This method prompts the user to choose a language (DAN, ENG, DE) and loads the corresponding file.
+    */
+    public class LanguageSelector
+    {
+        public static void SelectLanguageAndLoadFile(TextDatabase db)
         {
-            db.LoadFile(Path.Combine(Directory.GetCurrentDirectory(), "World Of Zuul Core files/ENGdata.txt").ToString());
-        }
-        else if (userInput == db.GetSection("BooleanDecisionNo"))
-        {
-            db.LoadFile(Path.Combine(Directory.GetCurrentDirectory(), "World Of Zuul Core files/data.txt").ToString());
+            Console.Clear();
+            bool validInput = false;
+            while (!validInput)
+            {
+                Console.WriteLine($"Which language? (DAN/ENG/DE)\nWrite 'DAN' for Danish\nWrite 'ENG' for English\nWrite 'DE' for German");
+                string userInput = Console.ReadLine()!.ToLower(); // Read and convert input to lowercase
+                
+                string filePath = userInput switch
+                {
+                    "dan" => Path.Combine(Directory.GetCurrentDirectory(), "txtfiles/DAN.txt"),
+                    "eng" => Path.Combine(Directory.GetCurrentDirectory(), "txtfiles/ENG.txt"),
+                    "de" => Path.Combine(Directory.GetCurrentDirectory(), "txtfiles/DE.txt"),
+                    _ => string.Empty // If input is invalid, return an empty string
+                };
+
+                if (!string.IsNullOrEmpty(filePath))
+                {
+                    db.LoadFile(filePath); // Load the selected file
+                    validInput = true; // Set validInput to true to exit the loop
+                    Console.Clear();
+                }
+                else
+                {
+                    Console.Clear();
+                    Console.WriteLine("Wrong input, try again." + "\n"); // Prompt the user to try again
+                }
+            }
         }
     }
 }

@@ -36,6 +36,18 @@ sprechen
 [CommandKeyBack]
 zurück
 
+[HeaderCommand1]
+Geben Sie 'KOMMANDO' 'AUSGANG' ein | Um in einen Raum zu gehen
+
+[HeaderCommand2]
+Geben Sie 'KOMMANDO' ein | Um mit einer Person im Raum zu sprechen
+
+[HeaderCommand3]
+Geben Sie 'KOMMANDO' ein | Für weitere Hilfe
+
+[HeaderCommandReplace]
+KOMMANDO
+
 [BaseCommandDescription]
 Undokumentiert
 
@@ -182,6 +194,12 @@ Du bist jetzt bei
 [CurrentExits]
 Aktuelle Ausgänge sind:
 
+[ContractUnitPrice]
+Preis pro Stück:
+
+[ContractBudget]
+Verbleibendes Budget:
+
 [ContractAmount1]
 Wie viele
 
@@ -226,44 +244,130 @@ Mit meiner Unterschrift bestätige ich, Informationen über die Energiequelle er
 DATUM
 Unterschrift: _______________________
 
+
+
 [AtomExpertIntro]
-Dies ist die Einführung des Atomexperten.
+Willkommen im Kernkraftwerk!
+
+Mein Name ist Nina Nuklear und ich bin Experte für Kernkraft, Kernreaktoren und Energieproduktion durch Fission.
+
+Wir befinden uns in einer Energieproduktionsanlage, die Energie mit Kernkraft erzeugt. Das Kernkraftwerk nimmt kleine Mengen Uran oder andere radioaktive Materialien und spaltet sie in einem Fusionsprozess, wodurch große Mengen Energie freigesetzt werden.
 
 [AtomExpertShortInfo]
-Informationen über Atomkraft.
+Kernkraftwerk:
+Preis: 5 Milliarden DKK
+Jährliche Energieproduktion: 1750 GWt
+CO2 bei Errichtung + erstem Jahr: 500.000 Tonnen
+Stabilität: 90-95%
+Kapazitätsfaktor: 90%
+Lebensdauer: Mindestens 60 Jahre
 
 [AtomExpertMoreInfo]
-MEHR Informationen über Atomkraft.
+Vorteile der Kernkraft:
+- Hohe Energieproduktion: Erzeugt jährlich 1750 GWt, genug, um hunderttausende Haushalte zu versorgen.
+- Effizienz und Stabilität: Kapazitätsfaktor von 90% und Stabilität von 90-95%, was über Solar- und Windenergie hinausgeht.
+- CO2-neutrale Betriebsweise: Es werden keine Treibhausgase bei der Stromproduktion emittiert, was den CO2-Fußabdruck reduziert.
+- Unabhängig vom Wetter: Liefert jederzeit stabile Energie, unabhängig von Wind- und Sonnenverhältnissen.
+- Technologische Verbesserungen: Moderne Kernkraftwerke sind sicherer und effizienter geworden.
+
+Nachteile der Kernkraft:
+- Historische Sicherheitsrisiken: Frühere Unfälle wie Tschernobyl haben Angst und Widerstand gegen Kernkraft verursacht.
+- Radioaktiver Abfall: Abfälle aus älteren Kraftwerken bleiben tausende Jahre radioaktiv und erfordern umfangreiche Lagerung.
+- Hohe Baukosten: Der Bau von Kernkraftwerken erfordert 500.000 Tonnen CO2, erhebliche finanzielle Mittel und langfristige Planung.
+- Politischer Widerstand: Kernkraft ist nicht Teil des dänischen Stromnetzes, hauptsächlich aufgrund des Widerstands aus den 1970er und 1980er Jahren.
+
+
 
 [WaterExpertIntro]
-Dies ist die Einführung des Wasserexperten.
+Willkommen im Wasserkraftwerk!
+
+Mein Name ist Verena Volt und ich bin Spezialist für Hydrologie und Wasserkrafttechnologie.
+
+Ein Wasserkraftwerk nutzt die Bewegung von Wasser, typischerweise durch Stürze oder Strömungen, um Turbinen anzutreiben, die Elektrizität erzeugen.
 
 [WaterExpertShortInfo]
-Informationen über Wasserkraft.
+Wasserkraftwerk:
+Preis: 310 Millionen DKK
+Jährliche Energieproduktion: 175 GWt
+CO2 bei Errichtung + erstem Jahr: 20.000 Tonnen
+Stabilität: 40-60%
+Kapazität: 50%
+Lebensdauer: Ca. 200 Jahre
 
 [WaterExpertMoreInfo]
-MEHR Informationen über Wasserkraft.
+Vorteile der Wasserenergie:
+- Wasserkraft ist stabil und unabhängig vom Wetter.
+- Die Energieproduktion kann je nach Bedarf reguliert werden.
+- Nur Verschmutzung während der Errichtung und Demontage, aber es wird diskutiert, ob Methan aus der Ansammlung von Pflanzenmaterial in die Emissionen zählt.
+
+Nachteile der Wasserenergie:
+- Erfordert spezifische geografische Bedingungen wie Flüsse und Gebirgsketten mit Höhenunterschieden.
+- Kann die Biodiversität schädigen, indem der Fluss verändert wird.
+- Wartung von Turbinen und Dämmen erfordert Ressourcen.
+- Hohe Baukosten und lange Bauzeiten.
+
+
 
 [SolarExpertIntro]
-Dies ist die Einführung des Solarenergie-Experten.
+Willkommen im Solarpark!
+
+Mein Name ist Sonnige Sol und ich bin Expertin für erneuerbare Energien, Solarenergie und Solarpanel-Effizienz.
+
+Ein Solarkraftwerk wandelt Sonnenlicht in Elektrizität um, indem es Solarzellen, einen Wechselrichter und gegebenenfalls Batterien verwendet, sodass der Strom zu Hause genutzt oder ins Netz eingespeist werden kann.
 
 [SolarExpertShortInfo]
-Informationen über Solarenergie.
+Solarpark:
+Preis: 370 Millionen DKK
+Jährliche Energieproduktion: 350 GWt
+CO2 bei Errichtung + erstem Jahr: 5.000 Tonnen
+Stabilität: 10-25%
+Kapazität: 17%
+Lebensdauer: Ca. 30 Jahre
 
 [SolarExpertMoreInfo]
-MEHR Informationen über Solarenergie.
+Vorteile der Solarenergie:
+- Die Sonne ist eine erneuerbare Energiequelle, von der wir voraussichtlich nicht ausgehen werden.
+- Solarenergie bietet die Möglichkeit, überschüssigen Strom zu speichern und zu verkaufen.
+- Die Anlagen erfordern minimale Wartung, da eine Neigung von 15 Grad sie selbstreinigend macht und die Betriebskosten niedrig hält.
+
+Nachteile der Solarenergie:
+- Solarkraftwerke können visuell störend sein, da sie große Flächen erfordern.
+- Batteriespeicher sind teuer und umweltschädlich mit einer kürzeren Lebensdauer als die Anlagen selbst.
+- Die Produktion von Solarzellen erfordert seltene Metalle wie Silizium und Silber, was zu umwelt- und ressourcenbezogenen Herausforderungen führen kann.
+
+
 
 [WindExpertIntro]
-Dies ist die Einführung des Windenergie-Experten.
+Willkommen im Windpark!
+
+Mein Name ist Wendy Windsturm und ich bin Spezialistin für Windenergie und Windparks.
+
+Windenergie wird durch Windturbinen genutzt, die die kinetische Energie des Windes in Elektrizität umwandeln. Wenn der Wind die Flügel der Turbine dreht, wird eine Welle angetrieben, die Strom erzeugt.
 
 [WindExpertShortInfo]
-Informationen über Windenergie.
+Windpark:
+Preis: 500 Millionen DKK
+Jährliche Energieproduktion: 350 GWt
+CO2 bei Errichtung + erstem Jahr: 10.000 Tonnen
+Stabilität: 20-40%
+Kapazitätsfaktor: 30%
+Lebensdauer: Ca. 15-25 Jahre
 
 [WindExpertMoreInfo]
-MEHR Informationen über Windenergie.
+- Vorteile der Windenergie:
+- CO2-neutral: Erzeugt Energie ohne Emission von Treibhausgasen und trägt zur grünen Transformation bei.
+- Erneuerbare Ressource: Wind ist eine unbegrenzte Energiequelle, die niemals aufgebraucht werden kann.
+- Energieproduktion: Ein durchschnittlicher Windpark erzeugt jährlich 350 GWt.
+- Wirtschaftlicher Vorteil: Kann exportiert werden und hat niedrige Betriebskosten, die die Energiekosten senken können.
+- Dänemark als Vorreiter: Windenergie ist seit den 1980er Jahren ein bedeutender Teil der dänischen Energieproduktion.
 
-[ExpertInfoLock]
-Sieh dir mehr Informationen an, bevor du kaufen kannst.
+Nachteile der Windenergie:
+- Hohe Errichtungskosten: Offshore-Windparks erfordern große Investitionen, typischerweise rund 500 Millionen DKK.
+- Visuelle und akustische Beeinträchtigung: Windturbinen können die Landschaft stören und Lärm verursachen, besonders in der Nähe von Wohngebieten.
+- Geringer Kapazitätsfaktor: Windenergie hat nur einen Kapazitätsfaktor von 30%, was sie weniger stabil als andere Energiequellen macht.
+- Abhängigkeit vom Wetter: Die Energieproduktion hängt von der Windstärke ab, was zu Schwankungen in der Energieversorgung führt.
+
+
 
 [ExpertInfoOption1]
 Möchtest du mehr Informationen? Schreibe
@@ -284,7 +388,11 @@ kauf
 zurück
 
 [SecretaryIntro]
-Dies ist die Einführung der Sekretärin.
+Hallo nochmal.
+
+Hier ist Susanne! Ich stehe bereit, dir zu helfen, den Status deines Stromnetzes zu erfassen und es abzuliefern, sobald du es für bereit hältst.
+
+Gib mir einfach Bescheid, wann es dir passt!
 
 [SecretaryOptionIntro]
 Womit kann ich dir helfen?
@@ -443,4 +551,96 @@ Warum ist Wasserkraft keine bedeutende Energiequelle in Dänemark?
 [SecIntro]
 SUSSANNE:
 Übersetzung abgeschlossen!
+Hallo, mein Name ist Susanne. Ich werde deine „Spin-Doktorin“ auf deiner Reise zur Gestaltung der zukünftigen Energieversorgung Dänemarks sein.
+Bevor wir damit anfangen, Steuergelder auszugeben, ist es wichtig, dass du gut vorbereitet bist, um die richtigen Entscheidungen zu treffen.
+Wenn es um Energieversorgung geht, gibt es unzählige Faktoren, die beeinflussen, welche Lösungen wir wählen können.
+Es ist komplex und erfordert viel Überlegung. Aber keine Sorge! Ich bin hier, um es dir leichter zu machen.
+Damit du nicht komplett grau wirst, bevor wir das Ziel erreichen, habe ich den gesamten politischen, moralischen und rechtlichen Aufwand entfernt.
+Wir konzentrieren uns nur auf vier Hauptfaktoren: Preis (P), Energieproduktion (E), CO₂-Emissionen (C) und Kapazitätsfaktor (K). Dein Erfolg wird daran gemessen, wie gut du die ersten drei – Preis, Produktion und CO₂ – ausbalancierst.
+Aber du musst trotzdem verstehen, was sie bedeuten! Es ist besonders wichtig, den Kapazitätsfaktor zu begreifen, denn hier haben viele frühere Umweltminister versagt.
 
+Kurz gesagt: Der Kapazitätsfaktor misst, wie effektiv eine Energieart ihre Kapazität nutzt. Zum Beispiel: Wenn du eine Energiequelle hast, die 10 MW produzieren kann, und der Kapazitätsfaktor beträgt 90%,
+dann bekommst du tatsächlich nur 9 MW nutzbare Energie. Es ist also ein entscheidender Schlüssel, um zu verstehen, was du für dein Geld bekommst.
+Aber jetzt hast du lange genug gewartet. Ich lasse dich jetzt loslegen. Du findest mich wieder im Christiansborg in meinem Büro.
+Dort kannst du deinen Vorschlag einreichen und ein Update zu den von dir getroffenen Entscheidungen erhalten.
+
+Oh, und noch eine letzte Sache... Ich brauche von dir ein paar Antworten auf Fragen, bevor du richtig loslegen kannst!
+Da das alles neu ist, gib einfach dein Bestes (rate). Später werden wir herausfinden, ob du etwas aus deiner Reise gelernt hast.
+
+[EndGameEnergyScorePoor]
+Deine Energieproduktion ist katastrophal. Du musst dringend Verbesserungen vornehmen.  
+
+[EndGameEnergyScoreBelowAverage]
+Deine Energieproduktion liegt unter dem Durchschnitt. Es gibt Raum für Verbesserungen.  
+
+[EndGameEnergyScoreAverage]
+Deine Energieproduktion ist akzeptabel, aber nichts Besonderes.  
+
+[EndGameEnergyScoreGood]
+Deine Energieproduktion ist solide und auf einem guten Niveau!  
+
+[EndGameEnergyScoreExcellent]
+Deine Energieproduktion ist hervorragend! Du hast ein Energiesystem der Spitzenklasse geschaffen!  
+
+[EndGameCO2ScorePoor]
+Die CO₂-Emissionen sind inakzeptabel. Deine Entscheidungen belasten die Umwelt.  
+
+[EndGameCO2ScoreBelowAverage]
+Die CO₂-Emissionen sind zu hoch. Du solltest mehr auf die Umwelt achten.  
+
+[EndGameCO2ScoreAverage]
+Die CO₂-Emissionen sind akzeptabel, aber es gibt noch Verbesserungspotenzial.  
+
+[EndGameCO2ScoreGood]
+Die CO₂-Emissionen sind niedrig. Gut gemacht im Hinblick auf den Umweltschutz!  
+
+[EndGameCO2ScoreExcellent]
+Die CO₂-Emissionen sind außergewöhnlich niedrig! Du hast die Umwelt beeindruckend priorisiert!  
+
+[EndGameBudgetScorePoor]
+Dein Budget ist ruiniert. Die Finanzen wurden nicht sorgfältig verwaltet.  
+
+[EndGameBudgetScoreBelowAverage]
+Deine finanzielle Verwaltung liegt unter dem Durchschnitt. Das Geld reicht nicht aus.  
+
+[EndGameBudgetScoreAverage]
+Deine Finanzen sind stabil, aber nicht herausragend. Du hast dich ordentlich geschlagen.  
+
+[EndGameBudgetScoreGood]
+Deine Finanzen sind stark! Du hast dein Budget gut und effizient verwaltet.  
+
+[EndGameBudgetScoreExcellent]
+Deine Finanzen sind hervorragend! Du hast das Geld vorbildlich verwaltet!  
+
+[EndGameStabilityScorePoor]
+Das System ist instabil und unvorhersehbar. Dringende Verbesserungen sind nötig.  
+
+[EndGameStabilityScoreBelowAverage]
+Die Stabilität des Systems liegt unter dem Durchschnitt. Es funktioniert, aber mit vielen Herausforderungen.  
+
+[EndGameStabilityScoreAverage]
+Die Stabilität des Systems ist akzeptabel, aber es gibt Raum für Optimierungen.  
+
+[EndGameStabilityScoreGood]
+Das System ist stabil und zuverlässig. Ein gutes Ergebnis!  
+
+[EndGameStabilityScoreExcellent]
+Das System ist extrem stabil und solide. Eine hervorragende Leistung!  
+
+[EndGamePoor]
+Dein Gesamtergebnis ist sehr schlecht. Das Spiel erfordert eine völlig neue Strategie.  
+
+[EndGameBelowAverage]
+Dein Gesamtergebnis liegt unter dem Durchschnitt. Es gibt viel Raum für Verbesserungen.  
+
+[EndGameAverage]
+Dein Gesamtergebnis ist akzeptabel, mit einer ausgeglichenen Leistung, aber es könnte besser sein.  
+
+[EndGameGood]
+Dein Gesamtergebnis ist gut! Du hast es gut gemacht, aber es gibt noch etwas zu lernen.  
+
+[EndGameExcellent]
+Dein Gesamtergebnis ist hervorragend! Du hast alle Herausforderungen mit Bravour gemeistert!
+
+[GoodbyeHeader]
+Danke, dir die Zeit genommen hast, zu spielen! Ich hoffe, du hattest Spaß und hast vielleicht etwas Neues gelernt. 😊

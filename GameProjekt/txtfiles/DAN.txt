@@ -260,43 +260,126 @@ Underskrift: _______________________
 
 
 [AtomExpertIntro]
-Dette er introen til atom eksperten
+Velkommen til atomkraftværket!
+
+Mit navn er Claus Atomsen, og jeg er ekspert i atomkraft, kernereaktorer og energiproduktion gennem fission.
+
+Vi befinder os i et energi-produktionsanlæg, der genererer energi ved hjælp af kernekraft.
+Atomkraftværket tager små mængder uran eller andre radioaktive materialer og spalter det i en fusionsproces, hvilket frigiver store mængder energi.
 
 [AtomExpertShortInfo]
-Info om atomer
+Atomkraftværk:
+Pris: 5 mia. kr.
+Energiproduktion om året: 1750 GWt
+CO2 ved etablering + første år: 500.000 tons
+Stabilitet: 90-95%
+Kapacitetsfaktor: 90%
+Levetid: Min. 60 år
 
 [AtomExpertMoreInfo]
-MERE Info om atomer
+Fordele ved atomkraft:
+- Høj energiproduktion: Producerer årligt 1750 GWt, nok til at forsyne hundredtusinder af husstande.
+- Effektivitet og stabilitet: Kapacitetsfaktor på 90 % og stabilitet på 90-95 %, hvilket overgår sol- og vindenergi.
+- CO2-neutral drift: Udleder ingen drivhusgasser under elektricitetens produktion, hvilket reducerer klimaaftrykket.
+- Uafhængig af vejret: Leverer stabil energi hele tiden, uanset vind- og solforhold.
+- Teknologiske forbedringer: Moderne atomkraftværker er blevet mere sikre og effektive.
+
+Ulemper ved atomkraft:
+- Historiske sikkerhedsrisici: Tidligere ulykker som Tjernobyl har skabt frygt og modstand mod atomkraft.
+- Radioaktivt affald: Affald fra ældre kraftværker forbliver radioaktivt i tusinder af år og kræver omfattende lagring.
+- Høj opførelsesomkostning: Etablering af atomkraftværker kræver 500.000 tons CO2, betydelige økonomiske ressourcer og lang tids planlægning.
+- Politisk modstand: Atomkraft er ikke en del af det danske elnet, hovedsageligt på grund af modstand fra 1970’erne og 1980’erne.
+
 
 
 [WaterExpertIntro]
-Dette er introen til vand eksperten
+Velkommen til Vandkraftværket!
+
+Mit navn er Thonny Vandstrøm, og jeg er specialist i hydrologi og vandkraftteknologi.
+
+Et vandkraftværk udnytter vandets bevægelse, typisk fra fald eller strøm, til at drive turbiner, der genererer elektricitet.
 
 [WaterExpertShortInfo]
-Info om vand
+Vandkraftværk:
+Pris: 310 mio. kr.
+Energiproduktion om året: 175 GWt
+CO2 ved etablering + første år: 20.000 tons
+Stabilitet: 40-60%
+Kapacitet: 50%
+Levetid: ca. 200 år
 
 [WaterExpertMoreInfo]
-MERE Info om vand
+Fordele ved vandenergi:
+- Vandkraft er stabil og uafhængig af vejret.
+- Energiproduktionen kan reguleres efter behov.
+- Kun forurening i forbindelse med opførsel og nedrivning, men der diskuteres, om metangas fra ophobningen af plantemateriale tæller i udledningen.
+
+Ulemper ved vandenergi:
+- Kræver særlige geografiske forhold som floder og bjerge med højdeforskelle.
+- Kan skade biodiversiteten ved at ændre flodens strøm.
+- Vedligeholdelse af turbiner og dæmninger kræver ressourcer.
+- Høj anlægspris og lang byggetid.
+
 
 
 [SolarExpertIntro]
-Dette er introen til sol eksperten
+Velkommen til Solcelleparken!
+
+Mit navn er Lise Lysdal, og jeg er ekspert i vedvarende energi, solenergi og solcellers effektivitet.
+
+Et solcelleanlæg omdanner sollys til elektricitet via solceller, en inverter og evt. batterier, så strømmen kan bruges i hjemmet eller sendes til elnettet.
 
 [SolarExpertShortInfo]
-Info om sol
+Solcellepark:
+Pris: 370 mio. kr.
+Energiproduktion om året: 350 GWt
+CO2 ved etablering + første år: 5.000 tons
+Stabilitet: 10-25%
+Kapacitet: 17%
+Levetid: ca. 30 år
 
 [SolarExpertMoreInfo]
-MERE Info om sol
+Fordele ved solenergi:
+- Solen er en vedvarende energikilde, som vi næppe løber tør for.
+- Solenergi giver mulighed for at lagre og sælge overskydende strøm.
+- Anlæg kræver minimal vedligeholdelse, da en hældning på 15 grader gør dem selvrensende og holder driftsomkostningerne lave.
+
+Ulemper ved solenergi:
+- Solcelleanlæg kan være visuelt forstyrrende, da det kræver store arealer.
+- Batterilagring er dyrt og miljøbelastende med kortere levetid end selve anlægget.
+- Produktionen af solpaneler kræver sjældne metaller som silicium og sølv, hvilket kan medføre miljømæssige og ressource-relaterede udfordringer.
+
 
 
 [WindExpertIntro]
-Dette er introen til vind eksperten
+Velkommen til vindmølleparken!
+
+Mit navn er Hanne Storm, og jeg er specialist i vindenergi og vindmølleparker.
+
+Vindenergi udnyttes ved hjælp af vindmøller, der omdanner vindens kinetiske energi til elektrisk energi via en generator. Når vinden får møllens vinger til at rotere, drives en aksel, som producerer strøm.
 
 [WindExpertShortInfo]
-Info om vind
+Vindmøllepark:
+Pris: 500 mio. kr.
+Energiproduktion om året: 350 GWt
+CO2 ved etablering + første år: 10.000 tons
+Stabilitet: 20-40%
+Kapacitetsfaktor: 30%
+Levetid: ca. 15 - 25 år
 
 [WindExpertMoreInfo]
-MERE Info om vind
+Fordele ved vindenergi:
+- CO2-neutral: Producerer energi uden udledning af drivhusgasser og bidrager til den grønne omstilling.
+- Vedvarende ressource: Vind er en ubegrænset energikilde, der aldrig kan bruges op.
+- Energiproduktion: En gennemsnitlig vindmøllepark producerer 350 GWt årligt.
+- Økonomisk fordel: Kan eksporteres, og har lave driftsomkostninger, der kan sænke energipriserne.
+- Danmark som frontløber: Vindenergi har været en betydelig del af dansk energiproduktion siden 1980'erne.
+
+Ulemper ved vindenergi:
+- Høje etableringsomkostninger: Offshore vindmølleparker kræver store investeringer, typisk omkring 500 mio. kr.
+- Visuel og lydmæssig påvirkning: Vindmøller kan forstyrre landskabet og skabe støj, især nær beboelse.
+- Lav kapacitetsfaktor: Vindenergi har kun en kapacitetsfaktor på 30 %, hvilket gør den mindre stabil end andre energikilder.
+- Afhængighed af vejret: Energiproduktionen afhænger af vindstyrken, hvilket fører til variationer i energiforsyningen.
 
 
 [ExpertInfoLock]
@@ -321,7 +404,12 @@ køb
 tilbage
 
 [SecretaryIntro]
-Dette er introen til sekretæren.
+Hej igen.
+
+Det er Susanne her! Jeg står klar til at hjælpe dig med at tage status på dit elnet og sørge for at aflevere det, når du føler, det er helt klar.
+
+Sig endelig til, når det passer dig!
+
 
 [SecretaryOptionIntro]
 Hvad kan jeg hjælpe dig med?
@@ -498,3 +586,82 @@ Det her du kan aflevere dit forslag og få en opdatering på hvilke valg du har 
 Og hov! Sidste ting... Jeg skal lige have dig til at svare på nogle spørgsmål inden du kan få lov til at give den gas! 
 Da det hele er nyt, skal du bare forsøge dit bedste (Gæt), senere finder vi ud af om du har lært noget af din rejse.
 
+
+
+[EndGameEnergyScorePoor]
+Din energiproduktion er katastrofal. Du har brug for drastiske forbedringer.  
+
+[EndGameEnergyScoreBelowAverage]
+Din energiproduktion er under middel. Der er plads til forbedringer.  
+
+[EndGameEnergyScoreAverage]
+Din energiproduktion er acceptabel, men ikke noget at prale af.  
+
+[EndGameEnergyScoreGood]
+Din energiproduktion er solid og på et godt niveau!  
+
+[EndGameEnergyScoreExcellent]
+Din energiproduktion er fremragende! Du har skabt en energisucces!  
+
+[EndGameCO2ScorePoor]
+CO₂-udledningen er uacceptabel. Miljøet lider under dine valg.  
+
+[EndGameCO2ScoreBelowAverage]
+CO₂-udledningen er for høj. Du bør tænke mere på miljøet.  
+
+[EndGameCO2ScoreAverage]
+CO₂-udledningen er acceptabel, men der er stadig forbedringspotentiale.  
+
+[EndGameCO2ScoreGood]
+CO₂-udledningen er lav. Godt klaret med hensyn til miljøet!  
+
+[EndGameCO2ScoreExcellent]
+CO₂-udledningen er fremragende lav! Du har prioriteret miljøet på imponerende vis!  
+
+[EndGameBudgetScorePoor]
+Dit budget er i ruiner. Økonomien er ikke håndteret forsvarligt.  
+
+[EndGameBudgetScoreBelowAverage]
+Din økonomiske styring er under middel. Pengene rækker ikke langt nok.  
+
+[EndGameBudgetScoreAverage]
+Din økonomi er stabil, men ikke fantastisk. Du har klaret det nogenlunde.  
+
+[EndGameBudgetScoreGood]
+Din økonomi er stærk! Du har budgetteret godt og effektivt.  
+
+[EndGameBudgetScoreExcellent]
+Din økonomi er fremragende! Du har forvaltet pengene eksemplarisk!  
+
+[EndGameStabilityScorePoor]
+Systemet er ustabilt og uforudsigeligt. Der er behov for drastiske forbedringer.  
+
+[EndGameStabilityScoreBelowAverage]
+Systemets stabilitet er under middel. Det fungerer, men med mange udfordringer.  
+
+[EndGameStabilityScoreAverage]
+Systemets stabilitet er acceptabel, men med plads til optimering.  
+
+[EndGameStabilityScoreGood]
+Systemet er stabilt og pålideligt. Du har opnået et godt resultat!  
+
+[EndGameStabilityScoreExcellent]
+Systemet er ekstremt stabilt og solidt. En fremragende indsats!  
+
+[EndGamePoor]
+Dit samlede resultat er meget dårligt. Spillet kræver en helt ny strategi.  
+
+[EndGameBelowAverage]
+Dit samlede resultat er under middel. Der er meget plads til forbedring.  
+
+[EndGameAverage]
+Dit samlede resultat er acceptabelt, med en balaneret ydeevne, men det kunne være bedre.  
+
+[EndGameGood]
+Dit samlede resultat er godt! Du har gjort det flot, men der er stadig lidt at lære.  
+
+[EndGameExcellent]
+Dit samlede resultat er fremragende! Du har klaret alle udfordringer med bravur!
+
+[GoodbyeHeader]
+Tak fordi du tog dig tid til at spille! Jeg håber, du havde det sjovt og måske lærte noget nyt undervejs. 😊

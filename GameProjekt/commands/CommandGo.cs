@@ -5,17 +5,18 @@ using static GameAssets;
 
 class CommandGo : BaseCommand, ICommand { // Command for transitioning between spaces
   public CommandGo () {
-    description = db.GetSection("CommandGoDescription"); 
+    description = db.GetSection("CommandGoDescription");
   }
   
+  // Executes the transition to a new space.
   public void Execute (Context context, string command, string[] parameters) {
-    if (GuardEq(parameters, 1)) { // Check if the number of parameters is not equal to 1
-      Console.Clear(); 
+    if (GuardEq(parameters, 1)) { // Ensures only one parameter is passed
+      Console.Clear();
       Console.WriteLine(db.GetSection("CommandGoLocationError") + "\n");
-      context.GetCurrent().Welcome(); // Print the welcome message of the current space
+      context.GetCurrent().Welcome(); // Displays the current space's welcome message
       return;
     }
-    context.Transition(parameters[0]); // Transition to the space "parameters[0]"
+    context.Transition(parameters[0]); // Transitions to the specified space
   }
 }
 
@@ -24,9 +25,10 @@ class CommandGoBack : BaseCommand, ICommand { // Command for going back to the p
     description = db.GetSection("CommandGoBackDescription");
   }
   
+  // Executes the transition back to the previous space.
   public void Execute (Context context, string command, string[] parameters) {
     Console.Clear();
-    context.TransitionBack();
+    context.TransitionBack(); // Transitions back to the previous space
   }
 }
 
@@ -35,9 +37,10 @@ class CommandGoBackHere : BaseCommand, ICommand { // Command for going back to t
     description = db.GetSection("CommandGoBackHereDescription");
   }
   
+  // Executes the transition back to the same space.
   public void Execute (Context context, string command, string[] parameters) {
     Console.Clear();
-    context.TransitionBackHere();
+    context.TransitionBackHere(); // Transitions back to the current space
   }
-  }
+}
   

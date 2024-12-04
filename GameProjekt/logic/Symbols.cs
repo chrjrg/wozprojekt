@@ -1,4 +1,6 @@
-using static GameAssets;
+/* 
+Class for shapes used in the game, including ASCII art and minimap representations.
+*/
 
 namespace GameLogic{
     public class Shape{

@@ -36,6 +36,18 @@ talk
 [CommandKeyBack]
 back
 
+[HeaderCommand1]
+Type 'COMMAND' 'EXIT' | To go to a room
+
+[HeaderCommand2]
+Type 'COMMAND' | To talk to a person in the room
+
+[HeaderCommand3]
+Type 'COMMAND' | For more help
+
+[HeaderCommandReplace]
+COMMAND
+
 [BaseCommandDescription]
 Undocumented
 
@@ -182,6 +194,12 @@ You are now at
 [CurrentExits]
 Current exits are:
 
+[ContractUnitPrice]
+Price per unit:
+
+[ContractBudget]
+Remaining budget:
+
 [ContractAmount1]
 How many
 
@@ -226,41 +244,129 @@ By signing, I confirm having received information about the energy source and ac
 DATE
 Signature: _______________________
 
+
+
 [AtomExpertIntro]
-This is the introduction for the nuclear expert
+Welcome to the nuclear power plant!
+
+My name is Nina Nucleus, and I am an expert in nuclear power, nuclear reactors, and energy production through fission.
+
+We are in an energy production facility that generates energy using nuclear power. The nuclear power plant takes small amounts of uranium or other radioactive materials and splits them in a fusion process, releasing large amounts of energy.
 
 [AtomExpertShortInfo]
-Information about nuclear energy
+Nuclear Power Plant:
+Price: 5 billion DKK
+Annual Energy Production: 1750 GWt
+CO2 during establishment + first year: 500,000 tons
+Stability: 90-95%
+Capacity Factor: 90%
+Lifespan: Minimum 60 years
 
 [AtomExpertMoreInfo]
-MORE information about nuclear energy
+Advantages of Nuclear Power:
+- High energy production: Produces 1750 GWt annually, enough to supply hundreds of thousands of households.
+- Efficiency and stability: Capacity factor of 90% and stability of 90-95%, which exceeds solar and wind energy.
+- CO2-neutral operation: Emits no greenhouse gases during electricity production, reducing the carbon footprint.
+- Independent of weather: Provides stable energy all the time, regardless of wind and solar conditions.
+- Technological improvements: Modern nuclear power plants have become safer and more efficient.
+
+Disadvantages of Nuclear Power:
+- Historical safety risks: Previous accidents like Chernobyl have caused fear and opposition to nuclear power.
+- Radioactive waste: Waste from older power plants remains radioactive for thousands of years and requires extensive storage.
+- High construction costs: Establishing nuclear power plants requires 500,000 tons of CO2, significant financial resources, and long-term planning.
+- Political opposition: Nuclear power is not part of Denmark's power grid, mainly due to opposition from the 1970s and 1980s.
+
+
 
 [WaterExpertIntro]
-This is the introduction for the hydro expert
+Welcome to the Hydroelectric Plant!
+
+My name is Eddy E. Current, and I am a specialist in hydrology and hydroelectric technology.
+
+A hydroelectric plant uses the movement of water, typically from falls or currents, to drive turbines that generate electricity.
 
 [WaterExpertShortInfo]
-Information about hydroelectric power
+Hydroelectric Plant:
+Price: 310 million DKK
+Annual Energy Production: 175 GWt
+CO2 during establishment + first year: 20,000 tons
+Stability: 40-60%
+Capacity: 50%
+Lifespan: About 200 years
 
 [WaterExpertMoreInfo]
-MORE information about hydroelectric power
+Advantages of Water Energy:
+- Hydropower is stable and independent of the weather.
+- Energy production can be regulated as needed.
+- Only pollution during construction and decommissioning, but there is discussion on whether methane from the accumulation of plant material counts in emissions.
+
+Disadvantages of Water Energy:
+- Requires specific geographic conditions such as rivers and mountains with elevation differences.
+- Can harm biodiversity by changing the flow of rivers.
+- Maintenance of turbines and dams requires resources.
+- High capital costs and long construction time.
+
+
 
 [SolarExpertIntro]
-This is the introduction for the solar expert
+Welcome to the Solar Park!
+
+My name is Sunny Sol, and I am an expert in renewable energy, solar energy, and solar panel efficiency.
+
+A solar power plant converts sunlight into electricity via solar panels, an inverter, and possibly batteries, so the power can be used at home or sent to the grid.
 
 [SolarExpertShortInfo]
-Information about solar power
+Solar Park:
+Price: 370 million DKK
+Annual Energy Production: 350 GWt
+CO2 during establishment + first year: 5,000 tons
+Stability: 10-25%
+Capacity: 17%
+Lifespan: About 30 years
 
 [SolarExpertMoreInfo]
-MORE information about solar power
+Advantages of Solar Energy:
+- The sun is a renewable energy source, and we are unlikely to run out of it.
+- Solar energy allows for storing and selling excess power.
+- The plants require minimal maintenance, as a 15-degree tilt makes them self-cleaning and keeps operational costs low.
+
+Disadvantages of Solar Energy:
+- Solar power plants can be visually intrusive as they require large areas.
+- Battery storage is expensive and environmentally burdensome with a shorter lifespan than the plants themselves.
+- The production of solar panels requires rare metals such as silicon and silver, which can lead to environmental and resource-related challenges.
+
+
 
 [WindExpertIntro]
-This is the introduction for the wind expert
+Welcome to the Wind Farm!
+
+My name is Wendy Windstorm, and I am a specialist in wind energy and wind farms.
+
+Wind energy is harnessed through wind turbines that convert the kinetic energy of the wind into electricity via a generator. When the wind causes the blades to rotate, it drives a shaft that generates power.
 
 [WindExpertShortInfo]
-Information about wind energy
+Wind Farm:
+Price: 500 million DKK
+Annual Energy Production: 350 GWt
+CO2 during establishment + first year: 10,000 tons
+Stability: 20-40%
+Capacity Factor: 30%
+Lifespan: About 15-25 years
 
 [WindExpertMoreInfo]
-MORE information about wind energy
+Advantages of Wind Energy:
+- CO2-neutral: Produces energy without emitting greenhouse gases and contributes to the green transition.
+- Renewable resource: Wind is an unlimited energy source that can never run out.
+- Energy production: An average wind farm produces 350 GWt annually.
+- Economic benefit: Can be exported, and has low operational costs that can reduce energy prices.
+- Denmark as a leader: Wind energy has been a significant part of Danish energy production since the 1980s.
+
+Disadvantages of Wind Energy:
+- High establishment costs: Offshore wind farms require large investments, typically around 500 million DKK.
+- Visual and noise impact: Wind turbines can disrupt the landscape and create noise, especially near residential areas.
+- Low capacity factor: Wind energy has a capacity factor of only 30%, making it less stable than other energy sources.
+- Dependence on weather: Energy production depends on wind strength, leading to fluctuations in the energy supply.
+
 
 [ExpertInfoLock]
 View more information before you can make a purchase
@@ -284,7 +390,11 @@ buy
 back
 
 [SecretaryIntro]
-This is the secretary’s introduction.
+Hi again.
+
+This is Susanne! I'm ready to help you take stock of your power grid and ensure it's delivered whenever you feel it's ready.
+
+Just let me know when it suits you!
 
 [SecretaryOptionIntro]
 What can I assist you with?
@@ -442,3 +552,96 @@ Why is hydropower not a major energy source in Denmark?
 
 [SecIntro]
 SUSSANE:
+Hi, my name is Susanne. I will be your “spin doctor” on your journey to shaping Denmark's future energy supply.
+Before we dive into spending taxpayer money, it’s important that you are well-prepared to make the right decisions.
+When it comes to energy supply, there are countless factors at play that influence which solutions we can choose.
+It’s complex and requires a lot of consideration. But don’t worry! I’m here to make it easier for you.
+To keep you from going completely gray before we reach the goal, I’ve removed all the political, moral, and legal hassle.
+We’ll focus only on four main factors: Price (P), Energy Production (E), CO₂ Emissions (C), and Capacity Factor (K). Your success will be measured based on how well you balance the first three – Price, Production, and CO₂.
+But you still need to understand what they mean! It’s especially important to grasp the capacity factor, as this is where many previous environment ministers have failed.
+
+In short, the capacity factor measures how effectively a type of energy utilizes its capacity. For example: if you have an energy source that can produce 10 MW and the capacity factor is 90%,
+you actually only get 9 MW of usable energy. So, it’s a crucial key to understanding what you’re getting for your money.
+Anyway, you’ve waited long enough now. I’ll let you do your thing. You can find me back at Christiansborg in my office.
+That’s where you can submit your proposal and get an update on the choices you’ve made.
+
+Oh, and one last thing... I need you to answer a few questions before you can get started!
+Since this is all new, just do your best (guess). Later, we’ll find out if you’ve learned something from your journey.
+
+[EndGameEnergyScorePoor]
+Your energy production is catastrophic. You urgently need to make improvements.  
+
+[EndGameEnergyScoreBelowAverage]
+Your energy production is below average. There’s room for improvement.  
+
+[EndGameEnergyScoreAverage]
+Your energy production is acceptable, but nothing special.  
+
+[EndGameEnergyScoreGood]
+Your energy production is solid and at a good level!  
+
+[EndGameEnergyScoreExcellent]
+Your energy production is excellent! You’ve created a top-tier energy system!  
+
+[EndGameCO2ScorePoor]
+CO₂ emissions are unacceptable. Your decisions are harming the environment.  
+
+[EndGameCO2ScoreBelowAverage]
+CO₂ emissions are too high. You should focus more on the environment.  
+
+[EndGameCO2ScoreAverage]
+CO₂ emissions are acceptable, but there is room for improvement.  
+
+[EndGameCO2ScoreGood]
+CO₂ emissions are low. Well done in terms of environmental protection!  
+
+[EndGameCO2ScoreExcellent]
+CO₂ emissions are exceptionally low! You’ve prioritized the environment impressively!  
+
+[EndGameBudgetScorePoor]
+Your budget is in ruins. The finances have not been managed responsibly.  
+
+[EndGameBudgetScoreBelowAverage]
+Your financial management is below average. The money doesn’t go far enough.  
+
+[EndGameBudgetScoreAverage]
+Your finances are stable but not outstanding. You’ve done reasonably well.  
+
+[EndGameBudgetScoreGood]
+Your finances are strong! You’ve managed your budget well and efficiently.  
+
+[EndGameBudgetScoreExcellent]
+Your finances are excellent! You’ve managed the money exceptionally well!  
+
+[EndGameStabilityScorePoor]
+The system is unstable and unpredictable. Drastic improvements are needed.  
+
+[EndGameStabilityScoreBelowAverage]
+The system’s stability is below average. It works, but with many challenges.  
+
+[EndGameStabilityScoreAverage]
+The system’s stability is acceptable but leaves room for optimization.  
+
+[EndGameStabilityScoreGood]
+The system is stable and reliable. A good result!  
+
+[EndGameStabilityScoreExcellent]
+The system is extremely stable and solid. An outstanding performance!  
+
+[EndGamePoor]
+Your overall result is very poor. The game requires a completely new strategy.  
+
+[EndGameBelowAverage]
+Your overall result is below average. There’s plenty of room for improvement.  
+
+[EndGameAverage]
+Your overall result is acceptable, with balanced performance, but it could be better.  
+
+[EndGameGood]
+Your overall result is good! You’ve done well, but there’s still room to grow.  
+
+[EndGameExcellent]
+Your overall result is excellent! You’ve mastered all the challenges brilliantly!  
+
+[GoodbyeHeader]
+Thank you for taking the time to play! I hope you had fun and maybe learned something new along the way. 😊

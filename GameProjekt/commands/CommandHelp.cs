@@ -6,31 +6,34 @@ using static GameAssets;
 class CommandHelp : BaseCommand, ICommand {
   Registry registry;
   
+  // Constructor for initializing the registry and setting the description.
   public CommandHelp (Registry registry) {
     this.registry = registry; // Dependency Injection
-    this.description = db.GetSection("CommandHelpDescription"); 
+    this.description = db.GetSection("CommandHelpDescription");
   }
   
+  // Executes the command to display a list of available commands.
   public void Execute (Context context, string command, string[] parameters) {
     Console.Clear();
-    string[] commandNames = registry.GetCommandNames(); // Get all command names
-    Array.Sort(commandNames);
+    string[] commandNames = registry.GetCommandNames(); // Fetches all command names
+    Array.Sort(commandNames); // Sorts the command names alphabetically
     
-    // Finds max length of command name
+    // Finds the maximum length of command names for formatting
     int max = 0;
     foreach (String commandName in commandNames) {
       int length = commandName.Length;
-      if (length>max) max = length;
+      if (length > max) max = length;
     }
     
-    // Presents list of commands
+    // Displays the list of commands with descriptions
     Console.WriteLine(db.GetSection("CommandHelpHeader") + "\n");
     foreach (String commandName in commandNames) {
       string description = registry.GetCommand(commandName).GetDescription();
-      Console.WriteLine(" - {0,-"+max+"} "+description, commandName);
+      Console.WriteLine(" - {0,-" + max + "} " + description, commandName);
     }
-    context.ClickNext();
+    
+    context.ClickNext(); // Prompts to click next
     Console.Clear();
-    context.TransitionBackHere();
+    context.TransitionBackHere(); // Returns to the previous space
   }
 }

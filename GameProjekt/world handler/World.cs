@@ -1,7 +1,7 @@
-/* World class for modeling the entire in-game world
+/* 
+World class for modeling the entire in-game world
  */
- using static GameAssets;
- using static Anim;
+using static GameAssets;
 
 public class World {
   
@@ -50,16 +50,15 @@ public class World {
     solar.AddNPC(db.GetSection("NPCExpertName"), new Expert(db.GetSection("NPCExpertName")));
     wind.AddNPC(db.GetSection("NPCExpertName"), new Expert(db.GetSection("NPCExpertName")));
 
-    
+    // Optional animations and visual tests (commented out)
     //atom.test =() => {DriveAnim(Car, Atom, 90, 25); Atom.Show(1);}; 
     //wind.test =() => {DriveAnim(Car, Wind, 90, 25); Wind.Show(1);}; 
     //solar.test =() => {DriveAnim(Car, Wind, 90, 25); Solar.Show(1);};
     //water.test =() => {DriveAnim(Car, Wind, 90, 25); Water.Show(1);}; 
-
-
   }
   
-  public Space GetEntry () {
+  public Space GetEntry () 
+  {
     return entry;
   }
 }
