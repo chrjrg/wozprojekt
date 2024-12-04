@@ -10,6 +10,6 @@ class CommandKeybind : BaseCommand, ICommand {
   }
   
   public void Execute (Context context, string command, string[] parameters) {
-    inputHandler.ListenForKeyPress();
+    inputHandler.ListenForKeyPress(); 
   }
 }

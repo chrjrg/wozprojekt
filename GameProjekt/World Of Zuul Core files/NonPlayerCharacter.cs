@@ -140,7 +140,9 @@ public class Expert : NPC { // Expert class inherits from NPC
         Console.Clear();
         context.TransitionBackHere();
       } else {
+        Console.Clear();
         Console.WriteLine(db.GetSection("InputError"));
+        UserChoiseExpert();
       }
   }
 
@@ -212,7 +214,9 @@ public class Secretary : NPC {
       Console.Clear();
       context.TransitionBackHere();
     } else {
+      Console.Clear();
       Console.WriteLine(db.GetSection("InputError"));
+      Submit();
     }
   }
 

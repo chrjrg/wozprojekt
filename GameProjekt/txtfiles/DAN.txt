@@ -39,6 +39,18 @@ snak
 tilbage
 
 
+[HeaderCommand1]
+* Skriv 'KOMANDO' 'UDGANG' | For at gå til et rum
+
+[HeaderCommand2]
+* Skriv 'KOMANDO' | For at snakke med en person i rummet
+
+[HeaderCommand3]
+* Skriv 'KOMANDO' | For mere hjælp
+
+[HeaderCommandReplace]
+KOMANDO
+
 
 [BaseCommandDescription]
 Udokumenteret
@@ -74,7 +86,7 @@ Interagere med personer i rummet
 Skriv navnet på personen for at interagere
 
 [CommandInteractHeader2]
-Skriv back for at gå tilbage
+Skriv 'tilbage' for at gå tilbage
 
 [CommandInteractNPCs]
 Personer i rummet: 
@@ -184,7 +196,7 @@ Ukendt lokation.
 Du er vendt tilbage til
 
 [ContextNoEdgesFound]
-Ingen edge for stedet
+Der er intet rum der hedder
 
 
 
@@ -194,6 +206,11 @@ Du er nu ved
 [CurrentExits]
 Nuværende udgange er:
 
+[ContractUnitPrice]
+Pris pr. stk:
+
+[ContractBudget]
+Resterende budget:
 
 
 [ContractAmount1]

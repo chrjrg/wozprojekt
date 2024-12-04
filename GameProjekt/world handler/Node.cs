@@ -26,7 +26,7 @@ public class Node {
           return edges[direction];
       }
 
-      Console.WriteLine($"{db.GetSection("ContextNoEdgesFound")} '{direction}'");
+      Console.WriteLine($"{db.GetSection("ContextNoEdgesFound")} '{direction}'" + "\n");
       return null;
   }
 }

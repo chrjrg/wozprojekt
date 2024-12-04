@@ -1,6 +1,8 @@
 /* 
 Space class for modeling spaces (rooms)
 */
+using System.Data;
+using System.IO.Compression;
 using System.Xml;
 using static GameAssets;
 
@@ -19,24 +21,34 @@ public class Space : Node {
     test?.Invoke();
     Console.WriteLine($"{db.GetSection("WelcomeHeader")} '{name}'" + "\n");
     HashSet<string> exits = edges.Keys.ToHashSet();
+    HeaderHelp();
     Console.WriteLine(db.GetSection("CurrentExits"));
     foreach (String exit in exits) {
         string formattedExit = char.ToUpper(exit[0]) + exit.Substring(1).ToLower();
         Console.WriteLine(" - "+formattedExit);
     }
-
   }
 
   public void WelcomeBack () {
     test?.Invoke();
     HashSet<string> exits = edges.Keys.ToHashSet();
+    HeaderHelp();
     Console.WriteLine(db.GetSection("CurrentExits"));
     foreach (String exit in exits) {
         string formattedExit = char.ToUpper(exit[0]) + exit.Substring(1).ToLower();
         Console.WriteLine(" - "+formattedExit);
     }
   }
-  
+
+  public void HeaderHelp() {
+    string commandGo = db.GetSection("CommandKeyGo");
+    string commandInteract = db.GetSection("CommandKeyInteract");
+    string commandHelp = db.GetSection("CommandKeyHelp");
+    Console.WriteLine(db.GetSection("HeaderCommand1").Replace(db.GetSection("HeaderCommandReplace"), commandGo));
+    Console.WriteLine(db.GetSection("HeaderCommand2").Replace(db.GetSection("HeaderCommandReplace"), commandInteract));
+    Console.WriteLine(db.GetSection("HeaderCommand3").Replace(db.GetSection("HeaderCommandReplace"), commandHelp) + "\n");
+  }
+
   public void Goodbye () {
   }
   

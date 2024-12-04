@@ -1,3 +1,4 @@
+using System.Reflection.Metadata.Ecma335;
 using static GameAssets;
 
 public class Contract
@@ -34,9 +35,12 @@ public class Contract
     public static void HandleContract(Context context, string contractKey, string itemName, EnergyType energyType, ref int resourceAmount)
     {
         string contractTemplate = db.GetSection("Contract"); // Fetch contract template from database
+        Console.WriteLine($"\n{db.GetSection("ContractUnitPrice")} {FormatValueWithUnit(energyType.GetPrice(), db.GetSection("MoneyUnit"))}");
+        Console.WriteLine($"{db.GetSection("ContractBudget")} {FormatValueWithUnit(budget.GetValue(), db.GetSection("MoneyUnit"))}\n");
         Console.WriteLine($"{db.GetSection("ContractAmount1")} {itemName} {db.GetSection("ContractAmount2")}");
         if (!int.TryParse(Console.ReadLine(), out int amount) || amount <= 0)
         {
+            Console.Clear();
             Console.WriteLine(db.GetSection("ContractInvalidAmount"));
             HandleContract(context, contractKey, itemName, energyType, ref resourceAmount); // Recursive retry
             return;
@@ -84,4 +88,18 @@ public class Contract
             return false;
         }   
     }   
+
+    public static string FormatValueWithUnit(double value, string unit)
+    {
+        switch (unit)
+        {
+            case var currency when currency == db.GetSection("MoneyUnit"):
+                if (value >= 1_000_000_000) return $"{value / 1_000_000_000:0.##} {db.GetSection("BillionUnit")} {unit}";
+                else if (value >= 1_000_000) return $"{value / 1_000_000:0.##} {db.GetSection("MillionUnit")} {unit}";
+                else if (value >= 1_000) return $"{value / 1_000:0.##} {db.GetSection("ThousandUnit")} {unit}";
+                else return $"{value:0.##} {unit}";
+            default:
+                return $"{value:0.##} {unit}";
+        }
+    }
 }

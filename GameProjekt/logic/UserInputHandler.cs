@@ -11,7 +11,7 @@ public class UserInputHandler
         _context = context;
     }
 
-    public void ListenForKeyPress()
+    public void ListenForKeyPress() 
     {
         while (true)
         {

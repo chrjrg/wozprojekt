@@ -20,6 +20,11 @@ public class EnergyType // This class is used to create new energy types, with t
         CO2Emission = co2Emission;
         Stability = stability;
     }
+
+    public double GetPrice()
+    {
+        return Price;
+    }
 }
 
 public static class EnergyStore // This class is used to manage the inventory of energy types.
@@ -71,8 +76,9 @@ public class EnergyInventory // This class is used to manage the inventory of en
     // Returns quantity of energy type
     public int GetQuantity(EnergyType energyType)
     {
-        return energyCounts.ContainsKey(energyType.Name) ? energyCounts[energyType.Name] : 0;
+        return energyCounts.ContainsKey(energyType.Name) ? energyCounts[energyType.Name] : 0; 
     }
+
 
     // Prints the inventory
     public void PrintInventory()
@@ -85,7 +91,7 @@ public class EnergyInventory // This class is used to manage the inventory of en
             Console.ForegroundColor = ConsoleColor.White; 
             Console.Write(db.GetSection("EnergyInventoryHeader2") + "\n");
             Console.WriteLine("______________________________________________" + "\n");
-            foreach (var energy in energyCounts)
+            foreach (var energy in energyCounts) // Loop through the energy types.
             {     
                 Console.ForegroundColor = ConsoleColor.DarkBlue;
                 Console.Write($"{energy.Key}: ");Console.ForegroundColor = ConsoleColor.White;
@@ -95,7 +101,7 @@ public class EnergyInventory // This class is used to manage the inventory of en
             Console.WriteLine($"{db.GetSection("StabilityPrefix")} {Math.Round(CalculateOverallStability(AtomType, SolarType, WindType, WaterType), 1)}%");
             Console.WriteLine("______________________________________________" + "\n");
             Console.ResetColor();
-            context.ClickNext();
+            context.ClickNext(); 
             Console.Clear();
             secretary.UserChoiceSecretary();
         }
@@ -123,5 +129,10 @@ public class EnergyInventory // This class is used to manage the inventory of en
                                    (wind.EnergyOutput * wind.Stability * windAmount) + 
                                    (water.EnergyOutput * water.Stability * waterAmount)) / totalOutput;
         return overallStability;
+    }
+
+    internal static int GetPrice(object price)
+    {
+        throw new NotImplementedException();
     }
 }
