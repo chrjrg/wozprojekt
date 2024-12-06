@@ -38,6 +38,8 @@ snak
 [CommandKeyBack]
 tilbage
 
+[CommandKeyMap]
+map
 
 
 [BaseCommandDescription]
@@ -70,6 +72,9 @@ Kommandoer:
 [CommandInteractDescription]
 Interagere med personer i rummet
 
+[CommandMapDescription]
+Fremviser mappet for spilleren
+
 [CommandInteractHeader]
 Skriv navnet på personen for at interagere
 
@@ -90,6 +95,8 @@ Keybind mode. Naviger med piletasterne (ESC: Afslut | C: Renser konsol)
 
 [CommandUnknownHeader]
 Jeg forstod ikke
+
+
 
 
 [BuyInsufficientFunds]

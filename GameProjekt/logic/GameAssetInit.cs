@@ -10,7 +10,10 @@ public static class GameAssets
     public static Intro Intro = new Intro();
     public static Shape Wind = new Wind();
     public static Shape Atom = new Atom();
+    public static Shape Water = new Water();
+    public static Shape Solar = new Solar();
     public static Shape Car = new Car();
+    public static Shape ActualMap = new ActualMap();
     public static Secretary secretary = new Secretary(db.GetSection("SecretaryName"));
     public static Quiz quiz = new Quiz();
     public static EnergyInventory inventory = new EnergyInventory(); // Tilføj lager
@@ -61,6 +64,7 @@ public static class GameAssets
         registry.Register(db.GetSection("CommandKeyClear"), new CommandClear());
         registry.Register(db.GetSection("CommandKeyInteract"), new CommandInteract());
         registry.Register(db.GetSection("CommandKeyBack"), new CommandGoBackHere());
+        registry.Register(db.GetSection("CommandKeyMap"), new CommandMap());
     }
 }
 

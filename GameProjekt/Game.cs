@@ -35,6 +35,7 @@ class Game {
     // db.LanguageChange();   ... SKAL VIRKE I STEDET FOR MAIN METODEN
 
     InitRegistry();
+    
 
     //Intro.ShowIntro();
 
@@ -45,6 +46,7 @@ class Game {
 
     
     context.GetCurrent().Welcome();
+
 
     while (context.IsDone()==false) {
       Console.Write("> ");

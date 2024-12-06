@@ -51,10 +51,10 @@ public class World {
     wind.AddNPC(db.GetSection("NPCExpertName"), new Expert(db.GetSection("NPCExpertName")));
 
     
-    atom.test =() => {DriveAnim(Car, Atom, 90, 25); Atom.Show(1);}; 
-    //wind.test =() => {DriveAnim(Car, Wind, 90, 25); Wind.Show(1);}; 
-    //solar.test =() => {DriveAnim(Car, Wind, 90, 25); Solar.Show(1);};
-    //water.test =() => {DriveAnim(Car, Wind, 90, 25); Water.Show(1);}; 
+    atom.display =() => {DriveAnim(Car, Atom, 90, 25); Atom.Show(1);}; 
+    wind.display =() => {DriveAnim(Car, Wind, 90, 25); Wind.Show(1);}; 
+    water.display =() => {DriveAnim(Car, Water, 90, 25); Water.Show(1);}; 
+    solar.display =() => {DriveAnim(Car, Solar,90, 25); Solar.Show(1);};
 
 
   }

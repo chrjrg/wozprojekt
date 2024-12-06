@@ -11,6 +11,8 @@ public static class Anim
     {
         isAnimating = true; // Set animation status to true
 
+      
+
         string[] left = l.GetAsciiArt();
         string[] right = r.GetAsciiArt();
 
@@ -46,8 +48,11 @@ public static class Anim
 
             // Pause for the duration specified by the speed of the animation
             Thread.Sleep(speed);
+               Console.WriteLine($"DEBUG: Left ASCII-art: {l.GetType().Name}");
+        Console.WriteLine($"DEBUG: Right ASCII-art: {r.GetType().Name}");
         }
         isAnimating = false; // Set animation status to false when finished
+     
     }
 
     // Adjust the height of the ASCII art by adding padding to the top

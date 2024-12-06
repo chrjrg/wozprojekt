@@ -8,7 +8,7 @@ public class Space : Node {
   public bool alreadyBeenHere = false;
   public bool selectedInfo = false;
 
-  public Action? test { get; set; }
+  public Action? display { get; set; }
 
   public Space(String name) : base(name)
   {
@@ -16,7 +16,7 @@ public class Space : Node {
   }
 
   public void Welcome () {
-    test?.Invoke();
+    display?.Invoke();
     Console.WriteLine($"{db.GetSection("WelcomeHeader")} '{name}'" + "\n");
     HashSet<string> exits = edges.Keys.ToHashSet();
     Console.WriteLine(db.GetSection("CurrentExits"));
@@ -28,7 +28,7 @@ public class Space : Node {
   }
 
   public void WelcomeBack () {
-    test?.Invoke();
+    display?.Invoke();
     HashSet<string> exits = edges.Keys.ToHashSet();
     Console.WriteLine(db.GetSection("CurrentExits"));
     foreach (String exit in exits) {
