@@ -6,28 +6,18 @@ using static GameAssets;
 
 class Game {
   static void Main (string[] byargs) {
-    TextDatabase db = TextDatabase.Instance;
-    TextDatabase.LanguageSelector.SelectLanguageAndLoadFile(db);
-    
-
-    InitRegistry();
-
+    TextDatabase db = TextDatabase.Instance; // Singleton instance of the text database
+    TextDatabase.LanguageSelector.SelectLanguageAndLoadFile(db); // Select language and load text file
+    InitRegistry(); // Initialize the game registry with commands
     Intro.ShowIntro();
 
-    //EnergyStore.BuyEnergy(AtomType,10); //for testing
-    //EnergyStore.BuyEnergy(WindType,1); //for testing
-    //EnergyStore.BuyEnergy(SolarType,135); //for testing
-    //EnergyStore.BuyEnergy(WaterType,1); //for testing 
+    context.GetCurrent().Welcome(); // Print the welcome message of the current space
 
-    context.GetCurrent().Welcome();
-
-    while (context.IsDone()==false) {
+    while (context.IsDone()==false) { // Main game loop
       Console.Write("> ");
       string? line = Console.ReadLine();
       if (line!=null)  registry.Dispatch(line);
-      //Console.WriteLine(context.ToString()); //.... For debugging
     }
     Console.WriteLine("Game Over");
   }
-
 }

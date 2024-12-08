@@ -67,7 +67,7 @@ namespace GameLogic{
                         GreenTyping(50); // Use green text for the first line
                         break;
                     case 5:
-                        System.Threading.Thread.Sleep(5000); // Pause before clearing screen
+                        context.ClickNext(); // Pause before clearing screen
                         Console.Clear();
                         break;
                     case 7:

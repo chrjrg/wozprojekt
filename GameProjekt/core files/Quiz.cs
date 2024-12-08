@@ -1,6 +1,9 @@
 /* 
 Class for quiz logic and handling user input for the quiz.
 */
+using System.Data.Common;
+using static GameAssets;
+
 public class Quiz
 {
     private List<Question> questions = new List<Question>(); // Holds the list of questions
@@ -15,7 +18,7 @@ public class Quiz
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"DEBUG: Fejl under initialisering af Quiz: {ex.Message}"); // Error handling
+            Console.WriteLine($"DEBUG: Error {ex.Message}"); // Error handling
         }
     }
 
@@ -47,13 +50,13 @@ public class Quiz
         if (question1 != null)
         {
             Console.WriteLine(question1.Text); 
-            userName = GetNonEmptyInput("Dit navn: "); // Get the user's name
+            userName = GetNonEmptyInput($"{db.GetSection("QuizName")}: "); // Get the user's name
         }
 
         if (question2 != null)
         {
             Console.WriteLine(question2.Text);
-            dob = GetNonEmptyInput("Dit fødselsår: "); // Get the user's date of birth
+            dob = GetNonEmptyInput($"{db.GetSection("QuizBirthYear")}: "); // Get the user's date of birth
         }
 
         // Loop through remaining questions and collect answers
@@ -65,7 +68,7 @@ public class Quiz
                 continue;
 
             Console.Clear();
-            Console.WriteLine($"Spørgsmål {questionNumber}:");
+            Console.WriteLine($"{db.GetSection("QuizQuestion")} {questionNumber}:");
             Console.WriteLine(question.Text); // Display question
 
             int answer = GetValidOption(4); // Get valid answer (1-4)
@@ -169,7 +172,7 @@ public class Quiz
         int choice;
         do
         {
-            Console.Write("Vælg en mulighed: ");
+            Console.Write($"{db.GetSection("QuizChoice")} ");
             string? input = Console.ReadLine();
 
             if (int.TryParse(input, out choice) && choice >= 1 && choice <= maxOption)
@@ -177,7 +180,7 @@ public class Quiz
                 return choice; // Return valid choice
             }
 
-            Console.WriteLine("Ugyldigt valg. Prøv igen. (Vælg mellem 1 og 4)"); // Invalid choice message
+            Console.WriteLine(db.GetSection("QuizInputError")); // Invalid choice message
         } while (true);
     }
 }

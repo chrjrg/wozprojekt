@@ -111,14 +111,13 @@ public class TextDatabase
             bool validInput = false;
             while (!validInput)
             {
-                Console.WriteLine($"Which language? (DAN/ENG/DE)\nWrite 'DAN' for Danish\nWrite 'ENG' for English\nWrite 'DE' for German");
+                Console.WriteLine($"Which language? (DAN/ENG)\nWrite 'DAN' for Danish\nWrite 'ENG' for English");
                 string userInput = Console.ReadLine()!.ToLower(); // Read and convert input to lowercase
                 
                 string filePath = userInput switch
                 {
                     "dan" => Path.Combine(Directory.GetCurrentDirectory(), "txtfiles/DAN.txt"),
                     "eng" => Path.Combine(Directory.GetCurrentDirectory(), "txtfiles/ENG.txt"),
-                    "de" => Path.Combine(Directory.GetCurrentDirectory(), "txtfiles/DE.txt"),
                     _ => string.Empty // If input is invalid, return an empty string
                 };
 

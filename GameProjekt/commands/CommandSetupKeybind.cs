@@ -11,6 +11,7 @@ class CommandKeybind : BaseCommand, ICommand {
   
   // Enters keybind mode and listens for key presses.
   public void Execute (Context context, string command, string[] parameters) {
+    inputHandler.TextHelp();
     inputHandler.ListenForKeyPress(); // Starts listening for key presses
   }
 }

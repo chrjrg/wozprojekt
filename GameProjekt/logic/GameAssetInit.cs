@@ -22,6 +22,7 @@ public static class GameAssets
     public static Shape Car = new Car();
     public static Secretary secretary = new Secretary(db.GetSection("SecretaryName"));
     public static Quiz quiz = new Quiz();
+    public static Shape ActualMap = new ActualMap();
     public static EnergyInventory inventory = new EnergyInventory(); // Add inventory
 
     // Fallback command in case of invalid user input
@@ -62,5 +63,6 @@ public static class GameAssets
         registry.Register(db.GetSection("CommandKeyClear"), new CommandClear());
         registry.Register(db.GetSection("CommandKeyInteract"), new CommandInteract());
         registry.Register(db.GetSection("CommandKeyBack"), new CommandGoBackHere());
+        registry.Register(db.GetSection("CommandKeyMap"), new CommandMap());
     }
 }

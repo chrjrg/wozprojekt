@@ -13,7 +13,7 @@ TIME:
 13:32
 
 [CommandKeyExit]
-end
+exit
 
 [CommandKeyGo]
 go
@@ -36,15 +36,27 @@ talk
 [CommandKeyBack]
 back
 
+[CommandKeyMap]
+map
+
+[KeybindHelpNavigation]
+Navigate in keybind mode using the arrow keys and the 'spacebar' to go to Christiansborg
+
+[KeybindHelpMap]
+Exit keybind mode and type 'map' to view the map
+
+[KeybindHelpExit]
+Press 'ESC' to exit keybind mode
+
 [HeaderCommand1]
+
 Type 'COMMAND' 'EXIT' | To go to a room
-
 [HeaderCommand2]
+
 Type 'COMMAND' | To talk to a person in the room
-
 [HeaderCommand3]
-Type 'COMMAND' | For more help
 
+Type 'COMMAND' | For more help
 [HeaderCommandReplace]
 COMMAND
 
@@ -64,25 +76,28 @@ Navigates the player to a new location
 Goes back to the previous location
 
 [CommandGoBackHereDescription]
-Returns to the same location
+Goes back to the same location
 
 [CommandGoLocationError]
-I don’t seem to know where that is 🤔
+I don't seem to know where that is 🤔
 
 [CommandHelpDescription]
 Displays a list of available commands and their functions
+
+[CommandMapDescription]
+Displays the world map
 
 [CommandHelpHeader]
 Commands:
 
 [CommandInteractDescription]
-Interacts with people in the room
+Interact with people in the room
 
 [CommandInteractHeader]
-Type the name of the person to interact with
+Type the name of the person to interact
 
 [CommandInteractHeader2]
-Type back to return
+Type 'back' to go back
 
 [CommandInteractNPCs]
 People in the room:
@@ -91,16 +106,16 @@ People in the room:
 There are no people in the room...
 
 [CommandInteractNPCError]
-There’s no one here by that name...
+There's no one here with that name...
 
 [CommandKeybindDescription]
-Keybind mode. Navigate with the arrow keys (ESC: Exit | C: Clear console)
+Keybind mode. Navigate with arrow keys (ESC: Exit | C: Clears console)
 
 [CommandUnknownHeader]
-I didn’t understand that
+I didn't understand
 
 [BuyInsufficientFunds]
-You don’t have enough money to make this purchase.
+You don't have enough money for this purchase.
 
 [EnergyInventoryHeader]
 Energy inventory:
@@ -109,7 +124,7 @@ Energy inventory:
 Overview of energy sources
 
 [EnergyInventoryUnit]
-pcs.
+pcs
 
 [SecretaryName]
 Sussane
@@ -132,7 +147,7 @@ Hydroplant
 Solarpark
 
 [ContractAtomName]
-nuclear reactors
+reactors
 
 [ContractWindName]
 wind turbines
@@ -153,7 +168,7 @@ expert
 secretary
 
 [StabilityPrefix]
-Overall stability:
+Total stability:
 
 [BudgetName]
 Budget
@@ -165,7 +180,7 @@ kr
 Energy
 
 [EnergyUnit]
-GWt
+GWh
 
 [CO2Unit]
 tons
@@ -174,19 +189,34 @@ tons
 Press any key to continue
 
 [KeybindExiting]
-Exiting keyboard input...
+Exiting keybind mode...
 
 [KeybindInvalid]
-Invalid keypress. Use arrow keys or space to navigate.
+Invalid key press. Use the arrow keys or space to navigate. Press 'ESC' to exit keybind mode.
+
+[QuizName]
+Your name
+
+[QuizBirthYear]
+Your birth year
+
+[QuizQuestion]
+Question
+
+[QuizChoice]
+Choose an option:
+
+[QuizInputError]
+Invalid choice. Try again. (Choose between 1 and 4)
 
 [ContextErrorNoLocation]
 Unknown location.
 
 [ContextReturned]
-You’ve returned to
+You have returned to
 
 [ContextNoEdgesFound]
-No edges for the location
+There is no room called
 
 [WelcomeHeader]
 You are now at
@@ -204,13 +234,13 @@ Remaining budget:
 How many
 
 [ContractAmount2]
-do you want to purchase?
+would you like to buy?
 
 [ContractInvalidAmount]
-"Something went wrong. Please try again and ensure to use whole numbers above 0."
+"Something went wrong. Please try again and ensure to use whole numbers above 0"
 
 [ContractSuccessful]
-The purchase was successful! You have now bought
+The purchase is complete! You have now bought
 
 [ContractReplaceAmount]
 AMOUNT
@@ -222,7 +252,7 @@ TYPE
 NAME
 
 [ContractSign]
-If you wish to sign, type yes, otherwise type no
+If you would like to sign, type yes, otherwise no
 
 [BooleanDecisionYes]
 yes
@@ -236,7 +266,7 @@ The contract was not signed.
 [ContractSigned]
 
 [InputError]
-I didn’t understand that...
+I didn't understand that...
 
 [Contract]
 I, NAME, hereby confirm the purchase of AMOUNT TYPE.
@@ -320,15 +350,19 @@ Solar Park:
 Price: 370 million DKK
 Annual Energy Production: 350 GWt
 CO2 during establishment + first year: 5,000 tons
+Production per m²: 200 watts
 Stability: 10-25%
 Capacity: 17%
+Average production time per year: 1,500 hours
 Lifespan: About 30 years
+
 
 [SolarExpertMoreInfo]
 Advantages of Solar Energy:
 - The sun is a renewable energy source, and we are unlikely to run out of it.
 - Solar energy allows for storing and selling excess power.
 - The plants require minimal maintenance, as a 15-degree tilt makes them self-cleaning and keeps operational costs low.
+- Low costs. It costs approximately 2 million DKK to construct 1 MW in Denmark.
 
 Disadvantages of Solar Energy:
 - Solar power plants can be visually intrusive as they require large areas.

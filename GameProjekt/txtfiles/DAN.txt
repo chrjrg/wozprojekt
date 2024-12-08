@@ -4,6 +4,7 @@ Der er super travlt inde på Christiansborg op til det kommende valg i 2025, og 
 Miljøministeren ønsker at komme med udkast til hvordan Danmarks energinet skal se ud inden 2030, som led i Parisaftalen.
 Han har dog svært ved at vide hvilken retning han skal gå, når det kommer til at vælge energiform.
 Du har nu til opgave at at udforske og vælge hvilken energiforsyning vi skal bruge i Danmark!
+
 LOKATION:
 Christiansborg
 DATO: 
@@ -37,6 +38,17 @@ snak
 [CommandKeyBack]
 tilbage
 
+[CommandKeyMap]
+kort
+
+[KeybindHelpNavigation]
+Naviger i keybindmode med piletasterne og 'spacebar' for at gå til Christiansborg
+
+[KeybindHelpMap]
+Afslut keybindmode og skriv 'kort' for at se mappet
+
+[KeybindHelpExit]
+Tryk 'ESC' for at afslutte keybindmode
 
 [HeaderCommand1]
 * Skriv 'KOMANDO' 'UDGANG' | For at gå til et rum
@@ -74,6 +86,9 @@ Jeg ser ikke ud til at vide, hvor det er 🤔
 
 [CommandHelpDescription]
 Viser en liste over tilgængelige kommandoer og deres funktioner
+
+[CommandMapDescription]
+Viser kort over verdenen
 
 [CommandHelpHeader]
 Kommandoer:
@@ -176,17 +191,29 @@ GWt
 tons
 
 
-
 [PressAnyKey]
 Tryk på en vilkårlig tast for at fortsætte
 
 [KeybindExiting]
-Afslutter tastaturindgang...
+Afslutter keybindmode...
 
 [KeybindInvalid]
-Ugyldigt tastetryk. Brug piletasterne eller space for at navigere.
+Ugyldigt tastetryk. Brug piletasterne eller space for at navigere. Til 'ESC' for at gå ud af keybindmod.
 
+[QuizName]
+Dit navn
 
+[QuizBirthYear]
+Dit fødselsår
+
+[QuizQuestion]
+Spørgsmål
+
+[QuizChoice]
+Vælg en mulighed:
+
+[QuizInputError]
+Ugyldigt valg. Prøv igen. (Vælg mellem 1 og 4)
 
 [ContextErrorNoLocation]
 Ukendt lokation.
@@ -333,8 +360,10 @@ Solcellepark:
 Pris: 370 mio. kr.
 Energiproduktion om året: 350 GWt
 CO2 ved etablering + første år: 5.000 tons
+Produktion per m²: 200 watt
 Stabilitet: 10-25%
 Kapacitet: 17%
+Gennemsnitlig produktionstid per år: 1500 timer
 Levetid: ca. 30 år
 
 [SolarExpertMoreInfo]
@@ -342,6 +371,7 @@ Fordele ved solenergi:
 - Solen er en vedvarende energikilde, som vi næppe løber tør for.
 - Solenergi giver mulighed for at lagre og sælge overskydende strøm.
 - Anlæg kræver minimal vedligeholdelse, da en hældning på 15 grader gør dem selvrensende og holder driftsomkostningerne lave.
+- Lave omkostninger. Det koster ca. 2 mio. kr. at opføre 1 mwt. i danmark.
 
 Ulemper ved solenergi:
 - Solcelleanlæg kan være visuelt forstyrrende, da det kræver store arealer.

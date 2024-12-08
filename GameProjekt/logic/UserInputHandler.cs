@@ -48,15 +48,13 @@ public class UserInputHandler
                     Console.Clear();
                     GoToRoom(db.GetSection("EntryName").ToLower());
                     break;
-                case ConsoleKey.M: // Map (currently no functionality)
-                    Console.Clear();
-                    break;
                 case ConsoleKey.C: // Clear screen
                     Console.Clear();
                     break;
                 case ConsoleKey.Escape: // Exit the program
                     Console.Clear();
-                    Console.WriteLine(db.GetSection("KeybindExiting"));
+                    Console.WriteLine(db.GetSection("KeybindExiting")+ "\n");
+                    context.GetCurrent().Welcome();
                     return;
                 default:
                     Console.Clear();
@@ -72,4 +70,12 @@ public class UserInputHandler
         // Attempt to transition to the specified room
         _context.Transition(direction);
     }
+
+    public void TextHelp() {
+        Console.Clear();
+        Console.WriteLine($"\n{db.GetSection("KeybindHelpNavigation")}\n");
+        Console.WriteLine($"{db.GetSection("KeybindHelpMap")}\n");
+        Console.WriteLine(db.GetSection("KeybindHelpExit"));
+    }
 }
+    

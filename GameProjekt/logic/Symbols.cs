@@ -2,6 +2,8 @@
 Class for shapes used in the game, including ASCII art and minimap representations.
 */
 
+using GameLogic;
+
 namespace GameLogic{
     public class Shape{
         protected string[] asciiArt = Array.Empty<string>();
@@ -118,3 +120,23 @@ namespace GameLogic{
     }
 }
 
+class ActualMap : Shape {
+    public ActualMap(){
+        asciiArt = new string[]
+        {
+"                           -------------------",
+"                          | Atomkraftværk(AK) |",
+"                           -------------------",
+"                                    |",
+"                                    |",
+" -------------------       --------------------       -------------------",
+"| Vindmøllepark(VP) | - - | Christiansborg(CB) | - - | Vandkraftværk(VK) |",
+" -------------------       --------------------       -------------------",
+"                                    |",
+"                                    |",
+"                           -------------------",
+"                          | Solcelleanlæg(SP) |",
+"                           -------------------"
+        };
+    }
+}

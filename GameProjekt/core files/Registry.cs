@@ -1,6 +1,7 @@
 /* 
 Command registry
  */
+
 public class Registry {
   Context context; // Holds the game context (current state)
   ICommand fallback; // The fallback command if no other match is found
@@ -61,4 +62,9 @@ public class Registry {
     }
     return output; // Return the parameters
   }
+
+    internal void Execute(string v1, Context context, string v2, string[] strings)
+    {
+        throw new NotImplementedException();
+    }
 }
