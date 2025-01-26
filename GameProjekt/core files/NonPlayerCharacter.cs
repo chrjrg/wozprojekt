@@ -263,7 +263,7 @@ public class Secretary : NPC {
         string[] initMessage = db.GetSectionArray("SecIntro");
 
         foreach (string text in initMessage) {
-            CharSplit(text, 15);
+            CharSplit(text, 5);
             Thread.Sleep(100);  // Add delay between each line for effect
             System.Console.WriteLine();
         }
